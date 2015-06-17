@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IPromiseProvider {
+        declare class IPromiseProvider {
             then(onResolve:Function, onReject:Function):IPromiseProvider;
         }
     }

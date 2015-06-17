@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IGeocodeProvider {
+        declare class IGeocodeProvider {
             geocode(request:string, options?:{
                 boundedBy:number[][];
                 results:number;

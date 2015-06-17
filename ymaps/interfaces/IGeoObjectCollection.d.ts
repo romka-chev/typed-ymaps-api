@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IGeoObjectCollection extends ICustomizable, IEventEmitter, IParentOnMap {
+        declare class IGeoObjectCollection extends ICustomizable, IEventEmitter, IParentOnMap {
             add(child:IGeoObject, index?:number):IGeoObjectCollection;
             each(callback:Function, context?:any):void;
             get(index:number):IGeoObject;

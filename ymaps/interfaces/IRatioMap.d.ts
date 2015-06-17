@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IRatioMap {
+        declare class IRatioMap {
             // todo dictionary?
         }
     }

@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IPixelMultiPolygonGeometry extends IPixelGeometry {
+        declare class IPixelMultiPolygonGeometry extends IPixelGeometry {
             contains(position:number[]):boolean;
 
             getClosest(anchorPosition:number[]):{
@@ -10,7 +10,7 @@ module ymaps {
                 nextPointIndex?:number;
                 prevPointIndex?:number;
                 pathIndex:number;
-            };//todo export class
+            };//todo declare class
             getCoordinates():number[][][][];
             getFillRule():"evenOdd"|"nonZero";
             getLength():number;

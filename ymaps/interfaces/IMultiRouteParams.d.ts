@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IMultiRouteParams {
+        declare class IMultiRouteParams {
             avoidTrafficJams:boolean = false;
             boundedBy:number[][] = null;
             results:number = 3;

@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IOverlay extends  ICustomizable, IDomEventEmitter{
+        declare class IOverlay extends  ICustomizable, IDomEventEmitter{
             getData():any;
             getGeometry():IPixelGeometry;
             getMap():ymaps.Map|undefined; //todo null?

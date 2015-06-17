@@ -1,7 +1,7 @@
 module ymaps {
     export module interfaces {
         export module vow {
-            export class Promise {
+            declare class Promise {
                 constructor(resolved?:Function);
 
                 done  (onFulfilled?:Function, onRejected?:Function, onProgress?:Function, ctx?:any):void;

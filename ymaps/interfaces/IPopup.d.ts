@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IPopup extends ICustomizable, IEventEmitter {
+        declare class IPopup extends ICustomizable, IEventEmitter {
             close(force?:boolean):vow.Promise;
             getData():void; // todo typo?
             getOverlay():vow.Promise;

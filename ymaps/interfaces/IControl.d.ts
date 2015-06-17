@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IControl extends IChildOnMap {
+        declare class IControl extends IChildOnMap {
             options:IOptionManager;
 
             constructor(options?:any);

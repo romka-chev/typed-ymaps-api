@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class ISelectableControl extends IControl{
+        declare class ISelectableControl extends IControl{
             deselect():void;
             disable():void;
             enable():void;

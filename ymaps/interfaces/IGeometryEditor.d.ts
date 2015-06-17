@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IGeometryEditor extends ICustomizable, IEventEmitter{
+        declare class IGeometryEditor extends ICustomizable, IEventEmitter{
             geometry:IGeometry;
             state:IDataManager;
 

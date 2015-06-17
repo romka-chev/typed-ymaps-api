@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class ILayout extends IDomEventEmitter{
+        declare class ILayout extends IDomEventEmitter{
 
             constructor(data:any);
 

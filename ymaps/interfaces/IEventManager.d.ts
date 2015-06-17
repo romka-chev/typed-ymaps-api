@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IEventManager {
+        declare class IEventManager {
             add   (types:string|string[], callback:Function, context?:any, priority:number = 0):IEventManager;
             remove(types:string|string[], callback:Function, context?:any, priority:number = 0):IEventManager;
 

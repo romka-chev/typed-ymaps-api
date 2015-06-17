@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IFreezable {
+        declare class IFreezable {
             events:IEventManager;
 
             freeze():IFreezable;

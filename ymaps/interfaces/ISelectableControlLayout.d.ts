@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class ISelectableControlLayout extends ILayout{
+        declare class ISelectableControlLayout extends ILayout{
 
         }
     }

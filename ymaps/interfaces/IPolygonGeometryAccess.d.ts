@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IPolygonGeometryAccess extends IFreezable {
+        declare class IPolygonGeometryAccess extends IFreezable {
             contains(position:number[]):boolean;
             get(index:number):number[][];
             getChildGeometry(index:number):ILinearRingGeometryAccess; // todo typo?
@@ -12,7 +12,7 @@ module ymaps {
                 prevPointIndex?:number;
                 pathIndex:number;
                 pathIndex:number;
-            };//todo export class
+            };//todo declare class
             getCoordinates():number[][];
             getFillRule():string; // todo determine?
             getLength():number;

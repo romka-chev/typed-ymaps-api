@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IEventTrigger{
+        declare class IEventTrigger{
             fire(type:string, eventObject?:IEvent|any):IEventTrigger;
         }
     }

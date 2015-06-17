@@ -1,11 +1,11 @@
 module ymaps {
     export module interfaces {
-        export class ICircleGeometryAccess extends IFreezable {
+        declare class ICircleGeometryAccess extends IFreezable {
             contains(position:number[]):boolean;
             getClosest(anchorPosition:number[]):{
                 position:number[];
                 distance:number;
-            };// todo export class
+            };// todo declare class
 
             getCoordinates():number[]|undefined; //todo null?
             setCoordinates(coordinates:number[]|undefined):ICircleGeometryAccess; //todo null?

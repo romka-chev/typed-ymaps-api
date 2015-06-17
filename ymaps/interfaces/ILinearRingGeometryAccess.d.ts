@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class ILinearRingGeometryAccess extends IFreezable {
+        declare class ILinearRingGeometryAccess extends IFreezable {
             contains(position:number[]):boolean;
 
             get(index:number):number[];
@@ -23,7 +23,7 @@ module ymaps {
                 closestPointIndex:number;
                 nextPointIndex?:number;
                 prevPointIndex?:number;
-            };//todo export class
+            };//todo declare class
 
             getLength():number;
         }

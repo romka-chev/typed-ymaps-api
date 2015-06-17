@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IShape {
+        declare class IShape {
             contains(position:number[]):boolean;
             equals(shape:IShape):boolean;
             getBounds():number[][]|undefined; // todo null?

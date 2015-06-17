@@ -1,5 +1,5 @@
 module ymaps{
-    export class Event{
+    declare class Event{
 
     }
 }

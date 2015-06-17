@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class ICopyrightsAccessor extends ICopyrightsProvider {
+        declare class ICopyrightsAccessor extends ICopyrightsProvider {
 
         }
     }

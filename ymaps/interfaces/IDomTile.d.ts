@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IDomTile {
+        declare class IDomTile {
             event:IEventManager;
 
             constructor(url:string);

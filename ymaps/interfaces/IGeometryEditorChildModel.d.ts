@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IGeometryEditorChildModel extends IGeometryEditorModel {
+        declare class IGeometryEditorChildModel extends IGeometryEditorModel {
             editor:IGeometryEditor;
             geometry:IBaseGeometry;
 

@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IOptionManager extends IChild, IEventEmitter, IFreezable {
+        declare class IOptionManager extends IChild, IEventEmitter, IFreezable {
             get(key:string, defaultValue?:any):any; // todo generics?
             getAll():any;
             getName():string;

@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IPopupManager extends IEventEmitter {
+        declare class IPopupManager extends IEventEmitter {
             close(force?:boolean):vow.Promise;
             destroy():void;
             getData():void; // todo typo?

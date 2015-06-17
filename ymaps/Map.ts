@@ -1,5 +1,5 @@
 module ymaps{
-    export class Map{
+    declare class Map{
 
     }
 }

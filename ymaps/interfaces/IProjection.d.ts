@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IProjection {
+        declare class IProjection {
             getCoordSystem():ICoordSystem;
             isCycled():boolean[];
             fromGlobalPixels(globalPixelPoint:number[], zoom:number):number[];

@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IPane extends IEventEmitter {
+        declare class IPane extends IEventEmitter {
             destroy():void;
             getElement():HTMLElement;
             getMap():ymaps.Map;

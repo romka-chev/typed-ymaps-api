@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IPixelGeometry extends IBaseGeometry {
+        declare class IPixelGeometry extends IBaseGeometry {
             equals(geometry:IPixelGeometry):boolean;
             getMetaData():any;
             scale(factor:number):IPixelGeometry;

@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IHotspotLayerObject extends ICustomizable, IDomEventEmitter{
+        declare class IHotspotLayerObject extends ICustomizable, IDomEventEmitter{
             getHotspot():IHotspot;
 
             getGeometry():any;
