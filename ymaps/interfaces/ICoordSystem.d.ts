@@ -1,7 +1,8 @@
 module ymaps {
     export module interfaces {
-        declare class ICoordSystem {
+        export class ICoordSystem {
             getDistance(point1:number[], point2:number[]):number;
+
             solveDirectProblem(startPoint:number[], direction:number[], distance:number):{
                 startPoint:number[];
                 startDirection:number[];

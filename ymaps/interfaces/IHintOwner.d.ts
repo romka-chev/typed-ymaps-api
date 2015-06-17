@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        declare class IHintOwner {
+        export class IHintOwner {
             hint:IHintManager;
         }
     }

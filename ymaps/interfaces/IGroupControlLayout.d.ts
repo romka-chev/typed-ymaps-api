@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        declare class IGroupControlLayout extends ILayout {
+        export class IGroupControlLayout extends ILayout {
             getChildContainerElement():any;
         }
     }

@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        declare class ILineStringGeometry extends IGeometry, ILineStringGeometryAccess {
+        export class ILineStringGeometry extends IGeometry, ILineStringGeometryAccess {
             getType():"LineString";
         }
     }

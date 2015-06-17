@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        declare class IBalloonManager extends IPopupManager {
+        export class IBalloonManager extends IPopupManager {
             autoPan():vow.Promise;
         }
     }

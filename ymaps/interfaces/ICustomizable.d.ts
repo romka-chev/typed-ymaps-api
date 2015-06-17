@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        declare class ICustomizable {
+        export class ICustomizable {
             options:IOptionManager;
         }
     }

@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        declare class IBalloonOwner {
+        export class IBalloonOwner {
             balloon:IBalloonManager;
         }
     }

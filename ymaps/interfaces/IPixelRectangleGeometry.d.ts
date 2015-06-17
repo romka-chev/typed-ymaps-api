@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        declare class IPixelRectangleGeometry extends IPixelGeometry {
+        export class IPixelRectangleGeometry extends IPixelGeometry {
             getClosest(anchorPosition:number[]):{
                 position:number[];
                 distance:number;
@@ -8,8 +8,9 @@ module ymaps {
                 nextPointIndex?:number;
                 prevPointIndex?:number;
                 pathIndex:number;
-            };//todo declare class
+            };//todo export class
             getCoordinates():number[][];
+
             getType():string; // todo determine?
         }
     }

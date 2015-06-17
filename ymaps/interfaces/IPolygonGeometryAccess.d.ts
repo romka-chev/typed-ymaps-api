@@ -1,8 +1,10 @@
 module ymaps {
     export module interfaces {
-        declare class IPolygonGeometryAccess extends IFreezable {
+        export class IPolygonGeometryAccess extends IFreezable {
             contains(position:number[]):boolean;
+
             get(index:number):number[][];
+
             getChildGeometry(index:number):ILinearRingGeometryAccess; // todo typo?
             getClosest(anchorPosition:number[]):{
                 position:number[];
@@ -12,14 +14,20 @@ module ymaps {
                 prevPointIndex?:number;
                 pathIndex:number;
                 pathIndex:number;
-            };//todo declare class
+            };//todo export class
             getCoordinates():number[][];
+
             getFillRule():string; // todo determine?
             getLength():number;
+
             insert(index:number, path:number[][]):IPolygonGeometryAccess;
+
             remove(index:number):IPolygonGeometryAccess;
+
             set(index:number, path:number[][]):IPolygonGeometryAccess;
+
             setCoordinates(coordinates:number[][][]):IPolygonGeometryAccess;
+
             setFillRule(fillRule:string):IPolygonGeometryAccess; // todo determine?
             splice(index:number, number:number):ILinearRingGeometryAccess[];
         }

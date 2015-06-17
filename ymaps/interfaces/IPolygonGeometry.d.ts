@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        declare class IPolygonGeometry extends IGeometry, IPolygonGeometryAccess{
+        export class IPolygonGeometry extends IGeometry, IPolygonGeometryAccess {
             getType():"Polygon";
         }
     }

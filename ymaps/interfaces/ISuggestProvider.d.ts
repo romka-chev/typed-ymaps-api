@@ -1,10 +1,10 @@
 module ymaps {
     export module interfaces {
-        declare class ISuggestProvider {
+        export class ISuggestProvider {
             suggest(request:string, options:{
                 boundedBy:number[][];
                 results:number;
-            }):vow.Promise;// todo declare class
+            }):vow.Promise;// todo export class
         }
     }
 }

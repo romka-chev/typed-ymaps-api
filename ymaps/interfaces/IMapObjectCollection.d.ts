@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        declare class IMapObjectCollection extends ICollection, ICustomizable, IParentOnMap {
+        export class IMapObjectCollection extends ICollection, ICustomizable, IParentOnMap {
 
         }
     }

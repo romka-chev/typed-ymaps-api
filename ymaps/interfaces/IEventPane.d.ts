@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        declare class IEventPane extends IDomEventEmitter, IPane{
+        export class IEventPane extends IDomEventEmitter, IPane {
 
         }
     }

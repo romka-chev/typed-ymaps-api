@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        declare class IHotspotContainer {
+        export class IHotspotContainer {
             // todo report about undefined interface
         }
     }

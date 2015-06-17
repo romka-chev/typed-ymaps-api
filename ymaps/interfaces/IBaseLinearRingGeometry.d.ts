@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        declare class IBaseLinearRingGeometry extends IBaseGeometry, ILinearRingGeometryAccess {
+        export class IBaseLinearRingGeometry extends IBaseGeometry, ILinearRingGeometryAccess {
             getType():"LinearRing";
         }
     }

@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        declare class IParentOnMap {
+        export class IParentOnMap {
             getMap():ymaps.Map;
         }
     }

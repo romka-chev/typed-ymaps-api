@@ -1,10 +1,12 @@
 module ymaps {
     export module interfaces {
-        declare class IFreezable {
+        export class IFreezable {
             events:IEventManager;
 
             freeze():IFreezable;
+
             isFrozen():boolean;
+
             unfreeze():IFreezable;
         }
     }
