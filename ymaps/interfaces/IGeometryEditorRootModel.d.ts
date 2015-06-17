@@ -1,7 +1,7 @@
 module ymaps {
     export module interfaces {
-        export interface IGeometryEditorRootModel extends IGeometryEditorModel {
-            new(geometry:IBaseGeometry, editor:IGeometryEditor):IGeometryEditorRootModel;
+        export class IGeometryEditorRootModel extends IGeometryEditorModel {
+            constructor(geometry:IBaseGeometry, editor:IGeometryEditor);
         }
     }
 }

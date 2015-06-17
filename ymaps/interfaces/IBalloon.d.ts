@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export interface IBalloon extends IPopup {
+        export class IBalloon extends IPopup {
 
         }
     }

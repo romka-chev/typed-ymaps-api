@@ -1,7 +1,7 @@
 module ymaps {
     export module interfaces {
-        export interface IGeometryEditorModel extends IEventEmitter {
-            new(geometry:IBaseGeometry, editor:IGeometryEditor):IGeometryEditorModel;
+        export class IGeometryEditorModel extends IEventEmitter {
+            // constructor(geometry:IBaseGeometry, editor:IGeometryEditor); // todo check constructor inheritance
 
             destroy():void;
             getPixels():number[];

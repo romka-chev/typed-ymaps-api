@@ -1,7 +1,7 @@
 module ymaps {
     export module interfaces {
-        export interface IBasePolygonGeometry extends IBaseGeometry, IPolygonGeometryAccess {
-            getType():string;
+        export class IBasePolygonGeometry extends IBaseGeometry, IPolygonGeometryAccess {
+            getType():"Polygon";
         }
     }
 }

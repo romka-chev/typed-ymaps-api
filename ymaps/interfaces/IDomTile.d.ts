@@ -1,9 +1,9 @@
 module ymaps {
     export module interfaces {
-        export interface IDomTile {
+        export class IDomTile {
             event:IEventManager;
 
-            new(url:string):IDomTile;
+            constructor(url:string);
 
             destroy():void;
             isReady():boolean;

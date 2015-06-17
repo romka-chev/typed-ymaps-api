@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export interface IHotspotLayerObject extends ICustomizable, IDomEventEmitter{
+        export class IHotspotLayerObject extends ICustomizable, IDomEventEmitter{
             getHotspot():IHotspot;
 
             getGeometry():any;
@@ -10,7 +10,7 @@ module ymaps {
             setId(id:number):void;
 
             getProperties():any;
-            setProperties(properties:any):void
+            setProperties(properties:any):void;
         }
     }
 }

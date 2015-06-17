@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export interface IGeoObjectPopupData {
+        export class IGeoObjectPopupData {
             geometry:IGeometry;
             geoObject:IGeoObject;
             properties:IDataManager;

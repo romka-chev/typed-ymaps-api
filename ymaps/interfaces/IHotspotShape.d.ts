@@ -1,8 +1,8 @@
 module ymaps {
     export module interfaces {
-        export interface IHotspotShape extends ICustomizable, IDomEventEmitter{
-            getContainer():IHotspotContainer;
-            setContainer(container:IHotspotContainer):void;
+        export class IHotspotShape extends ICustomizable, IDomEventEmitter{
+            getContainer():IHotspotContainer; // todo undefined interface?
+            setContainer(container:IHotspotContainer):void; // todo undefined interface?
 
             getGeometry():any;
             setGeometry(geometry:any):void;

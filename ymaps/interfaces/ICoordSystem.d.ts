@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export interface ICoordSystem {
+        export class ICoordSystem {
             getDistance(point1:number[], point2:number[]):number;
             solveDirectProblem(startPoint:number[], direction:number[], distance:number):{
                 startPoint:number[];
@@ -12,7 +12,7 @@ module ymaps {
                     point:number[];
                     direction:number[];
                 }
-            };// todo extract interface
+            };// todo extract class
             solveInverseProblem(startPoint:number[], endPoint:number[], reverseDirection:boolean = false):{
                 startPoint:number[];
                 startDirection:number[];
@@ -23,7 +23,7 @@ module ymaps {
                     point:number[];
                     direction:number[];
                 }
-            };// todo extract interface
+            };// todo extract class
         }
     }
 }

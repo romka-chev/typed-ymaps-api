@@ -1,7 +1,7 @@
 module ymaps {
     export module interfaces {
-        export interface IBaseRectangleGeometry extends IBaseGeometry, IPolygonGeometryAccess {
-            getType():string;
+        export class IBaseRectangleGeometry extends IBaseGeometry, IPolygonGeometryAccess {
+            getType():"Rectangle";
         }
     }
 }

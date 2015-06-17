@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export interface IGeoObjectSequence extends ICustomizable, IEventEmitter, IParentOnMap {
+        export class IGeoObjectSequence extends ICustomizable, IEventEmitter, IParentOnMap {
             each(callback:Function, context?:any):void;
             get(index:number):IGeoObject;
             getBounds():number[][]|undefined; // todo null?

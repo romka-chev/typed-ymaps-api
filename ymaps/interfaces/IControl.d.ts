@@ -1,9 +1,9 @@
 module ymaps {
     export module interfaces {
-        export interface IControl extends IChildOnMap {
+        export class IControl extends IChildOnMap {
             options:IOptionManager;
 
-            new(options?:any):IControl;
+            constructor(options?:any);
 
             getParent():IControlParent|undefined; // todo null?
             setParent(parent:IControlParent|undefined):IControl; // todo report about typo in official docs

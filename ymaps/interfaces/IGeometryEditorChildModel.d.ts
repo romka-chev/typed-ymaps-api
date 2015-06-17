@@ -1,10 +1,10 @@
 module ymaps {
     export module interfaces {
-        export interface IGeometryEditorChildModel extends IGeometryEditorModel {
+        export class IGeometryEditorChildModel extends IGeometryEditorModel {
             editor:IGeometryEditor;
             geometry:IBaseGeometry;
 
-            new(geometry:IBaseGeometry, editor:IGeometryEditor, pixels:number[], parent:IGeometryEditorModel):IGeometryEditorChildModel;
+            constructor(geometry:IBaseGeometry, editor:IGeometryEditor, pixels:number[], parent:IGeometryEditorModel);
             getParent():IGeometryEditorModel;
             setPixels(pixels:number[]):void;
         }

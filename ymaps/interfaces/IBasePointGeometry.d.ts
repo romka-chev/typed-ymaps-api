@@ -1,7 +1,7 @@
 module ymaps {
     export module interfaces {
-        export interface IBasePointGeometry extends IBaseGeometry, IPointGeometryAccess {
-            getType():string;
+        export class IBasePointGeometry extends IBaseGeometry, IPointGeometryAccess {
+            getType():"Point";
         }
     }
 }

@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export interface IEventEmitter {
+        export class IEventEmitter {
             events:IEventManager;
         }
     }

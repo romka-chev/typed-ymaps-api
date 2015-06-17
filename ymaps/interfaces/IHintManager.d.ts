@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export interface IHintManager extends IPopupManager {
+        export class IHintManager extends IPopupManager {
 
         }
     }

@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export interface IEvent {
+        export class IEvent {
             allowMapEvent():void;
             callMethod(name:string):void;
             get(name:string):any;

@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export interface IBalloonLayout extends ILayout {
+        export class IBalloonLayout extends ILayout {
 
         }
     }

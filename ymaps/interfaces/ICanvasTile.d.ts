@@ -1,9 +1,9 @@
 module ymaps {
     export module interfaces {
-        export interface ICanvasTile {
+        export class ICanvasTile {
             events:IEventManager;
 
-            new(url:string):ICanvasTile;
+            constructor(url:string);
 
             destroy():void;
             isReady():boolean;
