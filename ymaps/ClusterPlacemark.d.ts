@@ -30,7 +30,7 @@ module ymaps {
         iconColor:string;
         iconContentLayout:string| Function = 'cluster#iconContent';
         iconLayout:string|Function         = 'cluster#icon';
-        icons:ClusterPlacemarkOptionsIcons[]; // todo interface?
+        icons:ClusterPlacemarkOptionsIcons[];
         iconShape:interfaces.IGeometryJson = null;
         interactivityModel:string          = 'default#geoObject';
         numbers:number[]                   = [10, 100];
