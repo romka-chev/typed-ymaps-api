@@ -2,8 +2,8 @@ module ymaps {
     export module control {
         export class TrafficControl extends interfaces.IControl, interfaces.ICustomizable {
 
-            data:data.Manager;
-            state:TrafficControlDataManager;
+            data:TrafficControlDataManager;
+            state:TrafficControlStateManager;
 
             constructor(parameters?:TrafficControlParameters) {
                 super(<any>parameters);
@@ -55,6 +55,8 @@ module ymaps {
         }
 
         export class TrafficControlDataManager extends data.Manager {
+        }
+        export class TrafficControlStateManager extends data.Manager {
             get<T>(path:"trafficShown", defaultValue?:T):T|boolean;
             get<T>(path:"providerKey", defaultValue?:T):T|string;
             get<T>(path:"expanded", defaultValue?:T):T|boolean;

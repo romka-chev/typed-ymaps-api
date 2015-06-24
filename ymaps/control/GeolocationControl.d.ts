@@ -2,7 +2,7 @@ module ymaps {
     export module control {
         export class GeolocationControl extends Button {
 
-            state:state.Manager;
+            state:GeolocationControlStateManager;
 
             constructor(parameters?:GeolocationParameters){
                 super(<any>parameters);
@@ -32,5 +32,8 @@ module ymaps {
             right   :number|string = "auto";
         }
         export class GeolocationParametersState{}
+
+        class GeolocationControlStateManager extends data.Manager{
+        }
     }
 }

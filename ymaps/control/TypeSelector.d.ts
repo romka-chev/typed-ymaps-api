@@ -2,7 +2,7 @@ module ymaps {
     export module control {
         export class TypeSelector extends ListBox { // todo enum for mapType?
 
-            data:data.Manager;
+            data:TypeSelectorDataManager;
 
             constructor(parameters?:string[]|MapType[]|TypeSelectorParameters) {
                 super(<any>parameters);
@@ -43,6 +43,11 @@ module ymaps {
         }
         export class TypeSelectorParametersState {
             extended:boolean = false;
+        }
+
+
+        export class TypeSelectorDataManager extends data.Manager{
+
         }
 
     }

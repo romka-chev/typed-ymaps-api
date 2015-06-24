@@ -2,8 +2,8 @@ module ymaps {
     export module control {
         export class ListBoxItem extends interfaces.ICustomizable, interfaces.ISelectableControl {
 
-            state:state.Manager;
-            data:data.Manager;
+            data:ListBoxItemDataManager;
+            state:ListBoxItemStateManager;
 
             constructor(parameters?:string|ListBoxItemParameters);
 
@@ -29,6 +29,15 @@ module ymaps {
         }
         export class ListBoxItemParametersState {
             selected:boolean = false;
+        }
+
+        class ListBoxItemDataManager extends data.Manager{
+            get<T>(path:"content", defaultValue?:T):T|string;
+            get<T>(path:"title",   defaultValue?:T):T|string;
+        }
+        class ListBoxItemStateManager extends data.Manager{
+            get<T>(path:"selected", defaultValue?:T):T|boolean;
+            get<T>(path:"enabled",  defaultValue?:T):T|boolean;
         }
     }
 }

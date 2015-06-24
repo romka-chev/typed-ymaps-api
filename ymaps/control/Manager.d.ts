@@ -1,9 +1,10 @@
 module ymaps {
     export module control {
         export class Manager extends interfaces.ICustomizable, interfaces.ISelectableControl {
-            events:event.Manager;
-            options:option.Manager;
-            state:data.Manager;
+
+            events :ManagerEventsManager;
+            options:ManagerOptionsManager;
+            state  :ManagerStateManager;
 
             constructor(map:Map, controls?:string[]|interfaces.IControl[], options?:ManagerOptions);
 
@@ -47,6 +48,16 @@ module ymaps {
             margin:number   = 10;
             pane:interfaces.IPane;
             states:string[] = ["small", "medium", "large"];
+        }
+
+        export class ManagerEventsManager extends events.Manager{
+
+        }
+        export class ManagerOptionsManager extends option.Manager{
+
+        }
+        export class ManagerStateManager extends data.Manager{
+            get<T>(path:"size", defaultValue?:T):T|string; // todo check return
         }
     }
 }

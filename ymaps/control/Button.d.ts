@@ -2,8 +2,8 @@ module ymaps {
     export module control {
         export class Button extends interfaces.ICustomizable, interfaces.ISelectableControl {
 
-            data:data.Manager;
-            state:state.Manager;
+            data:ButtonDataManager;
+            state:ButtonStateManager;
 
             constructor(parameters?:ButtonParameters);
 
@@ -39,6 +39,17 @@ module ymaps {
         export class ButtonParametersState{
             enabled:boolean = true;
             selected:boolean = false;
+        }
+
+        class ButtonDataManager extends data.Manager{
+            get<T>(path:"image",   defaultValue?:T):T|string;
+            get<T>(path:"content", defaultValue?:T):T|string;
+            get<T>(path:"title",   defaultValue?:T):T|string;
+        }
+        class ButtonStateManager extends data.Manager{
+            get<T>(path:"selected", defaultValue?:T):T|boolean;
+            get<T>(path:"enabled",  defaultValue?:T):T|boolean;
+            get<T>(path:"size",     defaultValue?:T):T|string; // todo check return
         }
     }
 }

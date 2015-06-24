@@ -2,7 +2,7 @@ module ymaps {
     export module control {
         export class FullscreenControl extends Button {
 
-            state:state.Manager;
+            state:FullscreenControlStateManager;
 
             constructor(parameters?:FullscreenControlParameters){
                 super(<any>parameters);
@@ -33,6 +33,10 @@ module ymaps {
         export class FullscreenControlParametersState{
             enabled :boolean = true;
             selected:boolean = false;
+        }
+
+        class FullscreenControlStateManager extends data.Manager{
+            get<T>(path:"fullscreen", defaultValue?:T):T|boolean;
         }
     }
 }

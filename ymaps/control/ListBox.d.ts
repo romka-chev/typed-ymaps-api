@@ -2,8 +2,8 @@ module ymaps {
     export module control {
         export class ListBox extends interfaces.ICollection, interfaces.IControl, interfaces.ICustomizable {
 
-            state:state.Manager;
-            data:data.Manager;
+            data:ListBoxDataManager;
+            state:ListBoxStateManager;
 
             constructor(parameters?:ListBoxParameters);
 
@@ -42,6 +42,15 @@ module ymaps {
         }
         export class ListBoxParametersState{
             expanded:boolean = false;
+        }
+
+        class ListBoxDataManager extends data.Manager{
+            get<T>(path:"content", defaultValue?:T):T|string;
+            get<T>(path:"title",   defaultValue?:T):T|string;
+        }
+        class ListBoxStateManager extends data.Manager{
+            get<T>(path:"expanded", defaultValue?:T):T|boolean;
+            get<T>(path:"size",     defaultValue?:T):T|string; // todo check return
         }
     }
 }
