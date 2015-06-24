@@ -20,7 +20,6 @@ module ymaps {
         }
         export class ListBoxParametersData{
             content:string;
-            content:string;
             image:string;
             title:string;
         }
@@ -29,7 +28,7 @@ module ymaps {
             expandOnClick   :boolean  = true;
             float           :"left"|"right"|"none"  = "right";
             floatIndex      :number                 = 0;
-            layout          :string|interfaces.ISelectableControlLayout|interfaces.IGroupControlLayout|Function;
+            layout          :string|Function;
             maxWidth        :number|number[]        = 90;
             popupFloat      :"left"|"right";
             position        :ListBoxParametersOptionsPosition;
