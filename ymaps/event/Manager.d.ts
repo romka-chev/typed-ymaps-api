@@ -1,7 +1,7 @@
 module ymaps {
     export module event {
         export class Manager extends interfaces.IEventManager {
-            constructor(parameterss?:ManagerParameters);
+            constructor(parameters?:ManagerParameters);
 
             createEventObject(type:string, event:any, target:any):Event;
 

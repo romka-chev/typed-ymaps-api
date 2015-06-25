@@ -50,7 +50,7 @@ module ymaps {
             states:string[] = ["small", "medium", "large"];
         }
 
-        export class ManagerEventsManager extends events.Manager{
+        export class ManagerEventsManager extends event.Manager{
 
         }
         export class ManagerOptionsManager extends option.Manager{
