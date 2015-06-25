@@ -1,6 +1,6 @@
 module ymaps {
     export module interfaces {
-        export class IParentOnMap extends IPixelGeometry {
+        export class IPixelCircleGeometry extends IPixelGeometry {
             getCoordinates():number[];
 
             getRadius():number;
