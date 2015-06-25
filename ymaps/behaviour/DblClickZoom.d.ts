@@ -1,7 +1,9 @@
 module ymaps {
     export module behaviour {
         export class DblClickZoom extends interfaces.IBehavior {
-            constructor(options?:DblClickZoomOptions);
+            constructor(options?:DblClickZoomOptions){
+                super(<any>options);
+            }
         }
         export class DblClickZoomOptions {
             centering:boolean = true;

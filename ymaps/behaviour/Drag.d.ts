@@ -1,7 +1,9 @@
 module ymaps {
     export module behaviour {
         export class Drag extends interfaces.IBehavior {
-            constructor(options?:DragOptions);
+            constructor(options?:DragOptions){
+                super(<any>options);
+            }
         }
         export class DragOptions {
             actionCursor:string    = 'grabbing';
