@@ -1,9 +1,9 @@
 module ymaps {
     export module interfaces {
         export class ICoordSystem {
-            getDistance(point1:number[], point2:number[]):number;
+            static getDistance(point1:number[], point2:number[]):number;
 
-            solveDirectProblem(startPoint:number[], direction:number[], distance:number):{
+            static solveDirectProblem(startPoint:number[], direction:number[], distance:number):{
                 startPoint:number[];
                 startDirection:number[];
                 endPoint:number[];
@@ -14,7 +14,7 @@ module ymaps {
                     direction:number[];
                 }
             };// todo extract class
-            solveInverseProblem(startPoint:number[], endPoint:number[], reverseDirection:boolean = false):{
+            static solveInverseProblem(startPoint:number[], endPoint:number[], reverseDirection:boolean = false):{
                 startPoint:number[];
                 startDirection:number[];
                 endPoint:number[];
