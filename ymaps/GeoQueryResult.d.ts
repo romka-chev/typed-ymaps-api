@@ -61,7 +61,7 @@ module ymaps {
         ):GeoQueryResult;
         searchInside(object:interfaces.IGeoObject|interfaces.IGeometry|Map):GeoQueryResult;
         searchIntersect(object:interfaces.IGeoObject|interfaces.IGeometry|Map, options?:GeoQueryResultSearchIntersectOptions):GeoQueryResult;
-        setOptions(key:string|{[key:string]:any}, value?:any):GeoQueryResult; // todo extract dictionary? why value is not required?
+        setOptions(key:string|{[key:string]:any}, value?:any):GeoQueryResult; // todo extract dictionary? why value is not required? report?
         setProperties(path:string, value:any):GeoQueryResult;
         slice(begin:number, end?:number):GeoQueryResult;
         sort(comparator:string|Function):void; // todo check is it really void; (a?:IGeoObject, b?:IGeoObject) => number? (a?:IGeoObject, b?:IGeoObject) => any?
