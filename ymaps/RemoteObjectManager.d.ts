@@ -1,26 +1,27 @@
 module ymaps {
-    export class LoadingObjectManager extends interfaces.ICustomizable, interfaces.IEventEmitter, interfaces.IGeoObject, interfaces.IParentOnMap {
+    export class RemoteObjectManager extends interfaces.ICustomizable, interfaces.IEventEmitter, interfaces.IGeoObject, interfaces.IParentOnMap{
 
         clusters:objectManager.ClusterCollection;
         objects:objectManager.ObjectCollection;
 
-        constructor(urlTemplate:string, options?:LoadingObjectManagerOptions);
+        constructor(urlTemplate:string, options?:RemoteObjectManagerOptions);
 
-        getBounds():number[][]|undefined; // todo null;
-        getObjectState(id:any):LoadingObjectManagerObjectState; // todo check is it really any?
-        getPixelBounds():number[][]|undefined; // todo null;
+        getBounds():number[][]; // todo null;
+        getObjectState(id:any):RemoteObjectManagerObjectState; // todo check is it really any?
+        getPixelBounds():number[][]; // todo null;
         getUrlTemplate():string;
         reloadData():any;
+        setFilter(filterFunction:RemoteObjectManagerFilterFunction|string):any;
         setUrlTemplate(urlTemplate:string):any;
     }
-    export class LoadingObjectManagerOptions{
+    export class RemoteObjectManagerOptions{
+        // todo import other options
         clusterize:boolean = false;
         paddingParamName:boolean|string = 'callback'; // todo report about string type missed
         paddingTemplate:string = null;
         splitRequests:boolean = false;
         syncOverlayInit:boolean = false;
         viewportMargin:number|number[] = 128;
-
 
         // imported from ymaps.ClustererOptions
         gridSize:number                  = 64;
@@ -157,13 +158,22 @@ module ymaps {
         // todo check this options carefully
         geoObjectPixelRendering:"jumpy"|"static" = "jumpy";
         geoObjectProjection:interfaces.IProjection;
+
     }
 
-    export class LoadingObjectManagerObjectState{
+    export class RemoteObjectManagerObjectState{
         found:boolean;
         isShown:boolean;
-        cluster:any; // todo determine
-        isClustered:boolean;
         isFilteredOut:boolean;
+    }
+
+    export interface RemoteObjectManagerFilterFunction extends Function{
+        (object?:RemoteObjectManagerFilterFunctionObject):any; // todo check is there strict-type check for return value
+    }
+    export interface RemoteObjectManagerFilterFunctionObject{
+        options:any;
+        properties:any;
+        geometry:any;
+        id:any;
     }
 }
