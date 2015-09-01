@@ -1,18 +1,17 @@
 module ymaps {
-    export class Placemark extends GeoObject {
+    export class Polyline extends GeoObject {
 
-        editor:geometryEditor.Point;
-        geometry:geometry.Point;
+        editor:geometryEditor.LineString;
+        geometry:geometry.LineString;
 
         // todo determine Object type
-        constructor(geometry:number[]|Object|interfaces.IPointGeometry, properties?:interfaces.IDataManager|PlacemarkProperties, options?:PlacemarkOptions){
+        constructor(geometry:number[][]|Object|interfaces.ILineStringGeometry, properties?:interfaces.IDataManager|PolylineProperties, options?:PolylineOptions){
             super();
         }
     }
 
     // todo check types carefully
-    export class PlacemarkProperties {
-        iconContent:string;
+    export class PolylineProperties {
         hintContent:string;
         balloonContent:string;
         balloonContentHeader:string;
@@ -20,23 +19,25 @@ module ymaps {
         balloonContentFooter:string;
     }
 
-    export class PlacemarkOptions{
+    export class PolylineOptions{
 
         cursor:string = "pointer";
         draggable:boolean = false;
         hasBalloon:boolean = true;
         hasHint:boolean = true;
-        hideIconOnBalloonOpen:boolean = true;
-        iconOffset:number[]; // todo check for just {number}
-        iconShape:interfaces.IGeometryJson = null;
-        interactiveZIndex:boolean = true;
+        interactiveZIndex:boolean = false;
         interactivityModel:"default#opaque"|"default#geoObject"|"default#layer"|"default#transparent"|"default#silent" = "default#geoObject";
+        lineStringOverlay:string|PolylineOptionsLineStringOverlay = "default#polyline";
+        opacity:number = 1;
         openBalloonOnClick:boolean = true;
         openEmptyBalloon:boolean = false;
         openEmptyHint:boolean = false;
         openHintOnHover:boolean = true;
-        pane:string = "places"; // todo determine? check for IPane. report about IPane missed?
-        pointOverlay:string|PlacemarkOptionsPointOverlay = "default#placemark";
+        pane:string|interfaces.IPane = "areas"; // todo determine?
+        strokeColor:string|string[] = "0066ffff";
+        strokeOpacity:number|number[] = 1;
+        strokeStyle:string|string[]|Object|Object[]; // todo dictionary with string values
+        strokeWidth:number|number[] = 1;
         syncOverlayInit:boolean = false;
         visible:boolean = true;
         zIndex:number;
@@ -44,37 +45,6 @@ module ymaps {
         zIndexDrag:number;
         zIndexHover:number;
 
-        preset:string; // todo determine all possible values?
-
-        iconColor:string;
-        iconLayout:string|interfaces.ILayout; // todo determine string values?
-
-        // imported from ymaps.layout.ImageDataOptions
-        iconImageClipRect:number[][];
-        iconImageHref:string;
-        iconImageOffset:number[];
-        iconImageSize:number[];
-        iconShape:interfaces.IShape|any|undefined; // todo null
-
-        // imported from ymaps.layout.ImageWithContentDataOptions
-        iconContentLayout:string|Function; // todo ILayout constructor?
-        iconContentOffset:number[];
-        iconContentSize:number[];
-
-        iconShadowColor:string;
-        iconShadowLayout:string|interfaces.ILayout; // todo determine string values?
-
-        // imported from ymaps.layout.ImageDataOptions
-        iconShadowImageClipRect:number[][];
-        iconShadowImageHref:string;
-        iconShadowImageOffset:number[];
-        iconShadowImageSize:number[];
-        iconShadowShape:interfaces.IShape|any|undefined; // todo null
-
-        // imported from ymaps.layout.ImageWithContentDataOptions
-        iconShadowContentLayout:string|Function; // todo ILayout constructor?
-        iconShadowContentOffset:number[];
-        iconShadowContentSize:number[];
 
         // imported from ymaps.BalloonOptions
         balloonAutoPan:boolean                    = true;
@@ -105,20 +75,27 @@ module ymaps {
         hintOffset:number[]; // todo check for single-number version
         hintPane:string = "outerHint"; // todo determine all keys?
 
-        // imported from ymaps.geometryEditor.PointOptions
+        // imported from ymaps.geometryEditor.LineStringOptions
         editorDblClickHandler:Function;
         editorDrawingCursor:boolean|string = "arrow"; // todo report about type error?
         editorDrawOver:boolean = true;
+        editorEdgeLayout:Function;
+        editorMaxPoints:number = Infinity;
+        editorMenuManager:Function; // todo determine
+        editorVertexLayout:Function;
 
-        // imported from ymaps.geometry.PointOptions
+        // imported from ymaps.geometry.LineStringOptions
         // todo check this options carefully
+        coordRendering:"shortestPath"|"straightPath";
+        geodesic:boolean                = false;
         pixelRendering:"jumpy"|"static" = "jumpy";
         projection:interfaces.IProjection;
+        simplification:boolean          = true;
     }
 
     // todo generics?
     // todo determine arguments
-    export interface PlacemarkOptionsPointOverlay{
-        (geometry?:interfaces.IPixelPointGeometry, data?:interfaces.IDataManager|Object, options?:Object):vow.Promise;
+    export interface PolylineOptionsLineStringOverlay{
+        (geometry?:interfaces.IPixelLineStringGeometry, data?:interfaces.IDataManager|Object, options?:Object):vow.Promise;
     }
 }

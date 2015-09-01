@@ -38,7 +38,7 @@ module ymaps {
         openEmptyHint:boolean = false;
         openHintOnHover:boolean = true;
         outline:boolean = true;
-        pane:string = "areas"; // todo determine?
+        pane:string = "areas"; // todo determine? check for IPane. report about IPane missed?
         polygonOverlay:string|PolygonOptionsPolygonOverlay = "default#polygon";
         strokeColor:string|string[] = "0066ffff";
         strokeOpacity:number|number[] = 1;
@@ -102,6 +102,6 @@ module ymaps {
     // todo generics?
     // todo determine arguments
     export interface PolygonOptionsPolygonOverlay{
-        (geometry?:interfaces.IPixelPolygonGeometry, data?:interfaces.IDataManager|ObjectManager, options?:ObjectManager):vow.Promise;
+        (geometry?:interfaces.IPixelPolygonGeometry, data?:interfaces.IDataManager|Object, options?:Object):vow.Promise;
     }
 }
