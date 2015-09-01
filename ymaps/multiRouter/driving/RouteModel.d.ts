@@ -1,7 +1,7 @@
 module ymaps {
     export module multiRouter {
         export module driving {
-            class RouteModel extends interfaces.IEventEmitter {
+            export class RouteModel extends interfaces.IEventEmitter {
                 multiRoute:multiRouter.MultiRouteModel;
                 properties:RouteModelPropertiesManager;
 

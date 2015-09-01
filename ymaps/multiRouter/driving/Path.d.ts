@@ -1,7 +1,7 @@
 module ymaps {
     export module multiRouter {
         export module driving {
-            class Path extends interfaces.IGeoObject {
+            export class Path extends interfaces.IGeoObject {
                 model:multiRouter.driving.PathModel;
 
                 properties:PathPropertiesManager;

@@ -1,7 +1,7 @@
 module ymaps {
     export module multiRouter {
         export module driving {
-            class SegmentModel extends interfaces.IGeoObject {
+            export class SegmentModel extends interfaces.IGeoObject {
                 geometry:geometry.base.LineString;
                 path:multiRouter.driving.PathModel;
                 properties:SegmentModelPropertiesManager;
