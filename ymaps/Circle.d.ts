@@ -7,7 +7,9 @@ module ymaps {
         editor:any = null;
         geometry:geometry.Circle;
 
-        constructor(geometry:interfaces.ICircleGeometry|number[][]|any, properties?:interfaces.IDataManager|any, options?:CircleOptions);
+        constructor(geometry:interfaces.ICircleGeometry|number[][]|any, properties?:interfaces.IDataManager|any, options?:CircleOptions){
+            super();
+        }
     }
 
     export class CircleOptions {
