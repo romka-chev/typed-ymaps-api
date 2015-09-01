@@ -1,20 +1,17 @@
 module ymaps {
     export module control {
-        export class storage implements util.Storage {
-            static add(key:string, object:any):Storage;
 
-            static get(key:"rulerControl"):control.RulerControl;
-            static get(key:"searchControl"):control.SearchControl;
-            static get(key:"trafficControl"):control.TrafficControl;
-            static get(key:"typeSelector"):control.TypeSelector;
-            static get(key:"zoomControl"):control.ZoomControl;
-            static get(key:"geolocationControl"):control.GeolocationControl;
-            static get(key:"routeEditor"):control.RouteEditor;
-            static get(key:"fullscreenControl"):control.FullscreenControl;
+        export var storage:Storage;
 
-            static get(key:string):any;
-
-            static remove(key:string):Storage;
+        export class Storage extends util.Storage{
+            get(key:"rulerControl"):control.RulerControl;
+            get(key:"searchControl"):control.SearchControl;
+            get(key:"trafficControl"):control.TrafficControl;
+            get(key:"typeSelector"):control.TypeSelector;
+            get(key:"zoomControl"):control.ZoomControl;
+            get(key:"geolocationControl"):control.GeolocationControl;
+            get(key:"routeEditor"):control.RouteEditor;
+            get(key:"fullscreenControl"):control.FullscreenControl;
         }
     }
 }

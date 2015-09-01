@@ -1,5 +1,5 @@
 module ymaps {
-    export class Hint extends interfaces.IHint, interfaces.Popup {
+    export class Hint extends interfaces.IHint, Popup {
         constructor(map:Map, options?:HintOptions);
     }
 
