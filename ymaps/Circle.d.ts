@@ -25,7 +25,7 @@ module ymaps {
         hasHint:boolean               = true;
         hideIconOnBalloonOpen:boolean = true;
         interactiveZIndex:boolean     = false;
-        interactivityModel:string     = "default#geoObject";
+        interactivityModel:string     = "default#geoObject"; // todo determine
         opacity:number                = 1;
         openBalloonOnClick:boolean    = true;
         openEmptyBalloon:boolean      = false;

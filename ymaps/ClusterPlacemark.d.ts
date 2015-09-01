@@ -32,7 +32,7 @@ module ymaps {
         iconLayout:string|Function         = 'cluster#icon';
         icons:ClusterPlacemarkOptionsIcons[];
         iconShape:interfaces.IGeometryJson = null;
-        interactivityModel:string          = 'default#geoObject';
+        interactivityModel:string          = 'default#geoObject'; // todo determine
         numbers:number[]                   = [10, 100];
         openBalloonOnClick:boolean         = true;
         openEmptyHint:boolean              = false;

@@ -67,7 +67,7 @@ module ymaps {
         clusterIconLayout:string|Function         = 'cluster#icon';
         clusterIcons:ClusterPlacemarkOptionsIcons[];
         clusterIconShape:interfaces.IGeometryJson = null;
-        clusterInteractivityModel:string          = 'default#geoObject';
+        clusterInteractivityModel:string          = 'default#geoObject'; // todo determine
         clusterNumbers:number[]                   = [10, 100];
         clusterOpenBalloonOnClick:boolean         = true;
         clusterOpenEmptyHint:boolean              = false;
