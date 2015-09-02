@@ -24,7 +24,7 @@ module ymaps {
                 options?:MangerAddOptions):control.Manager;
 
             each(callback:Function, context:any):Manager;
-            get(index:number|string):interfaces.IControl|undefined; // todo null?
+            get(index:number|string):interfaces.IControl; // todo @null?
             getChildElement(control:interfaces.IControl):vow.Promise;
             getContainer():HTMLElement;
             getMap():Map;

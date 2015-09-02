@@ -49,7 +49,7 @@ module ymaps {
         class ButtonStateManager extends data.Manager{
             get<T>(path:"selected", defaultValue?:T):T|boolean;
             get<T>(path:"enabled",  defaultValue?:T):T|boolean;
-            get<T>(path:"size",     defaultValue?:T):T|string; // todo check return
+            get<T>(path:"size",     defaultValue?:T):T|"auto"|"small"|"medium"|"large";
         }
     }
 }

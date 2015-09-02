@@ -11,7 +11,11 @@ module ymaps {
         export class GeolocationParameters{
             data    :GeolocationParametersData;
             options :GeolocationParametersOptions;
-            state   :GeolocationParametersState; // todo report about mistake in official docs ?
+            /**
+             * todo @report about mistake in official docs ?
+             * There is no default states described in the docs
+             */
+            state   :GeolocationParametersState;
         }
         export class GeolocationParametersData{
             image:string = 'geolocation';

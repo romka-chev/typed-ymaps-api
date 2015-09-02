@@ -50,7 +50,12 @@ module ymaps {
         }
         class ListBoxStateManager extends data.Manager{
             get<T>(path:"expanded", defaultValue?:T):T|boolean;
-            get<T>(path:"size",     defaultValue?:T):T|string; // todo check return
+            /**
+             *  todo @report about size description docs missed
+             * @param path
+             * @param defaultValue
+             */
+            get<T>(path:"size",     defaultValue?:T):T|string;
         }
     }
 }
