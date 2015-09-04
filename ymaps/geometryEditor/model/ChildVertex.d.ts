@@ -4,12 +4,12 @@ module ymaps {
             export class ChildVertex extends interfaces.IGeometryEditorChildModel {
                 getAllVerticesNumber():number;
                 getIndex():number;
-                getNextVertex():ChildVertex|undefined; // todo null
-                getPrevVertex():ChildVertex|undefined; // todo null
+                getNextVertex():ChildVertex;
+                getPrevVertex():ChildVertex;
                 setGlobalPixels(pixels:number[]):void;
                 setIndex(index:number):void;
-                setNextVertex(nextVertex:ChildVertex|undefined):void;  // todo null
-                setPrevVertex(prevVertex:ChildVertex|undefined):void;  // todo null
+                setNextVertex(nextVertex:ChildVertex):void;
+                setPrevVertex(prevVertex:ChildVertex):void;
             }
         }
     }

@@ -8,12 +8,12 @@ module ymaps {
 
             getNative(key:string):any;
 
-            getParent():IOptionManager|undefined; // todo null?
+            getParent():IOptionManager;
             resolve(key:string, name?:string):any;
 
             setName(name:string):void;
 
-            setParent(parent:IOptionManager|undefined):IOptionManager; //todo null? report about type in docs?
+            setParent(parent:IOptionManager):IOptionManager; //todo report about type in docs?
         }
     }
 }

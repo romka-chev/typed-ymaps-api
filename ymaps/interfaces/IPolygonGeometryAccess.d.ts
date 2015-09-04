@@ -6,15 +6,7 @@ module ymaps {
             get(index:number):number[][];
 
             getChildGeometry(index:number):ILinearRingGeometryAccess; // todo typo?
-            getClosest(anchorPosition:number[]):{
-                position:number[];
-                distance:number;
-                closestPointIndex:number;
-                nextPointIndex?:number;
-                prevPointIndex?:number;
-                pathIndex:number;
-                pathIndex:number;
-            };//todo export class
+            getClosest(anchorPosition:number[]):IPolygonGeometryAccessGetClosestResult;
             getCoordinates():number[][];
 
             getFillRule():string; // todo determine?
@@ -30,6 +22,16 @@ module ymaps {
 
             setFillRule(fillRule:string):IPolygonGeometryAccess; // todo determine?
             splice(index:number, number:number):ILinearRingGeometryAccess[];
+        }
+
+        export interface IPolygonGeometryAccessGetClosestResult{
+            position:number[];
+            distance:number;
+            closestPointIndex:number;
+            nextPointIndex?:number;
+            prevPointIndex?:number;
+            pathIndex:number;
+            pathIndex:number;
         }
     }
 }

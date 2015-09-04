@@ -5,15 +5,15 @@ module ymaps {
 
             getGeometry():IPixelGeometry;
 
-            getMap():ymaps.Map|undefined; //todo null?
-            getShape():IShape|undefined; //todo null?
+            getMap():ymaps.Map;
+            getShape():IShape;
             isEmpty():boolean;
 
             setData(data:any):void;
 
             setGeometry(geometry:IPixelGeometry):void;
 
-            setMap(map:ymaps.Map|undefined):void; // todo null?
+            setMap(map:ymaps.Map):void;
         }
     }
 }

@@ -1,16 +1,21 @@
 module ymaps {
     export module interfaces {
         export class ISearchProvider {
-            search(request:string, options:{
-                boundedBy:number[][];
-                results:number;
-                skip:number;
-            }):vow.Promise;// todo export class
-            suggest(request:string, options:{
-                boundedBy:number[][];
-                results:number;
-                strictBounds:boolean;
-            }):vow.Promise;// todo export class
+            search(request:string, options:ISearchProviderSearchOptions):vow.Promise;
+            suggest(request:string, options:ISearchProviderSuggestOptions):vow.Promise;
         }
+
+        export interface ISearchProviderSearchOptions{
+            boundedBy?:number[][];
+            results?:number;
+            skip?:number;
+        }
+        export interface ISearchProviderSuggestOptions{
+            boundedBy?:number[][];
+            results?:number;
+            strictBounds?:boolean;
+        }
+
+
     }
 }

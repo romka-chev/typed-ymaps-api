@@ -7,12 +7,12 @@ module ymaps {
 
             get(index:number):IGeoObject;
 
-            getBounds():number[][]|undefined; // todo null?
+            getBounds():number[][];
             getIterator():IIterator;
 
             getLength():number;
 
-            getPixelBounds():number[][]|undefined; // todo null?
+            getPixelBounds():number[][];
             indexOf(object:any):number;
 
             remove(child:IGeoObject):IGeoObjectCollection;

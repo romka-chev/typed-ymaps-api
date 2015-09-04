@@ -9,8 +9,8 @@ module ymaps {
 
             group():IEventGroup;
 
-            getParent():IEventManager|undefined; //todo null?
-            setParent(parent:IEventManager|undefined):void; // todo null?
+            getParent():IEventManager;
+            setParent(parent:IEventManager):void;
         }
     }
 }

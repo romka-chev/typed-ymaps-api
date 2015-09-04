@@ -5,7 +5,7 @@ module ymaps {
 
             equals(shape:IShape):boolean;
 
-            getBounds():number[][]|undefined; // todo null?
+            getBounds():number[][];
             getGeometry():IPixelGeometry;
 
             getType():string; // todo determine?

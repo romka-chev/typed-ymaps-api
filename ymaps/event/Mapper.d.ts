@@ -9,12 +9,12 @@ module ymaps {
 
             once(types:string|string[], callback:(event?:Event) => any, context?:any, priority:number = 0):interfaces.IEventManager;
 
-            setParent(parent:interfaces.IEventManager|undefined):Manager; // todo null?
+            setParent(parent:interfaces.IEventManager):Manager;
         }
 
         export class MapperMappingTable{
             [key:string]:boolean;
-            [key:string]:(event?:Event) => Event|undefined; // todo null?
+            [key:string]:(event?:Event) => Event;
         }
 
     }

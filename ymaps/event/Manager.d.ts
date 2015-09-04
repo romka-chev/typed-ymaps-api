@@ -9,7 +9,7 @@ module ymaps {
 
             once(types:string|string[], callback:(event?:Event) => any, context?:any, priority:number = 0):interfaces.IEventManager;
 
-            setParent(parent:interfaces.IEventManager|undefined):Manager; // todo null?
+            setParent(parent:interfaces.IEventManager):Manager;
         }
 
         export class ManagerParameters {

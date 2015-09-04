@@ -2,7 +2,7 @@ module ymaps {
     export module geometry {
         export module json {
             export class circle extends interfaces.IGeometryJson {
-                coordinates:number[]|undefined; // todo null
+                coordinates:number[];
                 radius:number;
                 type:"Circle";
             }

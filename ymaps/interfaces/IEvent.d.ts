@@ -7,7 +7,7 @@ module ymaps {
 
             get(name:string):any;
 
-            getSourceEvent():IEvent|undefined; //todo null?
+            getSourceEvent():IEvent;
             isDefaultPrevented():boolean;
 
             isImmediatePropagationStopped():boolean;

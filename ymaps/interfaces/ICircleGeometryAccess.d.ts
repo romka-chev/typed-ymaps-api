@@ -3,17 +3,19 @@ module ymaps {
         export class ICircleGeometryAccess extends IFreezable {
             contains(position:number[]):boolean;
 
-            getClosest(anchorPosition:number[]):{
-                position:number[];
-                distance:number;
-            };// todo export class
+            getClosest(anchorPosition:number[]):ICircleGeometryAccessGetClosestResult;
 
-            getCoordinates():number[]|undefined; //todo null?
-            setCoordinates(coordinates:number[]|undefined):ICircleGeometryAccess; //todo null?
+            getCoordinates():number[];
+            setCoordinates(coordinates:number[]):ICircleGeometryAccess;
 
             getRadius():number;
 
             setRadius(radius:number):ICircleGeometryAccess;
+        }
+
+        export interface ICircleGeometryAccessGetClosestResult{
+            position:number[];
+            distance:number;
         }
     }
 }

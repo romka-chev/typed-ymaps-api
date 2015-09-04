@@ -8,7 +8,7 @@ module ymaps {
 
             isEmpty():boolean;
 
-            getShape():IShape|undefined; // todo null?
+            getShape():IShape;
 
             getData():any;
 
@@ -16,7 +16,7 @@ module ymaps {
 
             getParentElement():HTMLElement;
 
-            setParentElement(parent:HTMLElement|undefined):void; // todo null?
+            setParentElement(parent:HTMLElement):void;
 
         }
     }

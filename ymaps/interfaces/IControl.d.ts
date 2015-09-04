@@ -5,8 +5,8 @@ module ymaps {
 
             constructor(options?:any);
 
-            getParent():IControlParent|undefined; // todo null?
-            setParent(parent:IControlParent|undefined):IControl; // todo report about typo in official docs
+            getParent():IControlParent;
+            setParent(parent:IControlParent):IControl; // todo report about typo in official docs
 
         }
     }

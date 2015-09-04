@@ -5,12 +5,12 @@ module ymaps {
 
             constructor(geometry:interfaces.IPolygonGeometry, options?:PolygonOptions);
 
-            getModel():vow.Promise; // todo error return
-            getModelSync():model.RootPolygon|undefined; // todo null
-            getView():vow.Promise; // todo error return
-            getViewSync():view.MultiPath|undefined; // todo null
-            startDrawing():vow.Promise; // todo error return
-            startEditing():vow.Promise; // todo error return
+            getModel():vow.Promise; // todo error return; generics
+            getModelSync():model.RootPolygon;
+            getView():vow.Promise; // todo error return; generics
+            getViewSync():view.MultiPath;
+            startDrawing():vow.Promise; // todo error return; generics
+            startEditing():vow.Promise; // todo error return; generics
             startFraming():vow.Promise;
             stopDrawing():void;
             stopEditing():void;

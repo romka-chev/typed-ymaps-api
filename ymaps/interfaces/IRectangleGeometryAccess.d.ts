@@ -3,13 +3,15 @@ module ymaps {
         export class IRectangleGeometryAccess extends IFreezable {
             contains(position:number[]):boolean;
 
-            getClosest(anchorPosition:number[]):{
-                position:number[];
-                distance:number;
-            };//todo export class
+            getClosest(anchorPosition:number[]):IRectangleGeometryAccessGetClosestResult;
             getCoordinates():number[][];
 
             setCoordinates(coordinates:number[][]):IRectangleGeometryAccess;
+        }
+
+        export interface IRectangleGeometryAccessGetClosestResult{
+            position:number[];
+            distance:number;
         }
     }
 }

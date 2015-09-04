@@ -3,13 +3,7 @@ module ymaps {
         export class ILineStringGeometryAccess extends IFreezable {
             getChildGeometry(index:number):IPointGeometryAccess;
 
-            getClosest(anchorPosition:number[]):{
-                position:number[];
-                distance:number;
-                closestPointIndex:number;
-                nextPointIndex?:number;
-                prevPointIndex?:number;
-            };//todo export class
+            getClosest(anchorPosition:number[]):ILineStringGeometryAccessGetClosestResult;
             getCoordinates():number[][];
 
             setCoordinates(coordinates:number[][]):ILineStringGeometryAccess;
@@ -25,6 +19,14 @@ module ymaps {
             set(index:number, coordinates:number[]):ILineStringGeometryAccess;
 
             splice(index:number, number:number):number[][];
+        }
+
+        export interface ILineStringGeometryAccessGetClosestResult{
+            position:number[];
+            distance:number;
+            closestPointIndex:number;
+            nextPointIndex?:number;
+            prevPointIndex?:number;
         }
     }
 }

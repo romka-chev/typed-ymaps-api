@@ -22,15 +22,17 @@ module ymaps {
 
             getChildGeometry(index:number):IPointGeometryAccess;
 
-            getClosest(anchorPosition:number[]):{
-                position:number[];
-                distance:number;
-                closestPointIndex:number;
-                nextPointIndex?:number;
-                prevPointIndex?:number;
-            };//todo export class
+            getClosest(anchorPosition:number[]):ILinearRingGeometryAccessGetClosestResult;
 
             getLength():number;
+        }
+
+        export interface ILinearRingGeometryAccessGetClosestResult{
+            position:number[];
+            distance:number;
+            closestPointIndex:number;
+            nextPointIndex?:number;
+            prevPointIndex?:number;
         }
     }
 }

@@ -5,12 +5,12 @@ module ymaps {
 
             constructor(geometry:interfaces.ILineStringGeometry, options?:LineStringOptions);
 
-            getModel():vow.Promise; // todo check error return
-            getModelSync():model.RootLineString|undefined; // todo null
+            getModel():vow.Promise; // todo check error return; generics
+            getModelSync():model.RootLineString;
             getView():vow.Promise;
-            getViewSync():view.Path|undefined; // todo null
-            startDrawing():vow.Promise; // todo check error return
-            startEditing():vow.Promise; // todo check error return
+            getViewSync():view.Path;
+            startDrawing():vow.Promise; // todo check error return; generics
+            startEditing():vow.Promise; // todo check error return; generics
             startFraming():vow.Promise;
 
             stopDrawing():void;
