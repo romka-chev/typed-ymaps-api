@@ -1,9 +1,8 @@
-module ymaps {
-    export module geoObject {
-        export module addon {
-            export class editor {
-                static get(geoObject:interfaces.IGeoObject):interfaces.IGeometryEditor;
-            }
-        }
+namespace ymaps.geoObject.addon {
+
+    interface Editor {
+        get(geoObject:interfaces.IGeoObject):interfaces.IGeometryEditor;
     }
+
+    declare var editor:Editor;
 }

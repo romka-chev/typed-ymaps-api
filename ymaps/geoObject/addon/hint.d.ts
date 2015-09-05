@@ -1,9 +1,8 @@
-module ymaps {
-    export module geoObject {
-        export module addon {
-            export class hint {
-                static get(geoObject:interfaces.IGeoObject):interfaces.IPopupManager;
-            }
-        }
+namespace ymaps.geoObject.addon {
+
+    interface Hint {
+        get(geoObject:interfaces.IGeoObject):interfaces.IPopupManager;
     }
+
+    declare var hint:Hint;
 }

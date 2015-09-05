@@ -1,9 +1,9 @@
-module ymaps {
-    export module geoObject {
-        export module addon {
-            export class balloon {
-                static get(geoObject:interfaces.IGeoObject):interfaces.IPopupManager;
-            }
-        }
+namespace ymaps.geoObject.addon {
+
+    // todo check is this correct
+    interface Balloon {
+        get(geoObject:interfaces.IGeoObject):interfaces.IPopupManager;
     }
+
+    declare var balloon:Balloon;
 }
