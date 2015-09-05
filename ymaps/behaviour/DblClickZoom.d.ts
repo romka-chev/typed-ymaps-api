@@ -1,13 +1,20 @@
-module ymaps {
-    export module behaviour {
-        export class DblClickZoom extends interfaces.IBehavior {
-            constructor(options?:DblClickZoomOptions){
-                super(<any>options);
-            }
-        }
-        export class DblClickZoomOptions {
-            centering:boolean = true;
-            duration:number   = 200;
-        }
+namespace ymaps.behaviour {
+
+    interface DblClickZoomStatic {
+        new(options:DblClickZoomOptions = defaultDblClickZoomOptions):DblClickZoom;
     }
+    interface DblClickZoom extends ymaps.interfaces.IBehavior {
+    }
+
+    interface DblClickZoomOptions {
+        centering?:boolean;
+        duration?:number;
+    }
+
+
+    declare var DblClickZoom:DblClickZoomStatic;
+    declare var defaultDblClickZoomOptions:DblClickZoomOptions = {
+        centering: true,
+        duration : 200
+    };
 }

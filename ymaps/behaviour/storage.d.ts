@@ -1,5 +1,3 @@
-module ymaps {
-    export module behaviour {
-        declare var storage:util.Storage;
-    }
+namespace ymaps.behaviour {
+    declare var storage:ymaps.util.Storage;
 }

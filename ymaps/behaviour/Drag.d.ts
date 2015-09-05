@@ -1,16 +1,25 @@
-module ymaps {
-    export module behaviour {
-        export class Drag extends interfaces.IBehavior {
-            constructor(options?:DragOptions){
-                super(<any>options);
-            }
-        }
-        export class DragOptions {
-            actionCursor:string    = 'grabbing';
-            cursor:string          = 'grab';
-            inertia:boolean        = true;
-            inertiaDuration:number = 400;
-            tremor:number          = 2;
-        }
+namespace ymaps.behaviour {
+
+    interface DragStatic {
+        new(options:DragOptions = defaultDragOptionsOptions):Drag;
     }
+    interface Drag extends ymaps.interfaces.IBehavior {
+    }
+    interface DragOptions {
+        actionCursor?:string;
+        cursor?:string;
+        inertia?:boolean;
+        inertiaDuration?:number;
+        tremor?:number;
+    }
+
+
+    declare var Drag:DragStatic;
+    declare var defaultDragOptionsOptions:DragOptions = {
+        actionCursor   : 'grabbing',
+        cursor         : 'grab',
+        inertia        : true,
+        inertiaDuration: 400,
+        tremor         : 2
+    };
 }

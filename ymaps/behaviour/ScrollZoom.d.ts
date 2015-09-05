@@ -1,14 +1,20 @@
-module ymaps {
-    export module behaviour {
-        export class ScrollZoom extends interfaces.IBehavior {
-            constructor(options?:ScrollZoomOptions){
-                super(<any>options);
-            }
-        }
-        export class ScrollZoomOptions {
-            maximumDelta:number = 5;
-            speed:number        = 5;
-        }
+namespace ymaps.behaviour {
 
+    interface ScrollZoomStatic {
+        new(options:ScrollZoomOptions = defaultScrollZoomOptions):ScrollZoom;
+    }
+
+    interface ScrollZoom extends ymaps.interfaces.IBehavior {
+    }
+    interface ScrollZoomOptions {
+        maximumDelta?:number;
+        speed?:number;
+    }
+
+
+    declare var ScrollZoom:ScrollZoomStatic;
+    declare var defaultScrollZoomOptions:ScrollZoomOptions = {
+        maximumDelta: 5,
+        speed       : 5
     }
 }

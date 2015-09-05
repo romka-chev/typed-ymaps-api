@@ -1,13 +1,11 @@
-module ymaps {
-    export module interfaces {
-        export class IBehavior extends IChildOnMap, ICustomizable {
-            constructor(options?:any);
+namespace ymaps.interfaces {
+    export interface IBehavior extends IChildOnMap, ICustomizable {
+        new(options?:any);
 
-            disable():void;
+        disable():void;
 
-            enable():void;
+        enable():void;
 
-            isEnabled():boolean;
-        }
+        isEnabled():boolean;
     }
 }
