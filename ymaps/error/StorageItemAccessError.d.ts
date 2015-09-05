@@ -1,7 +1,5 @@
-module ymaps {
-    export module error {
-        export class StorageItemAccessError extends ClientError {
+namespace ymaps.error {
+    interface StorageItemAccessError extends ClientError {
 
-        }
     }
 }

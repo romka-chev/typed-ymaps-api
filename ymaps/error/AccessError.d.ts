@@ -1,7 +1,5 @@
-module ymaps {
-    export module error {
-        export class AccessError extends ExternalError {
+namespace ymaps.error {
+    interface AccessError extends ExternalError {
 
-        }
     }
 }

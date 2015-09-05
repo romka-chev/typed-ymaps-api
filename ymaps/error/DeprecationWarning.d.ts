@@ -1,7 +1,5 @@
-module ymaps {
-    export module error {
-        export class DeprecationWarning extends Warning {
+namespace ymaps.error {
+    interface DeprecationWarning extends Warning {
 
-        }
     }
 }

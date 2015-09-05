@@ -1,7 +1,5 @@
-module ymaps {
-    export module error {
-        export class DataProcessingError extends ExternalError {
+namespace ymaps.error {
+    interface DataProcessingError extends ExternalError {
 
-        }
     }
 }

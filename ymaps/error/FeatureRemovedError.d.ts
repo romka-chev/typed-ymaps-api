@@ -1,7 +1,5 @@
-module ymaps {
-    export module error {
-        export class FeatureRemovedError extends ClientError {
+namespace ymaps.error {
+    interface FeatureRemovedError extends ClientError {
 
-        }
     }
 }

@@ -1,5 +1,5 @@
-module ymaps {
-    export class Error {
+namespace ymaps {
+    interface Error {
 
     }
 }

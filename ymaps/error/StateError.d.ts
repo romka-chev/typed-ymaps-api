@@ -1,7 +1,5 @@
-module ymaps {
-    export module error {
-        export class StateError extends ClientError {
+namespace ymaps.error {
+    interface StateError extends ClientError {
 
-        }
     }
 }

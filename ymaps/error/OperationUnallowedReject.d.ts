@@ -1,7 +1,5 @@
-module ymaps {
-    export module error {
-        export class OperationUnallowedReject extends Reject {
+namespace ymaps.error {
+    interface OperationUnallowedReject extends Reject {
 
-        }
     }
 }

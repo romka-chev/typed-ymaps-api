@@ -1,7 +1,5 @@
-module ymaps {
-    export module error {
-        export class OveruseWarning extends Warning {
+namespace ymaps.error {
+    interface OveruseWarning extends Warning {
 
-        }
     }
 }

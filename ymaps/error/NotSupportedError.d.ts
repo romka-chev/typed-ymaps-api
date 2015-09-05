@@ -1,7 +1,5 @@
-module ymaps {
-    export module error {
-        export class NotSupportedError extends ExternalError {
+namespace ymaps.error {
+    interface NotSupportedError extends ExternalError {
 
-        }
     }
 }
