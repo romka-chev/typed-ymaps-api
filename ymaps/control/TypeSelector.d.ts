@@ -1,54 +1,63 @@
-module ymaps {
-    export module control {
-        export class TypeSelector extends ListBox { // todo enum for mapType?
+namespace ymaps.control {
 
-            data:TypeSelectorDataManager;
+    interface TypeSelectorStatic {
+        constructor(parameters:ymaps.MapTypes[]|MapType[]|TypeSelectorParameters = defaultTypeSelectorParameters):TypeSelector;
+    }
+    interface TypeSelector extends ListBox {
+        addMapType(mapType:"yandex#map", positionIndex:number = 5):TypeSelector;
+        addMapType(mapType:"yandex#satellite", positionIndex:number = 10):TypeSelector;
+        addMapType(mapType:"yandex#hybrid", positionIndex:number = 15):TypeSelector;
+        addMapType(mapType:"yandex#publicMap", positionIndex:number = 20):TypeSelector;
+        addMapType(mapType:"yandex#publicMapHybrid", positionIndex:number = 25):TypeSelector;
+        addMapType(mapType:ymaps.MapTypes|MapType, positionIndex?:number):TypeSelector;
+        removeAllMapTypes():TypeSelector;
+        removeMapType(mapType:ymaps.MapTypes|MapType):TypeSelector;
+    }
 
-            constructor(parameters?:string[]|MapType[]|TypeSelectorParameters) {
-                super(<any>parameters);
-            }
+    interface TypeSelectorParameters {
+        mapTypes?:ymaps.MapTypes[]|MapType[];
+        options ?:TypeSelectorParametersOptions;
+        state   ?:TypeSelectorParametersState;
+    }
+    interface TypeSelectorParametersOptions {
+        collapseOnBlur ?:boolean;
+        collapseTimeout?:number;
+        float          ?:ymaps.Float;
+        floatIndex     ?:number;
+        layout         ?:string|Function;
+        maxWidth       ?:number|number[];
+        position       ?:TypeSelectorParametersOptionsPosition;
+        visible        ?:boolean;
 
-            addMapType(mapType:"yandex#map",             positionIndex:number = 5 ):TypeSelector;
-            addMapType(mapType:"yandex#satellite",       positionIndex:number = 10):TypeSelector;
-            addMapType(mapType:"yandex#hybrid",          positionIndex:number = 15):TypeSelector;
-            addMapType(mapType:"yandex#publicMap",       positionIndex:number = 20):TypeSelector;
-            addMapType(mapType:"yandex#publicMapHybrid", positionIndex:number = 25):TypeSelector;
-            addMapType(mapType:string|MapType,           positionIndex?:number    ):TypeSelector;
+    }
+    interface TypeSelectorParametersOptionsPosition {
+        top   ?:number|string;
+        right ?:number|string;
+        bottom?:number|string;
+        left  ?:number|string;
+    }
+    interface TypeSelectorParametersState {
+        extended?:boolean;
+    }
 
-            getMap():Map;
-            removeAllMapTypes():TypeSelector;
-            removeMapType(mapType:string|MapType):TypeSelector; // todo enum?
+    declare var TypeSelector:TypeSelectorStatic;
+    declare var defaultTypeSelectorParameters:TypeSelectorParameters = {
+        options: {
+            collapseOnBlur : true,
+            collapseTimeout: 3000,
+            float          : "right",
+            floatIndex     : 200,
+            maxWidth       : [30, 65, 85],
+            position       : {
+                top   : "auto",
+                right : "auto",
+                bottom: "auto",
+                left  : "auto",
+            },
+            visible        : true,
+        },
+        state  : {
+            extended: false
         }
-        export class TypeSelectorParameters {
-            mapTypes:string[]|MapType[]; // todo enum?
-            options:TypeSelectorParametersOptions;
-            state:TypeSelectorParametersState;
-        }
-        export class TypeSelectorParametersOptions {
-            collapseOnBlur:boolean      = true;
-            collapseTimeout:number      = 3000;
-            float:"left"|"right"|"none" = "right";
-            floatIndex:number           = 200;
-            layout:string|Function;
-            maxWidth:number|number[]    = [30, 65, 85];
-            position:TypeSelectorParametersOptionsPosition;
-            visible:boolean             = true;
-
-        }
-        export class TypeSelectorParametersOptionsPosition {
-            bottom:number|string = "auto";
-            left:number|string   = "auto";
-            right:number|string  = "auto";
-            top:number|string    = "auto";
-        }
-        export class TypeSelectorParametersState {
-            extended:boolean = false;
-        }
-
-
-        export class TypeSelectorDataManager extends data.Manager{
-
-        }
-
     }
 }

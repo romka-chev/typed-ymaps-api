@@ -5,6 +5,7 @@ namespace ymaps.control {
     }
     interface GeolocationControl extends Button {
     }
+
     interface GeolocationParameters {
         data   ?:GeolocationParametersData;
         options?:GeolocationParametersOptions;
@@ -23,10 +24,10 @@ namespace ymaps.control {
         position   ?:GeolocationParametersOptionsPosition;
     }
     interface GeolocationParametersOptionsPosition {
-        bottom?:number|string;
-        left  ?:number|string;
         top   ?:number|string;
         right ?:number|string;
+        bottom?:number|string;
+        left  ?:number|string;
     }
     interface GeolocationParametersState {
     }
@@ -43,10 +44,10 @@ namespace ymaps.control {
             visible    : true,
             noPlacemark: false,
             position   : {
+                top   : "auto",
+                right : "auto",
                 bottom: "auto",
                 left  : "auto",
-                top   : "auto",
-                right : "auto"
             }
         }
     }

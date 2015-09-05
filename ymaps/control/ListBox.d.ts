@@ -13,6 +13,7 @@ namespace ymaps.control {
         getMap():Map;
         isExpanded():boolean;
     }
+
     interface ListBoxParameters {
         data    ?:ListBoxParametersData;
         items   ?:interfaces.IControl[];
@@ -36,13 +37,13 @@ namespace ymaps.control {
         visible         ?:boolean;
     }
     interface ListBoxParametersOptionsPosition {
-        bottom  ?:number|string;
-        left    ?:number|string;
         top     ?:number|string;
         right   ?:number|string;
+        bottom  ?:number|string;
+        left    ?:number|string;
     }
-    export class ListBoxParametersState {
-        expanded:boolean = false;
+    interface ListBoxParametersState {
+        expanded:boolean;
     }
 
     declare var ListBox:ListBoxStatic;
@@ -54,12 +55,15 @@ namespace ymaps.control {
             floatIndex    : 0,
             maxWidth      : 90,
             position      : {
+                top   : "auto",
+                right : "auto",
                 bottom: "auto",
                 left  : "auto",
-                top   : "auto",
-                right : "auto"
             },
             visible       : true
+        },
+        state: {
+            expanded: false
         }
     }
 

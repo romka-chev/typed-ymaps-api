@@ -1,4 +1,3 @@
-import Button = ymaps.control.Button;
 namespace ymaps.control {
 
     interface ButtonStatic {
@@ -33,10 +32,10 @@ namespace ymaps.control {
         visible      ?:boolean;
     }
     interface ButtonParametersOptionsPosition {
-        bottom?:number|string;
-        left  ?:number|string;
         top   ?:number|string;
         right ?:number|string;
+        bottom?:number|string;
+        left  ?:number|string;
     }
     interface ButtonParametersState {
         enabled ?:boolean;
@@ -50,10 +49,10 @@ namespace ymaps.control {
             floatIndex   : 0,
             maxWidth     : 50,
             position     : {
+                top   : "auto",
+                right : "auto",
                 bottom: "auto",
                 left  : "auto",
-                top   : "auto",
-                right : "auto"
             },
             selectOnClick: true,
             size         : "auto",

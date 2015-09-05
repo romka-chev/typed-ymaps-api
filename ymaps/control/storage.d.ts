@@ -1,7 +1,5 @@
 namespace ymaps.control {
 
-    declare var storage:Storage;
-
     interface Storage extends util.Storage {
         get(key:"rulerControl"):control.RulerControl;
         get(key:"searchControl"):control.SearchControl;
@@ -12,4 +10,6 @@ namespace ymaps.control {
         get(key:"routeEditor"):control.RouteEditor;
         get(key:"fullscreenControl"):control.FullscreenControl;
     }
+
+    declare var storage:Storage;
 }

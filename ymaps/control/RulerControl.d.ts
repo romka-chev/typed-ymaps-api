@@ -1,31 +1,43 @@
-module ymaps {
-    export module control {
-        export class RulerControl extends Button {
-            constructor(parameters?:RulerControlParameters) {
-                super(<any>parameters);
-            }
-        }
-        export class RulerControlParameters {
-            data:RulerControlParametersData;
-            options:RulerControlParametersOptions;
-            state:RulerControlParametersState;
-        }
-        export class RulerControlParametersData {
+namespace ymaps.control {
 
-        }
-        export class RulerControlParametersOptions {
-            position:RulerControlParametersOptionsPosition;
-            scaleLine:boolean = true;
-            visible:boolean   = true;
-        }
-        export class RulerControlParametersOptionsPosition {
-            bottom:number|string = 30;
-            left:number|string   = "auto";
-            right:number|string  = 10;
-            top:number|string    = "auto";
-        }
-        export class RulerControlParametersState {
+    interface RulerControlStatic {
+        new(parameters:RulerControlParameters = defaultRulerControlParameters):RulerControl;
+    }
+    interface RulerControl extends Button {
+    }
 
+    interface RulerControlParameters {
+        data   ?:RulerControlParametersData;
+        options?:RulerControlParametersOptions;
+        state  ?:RulerControlParametersState;
+    }
+    interface RulerControlParametersData {
+    }
+    interface RulerControlParametersOptions {
+        position ?:RulerControlParametersOptionsPosition;
+        scaleLine?:boolean;
+        visible  ?:boolean;
+    }
+    interface RulerControlParametersOptionsPosition {
+        top   ?:number|string;
+        right ?:number|string;
+        bottom?:number|string;
+        left  ?:number|string;
+    }
+    interface RulerControlParametersState {
+    }
+
+    declare var RulerControl:RulerControlStatic;
+    declare var defaultRulerControlParameters:RulerControlParameters = {
+        options: {
+            position : {
+                top   : "auto",
+                right : 10,
+                bottom: 30,
+                left  : "auto",
+            },
+            scaleLine: true,
+            visible  : true
         }
     }
 }

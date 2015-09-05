@@ -7,26 +7,26 @@ namespace ymaps.control {
     }
 
     interface FullscreenControlParameters {
-        data?:FullscreenControlParametersData;
+        data   ?:FullscreenControlParametersData;
         options?:FullscreenControlParametersOptions;
-        state?:FullscreenControlParametersState;
+        state  ?:FullscreenControlParametersState;
     }
     interface FullscreenControlParametersData {
         title?:string;
     }
     interface FullscreenControlParametersOptions {
-        float?:ymaps.Float;
+        float     ?:ymaps.Float;
         floatIndex?:number;
-        maxWidth?:number|number[];
-        visible?:boolean;
-        layout?:string|interfaces.ISelectableControlLayout; // todo layout constructor
-        position?:FullscreenControlParametersOptionsPosition;
+        maxWidth  ?:number|number[];
+        visible   ?:boolean;
+        layout    ?:string|interfaces.ISelectableControlLayout; // todo layout constructor
+        position  ?:FullscreenControlParametersOptionsPosition;
     }
     interface FullscreenControlParametersOptionsPosition {
+        top   ?:number|string;
+        right ?:number|string;
         bottom?:number|string;
-        left?:number|string;
-        top?:number|string;
-        right?:number|string;
+        left  ?:number|string;
     }
     interface FullscreenControlParametersState {
         enabled?:boolean;
@@ -41,10 +41,10 @@ namespace ymaps.control {
             maxWidth  : 28,
             visible   : true,
             position  : {
+                top   : "auto",
+                right : "auto",
                 bottom: "auto",
                 left  : "auto",
-                top   : "auto",
-                right : "auto"
             }
         },
         state  : {

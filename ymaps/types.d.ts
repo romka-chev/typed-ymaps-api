@@ -2,7 +2,11 @@ namespace ymaps {
     type Dictionary<T> = {[key:string]:T};
     type Float = "left"|"right"|"none";
     type PopupFloat = "left"|"right";
+    type Kind = "house"|"street"|"metro"|"district"|"locality";
+    type Provider = "yandex#map"|"yandex#publicMap"|"yandex#search";
+    type TrafficProvider = "traffic#actual"|"traffic#archive";
     type Size = "auto"|"small"|"medium"|"large";
+    type MapTypes = "yandex#map"|"yandex#satellite"|"yandex#hybrid"|"yandex#publicMap"|"yandex#publicMapHybrid";
     enum Controls{
         FULLSCREEN_CONTROL     = "fullscreenControl",
         GEOLOCATION_CONTROL    = "geolocationControl",

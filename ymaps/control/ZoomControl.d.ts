@@ -1,39 +1,49 @@
-module ymaps {
-    export module control {
-        export class ZoomControl extends interfaces.IControl, interfaces.ICustomizable {
+namespace ymaps.control {
 
-            constructor(parameters?:ZoomControlParameters) {
-                super(<any>parameters);
-            }
+    interface ZoomControlStatic {
+        new(parameters:ZoomControlParameters = defaultZoomControlParameters):ZoomControl;
+    }
+    interface ZoomControl extends interfaces.IControl, interfaces.ICustomizable {
+    }
 
-            getMap():Map;
-
-        }
-        export class ZoomControlParameters {
-            data:ZoomControlParametersData;
-            options:ZoomControlParametersOptions;
-            state:ZoomControlParametersState;
-        }
-        export class ZoomControlParametersData {
-
-        }
-        export class ZoomControlParametersOptions {
-            layout:string|interfaces.IZoomControlLayout;
-            position:ZoomControlParametersOptionsPosition;
-            size:"small"|"large"|"auto" = "auto";
-            visible:boolean             = true;
-            zoomDuration:number         = 200;
-            zoomStep:number             = 1;
-        }
-        export class ZoomControlParametersOptionsPosition {
-            bottom:number|string = "auto";
-            left:number|string   = 10;
-            right:number|string  = "auto";
-            top:number|string    = 108;
-        }
-        export class ZoomControlParametersState {
-
-        }
+    interface ZoomControlParameters {
+        data   ?:ZoomControlParametersData;
+        options?:ZoomControlParametersOptions;
+        state  ?:ZoomControlParametersState;
+    }
+    interface ZoomControlParametersData {
 
     }
+    interface ZoomControlParametersOptions {
+        layout      ?:string|interfaces.IZoomControlLayout;
+        position    ?:ZoomControlParametersOptionsPosition;
+        size        ?:"small"|"large"|"auto";
+        visible     ?:boolean;
+        zoomDuration?:number;
+        zoomStep    ?:number;
+    }
+    interface ZoomControlParametersOptionsPosition {
+        top   ?:number|string;
+        right ?:number|string;
+        bottom?:number|string;
+        left  ?:number|string;
+    }
+    interface ZoomControlParametersState {
+    }
+
+    declare var ZoomControl:ZoomControlStatic;
+    declare var defaultZoomControlParameters:ZoomControlParameters = {
+        options: {
+            position    : {
+                top   : 108,
+                right : "auto",
+                bottom: "auto",
+                left  : 10,
+            },
+            size        : "auto",
+            visible     : true,
+            zoomDuration: 200,
+            zoomStep    : 1,
+        }
+    };
 }
