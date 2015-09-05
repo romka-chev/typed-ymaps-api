@@ -1,5 +1,3 @@
-module ymaps {
-    export module layout {
-        export var storage:util.AsyncStorage;
-    }
+namespace ymaps.layout {
+    declare var storage:util.AsyncStorage;
 }

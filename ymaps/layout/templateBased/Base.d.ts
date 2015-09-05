@@ -1,16 +1,14 @@
-module ymaps {
-    export module layout {
-        export module templateBased {
-            class Base extends interfaces.ILayout {
-                constructor(data:any){
-                    super(<any>data);
-                }
+namespace ymaps.layout.templateBased {
 
-                build():void;
-                clear():void;
-                getShape():interfaces.IShape|undefined;
-                rebuild():void;
-            }
-        }
+    interface BaseStatic extends ymaps.interfaces.ILayoutStatic{
+        new(data:any):Base
     }
+    interface Base extends interfaces.ILayout {
+        build():void;
+        clear():void;
+        getShape():interfaces.IShape|undefined;
+        rebuild():void;
+    }
+
+    declare var Base:BaseStatic;
 }
