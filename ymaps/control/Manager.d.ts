@@ -1,50 +1,56 @@
 module ymaps {
     export module control {
-        export class Manager extends interfaces.ICustomizable, interfaces.ISelectableControl {
 
-            events :ManagerEventsManager;
-            options:ManagerOptionsManager;
-            state  :ManagerStateManager;
-
-            constructor(map:Map, controls?:string[]|interfaces.IControl[], options?:ManagerOptions);
-
-            add(control:ymaps.Controls|interfaces.IControl, options?:MangerAddOptions):control.Manager;
+        interface ManagerStatic {
+            new(map:ymaps.Map, controls?:ymaps.Controls[]|interfaces.IControl[], options:ManagerOptions = defaultManagerOptions);
+        }
+        interface Manager extends interfaces.ICustomizable, interfaces.ISelectableControl {
+            state  :ymaps.data.Manager;
 
             each(callback:Function, context:any):Manager;
-            get(index:number|string):interfaces.IControl;
+
+            add(control:ymaps.Controls|interfaces.IControl, options:MangerAddOptions = defaultMangerAddOptions):control.Manager;
+            remove(control:ymaps.Controls|interfaces.IControl):Manager;
+            get(index:number|ymaps.Controls):interfaces.IControl;
+            indexOf(childToFind:ymaps.Controls|interfaces.IControl):number;
+
             getChildElement(control:interfaces.IControl):vow.Promise;
             getContainer():HTMLElement;
             getMap():Map;
-            indexOf(childToFind:string|interfaces.IControl):number;
-            remove(control:string|interfaces.IControl):Manager;
         }
 
-        export class MangerAddOptions {
-            float:"left"|"right"|"none" = "right";
-            floatIndex:number           = 0;
-            position:MangerAddOptionsPosition;
+        interface ManagerOptions {
+            margin?:number;
+            pane  ?:interfaces.IPane;
+            states?:string[];
         }
 
-        export class MangerAddOptionsPosition {
-            bottom:number|string = "auto";
-            left:number|string   = "auto";
-            top:number|string    = "auto";
-            right:number|string  = "auto";
+        interface MangerAddOptions {
+            float     ?:ymaps.Float;
+            floatIndex?:number;
+            position  ?:MangerAddOptionsPosition;
         }
-        export class ManagerOptions {
-            margin:number   = 10;
-            pane:interfaces.IPane;
-            states:string[] = ["small", "medium", "large"];
+        interface MangerAddOptionsPosition {
+            bottom?:number|string;
+            left  ?:number|string;
+            top   ?:number|string;
+            right ?:number|string;
         }
 
-        export class ManagerEventsManager extends event.Manager{
-
-        }
-        export class ManagerOptionsManager extends option.Manager{
-
-        }
-        export class ManagerStateManager extends data.Manager{
-            get<T>(path:"size", defaultValue?:T):T|string; // todo check return
-        }
+        declare var Manager:ManagerStatic;
+        declare var defaultManagerOptions:ManagerOptions     = {
+            margin: 10,
+            states: ["small", "medium", "large"]
+        };
+        declare var defaultMangerAddOptions:MangerAddOptions = {
+            float     : "right",
+            floatIndex: 0,
+            position  : {
+                bottom: "auto",
+                left  : "auto",
+                top   : "auto",
+                right : "auto"
+            }
+        };
     }
 }

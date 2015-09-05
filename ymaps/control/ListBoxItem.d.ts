@@ -1,43 +1,52 @@
 module ymaps {
     export module control {
-        export class ListBoxItem extends interfaces.ICustomizable, interfaces.ISelectableControl {
+        interface ListBoxItemStatic {
+            new(parameters:string|ListBoxItemParameters):ListBoxItemParameters;
+        }
+        interface ListBoxItem extends interfaces.ICustomizable, interfaces.ISelectableControl {
 
-            data:ListBoxItemDataManager;
-            state:ListBoxItemStateManager;
-
-            constructor(parameters?:string|ListBoxItemParameters);
+            data:ymaps.data.Manager;
+            state:ymaps.data.Manager;
 
             getMap():Map;
         }
-        export class ListBoxItemParameters {
-            data:ListBoxItemParametersData;
-            items:interfaces.IControl[];
-            options:ListBoxItemParametersOptions;
-            state:ListBoxItemParametersState;
+
+        interface ListBoxItemParameters {
+            data   ?:ListBoxItemParametersData;
+            items  ?:interfaces.IControl[];
+            options?:ListBoxItemParametersOptions;
+            state  ?:ListBoxItemParametersState;
         }
-        export class ListBoxItemParametersData {
-            content:string;
+        interface ListBoxItemParametersData {
+            content?:string;
         }
-        export class ListBoxItemParametersOptions {
-            layout:string|Function           = "islands#listBoxItemLayout";
-            selectableLayout:string|Function = "islands#listBoxItemSelectableLayout";
-            selectOnClick:boolean            = true;
-            separatorLayout:string|Function  = "islands#listBoxItemSeparatorLayout";
-            expandOnClick:boolean            = true;
-            type:"selectable"|"separator"    = "selectable";
-            visible:boolean                  = true;
+        interface ListBoxItemParametersOptions {
+            layout          ?:string|Function; // todo constructor
+            selectableLayout?:string|Function;
+            selectOnClick   ?:boolean;
+            separatorLayout ?:string|Function;
+            expandOnClick   ?:boolean;
+            type            ?:"selectable"|"separator";
+            visible         ?:boolean;
         }
-        export class ListBoxItemParametersState {
-            selected:boolean = false;
+        interface ListBoxItemParametersState {
+            selected?:boolean;
         }
 
-        class ListBoxItemDataManager extends data.Manager{
-            get<T>(path:"content", defaultValue?:T):T|string;
-            get<T>(path:"title",   defaultValue?:T):T|string;
-        }
-        class ListBoxItemStateManager extends data.Manager{
-            get<T>(path:"selected", defaultValue?:T):T|boolean;
-            get<T>(path:"enabled",  defaultValue?:T):T|boolean;
+        declare var ListBoxItem:ListBoxItemStatic;
+        declare var defaultListBoxItemParameters:ListBoxItemParameters = {
+            options: {
+                layout          : "islands#listBoxItemLayout",
+                selectableLayout: "islands#listBoxItemSelectableLayout",
+                selectOnClick   : true,
+                separatorLayout : "islands#listBoxItemSeparatorLayout",
+                expandOnClick   : true,
+                type            : "selectable",
+                visible         : true
+            },
+            state  : {
+                selected: false
+            }
         }
     }
 }
