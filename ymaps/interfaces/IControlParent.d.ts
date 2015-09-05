@@ -1,9 +1,7 @@
-module ymaps {
-    export module interfaces {
-        export class IControlParent extends IParentOnMap {
-            state:IDataManager;
+namespace ymaps.interfaces {
+    interface IControlParent extends ymaps.interfaces.IParentOnMap {
+        state:ymaps.interfaces.IDataManager;
 
-            getChildElement(child:IControl):vow.Promise;
-        }
+        getChildElement(child:ymaps.interfaces.IControl):vow.Promise;
     }
 }

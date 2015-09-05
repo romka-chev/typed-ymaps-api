@@ -1,7 +1,5 @@
-module ymaps {
-    export module interfaces {
-        export class IParentOnMap {
-            getMap():ymaps.Map;
-        }
+namespace ymaps.interfaces {
+    interface IParentOnMap {
+        getMap():ymaps.Map;
     }
 }
