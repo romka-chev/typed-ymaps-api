@@ -2,7 +2,7 @@ module ymaps {
     export module control {
 
         interface ManagerStatic {
-            new(map:ymaps.Map, controls?:ymaps.Controls[]|interfaces.IControl[], options:ManagerOptions = defaultManagerOptions);
+            new(map:ymaps.Map, controls?:ymaps.Controls[]|interfaces.IControl[], options:ManagerOptions = defaultManagerOptions):Manager;
         }
         interface Manager extends interfaces.ICustomizable, interfaces.ISelectableControl {
             state  :ymaps.data.Manager;
