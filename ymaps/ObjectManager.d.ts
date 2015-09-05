@@ -10,10 +10,10 @@ module ymaps {
         add(objects:ObjectManagerFeatureCollection[]|ObjectManagerFeature[]):ObjectManager;
         add(objects:string):ObjectManager;
 
-        getBounds():number[][]; // todo null;
-        getFilter():string|Function; // todo null; report about wrong declaration description
+        getBounds():number[][];
+        getFilter():string|Function; // todo report about wrong declaration description
         getObjectState(id:any):ObjectManagerObjectState;
-        getPixelBounds():number[][]; // todo null;
+        getPixelBounds():number[][];
 
         remove(objects:ObjectManagerFeatureCollection|ObjectManagerFeature):ObjectManager;
         remove(objects:ObjectManagerFeatureCollection[]|ObjectManagerFeature[]):ObjectManager;

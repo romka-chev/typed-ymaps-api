@@ -5,7 +5,7 @@ module ymaps {
             constructor(collection:interfaces.IReadOnlyCollection); // todo report about interface missing
 
             close(force:boolean = false):vow.Promise; // todo generics
-            getData():any; // todo null; todo determine
+            getData():any; // todo determine
 
             isOpen(id:any):boolean; // todo determine; todo report about incompatibility?
 

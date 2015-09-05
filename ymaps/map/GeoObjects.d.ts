@@ -10,10 +10,10 @@ module ymaps {
             each(callback:Function, context?:any):void;
 
             get(index:number):interfaces.IGeoObject;
-            getBounds():number[][]|undefined; // todo null
+            getBounds():number[][];
             getIterator():interfaces.IIterator;
             getLength():number;
-            getPixelBounds():number[][]|undefined; // todo null
+            getPixelBounds():number[][];
             indexOf(object:any):number; // todo IGeoObject?
             remove(child:interfaces.IGeoObject):GeoObjects;
             removeAll():GeoObjects;

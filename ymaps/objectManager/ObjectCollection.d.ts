@@ -20,7 +20,7 @@ module ymaps {
             // todo determine; Cluster[]?
             getAll():any[];
 
-            // todo determine; Cluster[]? null?
+            // todo determine; Cluster[]?
             getById(id:string):any;
 
             getLength():number;

@@ -9,7 +9,7 @@ module ymaps {
             fromBounds(sourceBounds:number[][][]):number[][];
             fromPoints(points:number[][]):number[][];
             getCenter(bounds:number[][]):number[];
-            getIntersection(bounds1:number[][], bounds2:number[][]):number[][]; // todo null;
+            getIntersection(bounds1:number[][], bounds2:number[][]):number[][];
             getSize(bounds:number[][]):number[];
 
         }

@@ -8,13 +8,13 @@ module ymaps {
             getIconElement():HTMLElement;
 
             getIconLayout():vow.Promise; // todo generics?
-            getIconLayoutSync():interfaces.ILayout; // todo null?
+            getIconLayoutSync():interfaces.ILayout;
             getLayout():vow.Promise; // todo generics?
-            getLayoutSync():interfaces.ILayout; // todo null?
+            getLayoutSync():interfaces.ILayout;
             getShadowElement():HTMLElement;
 
             getShadowLayout():vow.Promise; // todo generics?
-            getShadowLayoutSync():interfaces.ILayout; // todo null?
+            getShadowLayoutSync():interfaces.ILayout;
 
         }
 

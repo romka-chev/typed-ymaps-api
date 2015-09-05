@@ -9,10 +9,10 @@ module ymaps {
 
         // todo report about types missed
         // todo check tileNumber:number[]?
-        getTileUrl(tileNumber:number, tileZoom:number):string|undefined; // todo null
+        getTileUrl(tileNumber:number, tileZoom:number):string;
         getTileUrlTemplate():string|Function;
         numberToClientBounds(tileNumber:number[], tileZoom:number):number[][];
-        restrict(number:number[], tileZoom:number):number[]|undefined; // todo null
+        restrict(number:number[], tileZoom:number):number[];
         setTileUrlTemplate(tileUrlTemplate:string|Function):void;
 
         // todo check updateBounds parameter

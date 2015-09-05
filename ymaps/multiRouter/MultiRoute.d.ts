@@ -7,12 +7,12 @@ module ymaps {
 
             constructor(model:multiRouter.MultiRouteModel|interfaces.IMultiRouteModelJson, options?:MultiRouteOptions);
 
-            getActiveRoute():multiRouter.driving.Route|multiRouter.masstransit.Route; // todo null
-            getBounds():number[][]; // todo null
-            getPixelBounds():number[][]; // todo null
+            getActiveRoute():multiRouter.driving.Route|multiRouter.masstransit.Route;
+            getBounds():number[][];
+            getPixelBounds():number[][];
             getRoutes():GeoObjectCollection;
             getViaPoints():GeoObjectCollection;
-            setActiveRoute(model:multiRouter.MultiRouteModel|interfaces.IMultiRouteModelJson):any; // todo null
+            setActiveRoute(model:multiRouter.MultiRouteModel|interfaces.IMultiRouteModelJson):any;
         }
 
         export class MultiRouteOptions {

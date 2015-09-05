@@ -6,7 +6,7 @@ module ymaps {
 
                 append(key:string, pane:interfaces.IPane):void;
                 destroy():void;
-                get(key:string):interfaces.IPane|undefined; // todo null
+                get(key:string):interfaces.IPane;
                 getLower():string;
                 getUpper():string;
                 insertBefore(key:string, pane:interfaces.IPane, referenceKey:string):void;

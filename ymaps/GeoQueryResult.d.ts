@@ -25,18 +25,18 @@ module ymaps {
         clusterize(options?:ClustererOptions):Clusterer; // todo check options carefully
         each(callback:Function, context:any):GeoQueryResult; // todo (item?:IGeoObject) => any? todo context is not required? report?
         get(index:number):interfaces.IGeoObject;
-        getBounds():number[][]|undefined; // todo null?
+        getBounds():number[][];
         getCenter(map:Map):number[][];
-        getCentralObject(map:Map):interfaces.IGeoObject|undefined; // todo null?
+        getCentralObject(map:Map):interfaces.IGeoObject;
         getClosestTo(object:interfaces.IGeoObject|interfaces.IGeometry|Map|number[]|GeoQueryJsonDescriptionFeature, radius?:number):interfaces.IGeoObject; // todo check GeoQueryJsonDescriptionFeature carefully
         getExtreme(key:"top"|"right"|"bottom"|"left"):number;
         getExtremeObject(key:"top"|"right"|"bottom"|"left"):interfaces.IGeoObject;
-        getGlobalPixelBounds(map:Map):number[][]|undefined; // todo null?
+        getGlobalPixelBounds(map:Map):number[][];
         getGlobalPixelCenter(map:Map):number[];
         getIterator():interfaces.IIterator;
         getLength():number;
         getMaxZoom(map:Map, options?:any):number; // todo map in not required? report?
-        getParent():GeoQueryResult|undefined; // todo null?
+        getParent():GeoQueryResult;
         indexOf(item:interfaces.IGeoObject):number;
         intersect(result:GeoQueryResult):GeoQueryResult;
         isReady():boolean;

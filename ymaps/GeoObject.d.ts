@@ -4,7 +4,7 @@ module ymaps {
         balloon:geoObject.Balloon;
         editor:interfaces.IGeometryEditor;
         events:event.Manager;
-        geometry:interfaces.IGeometry|undefined; // todo null
+        geometry:interfaces.IGeometry;
         hint:geoObject.Hint;
         options:option.Manager;
         properties:data.Manager;
@@ -46,7 +46,7 @@ module ymaps {
         iconImageClipRect:number[][] /* = [[0,0], [{imageWidth}, {imageHeight}]]*/;
         iconImageHref:string;
         iconImageOffset:number[];
-        iconImageShape:interfaces.IShape|undefined; // todo null;
+        iconImageShape:interfaces.IShape;
         iconImageSize:number[];
         iconLayout:string|Function; // todo check ILayout
         iconMaxHeight:number;

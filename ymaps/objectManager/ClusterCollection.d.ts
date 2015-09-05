@@ -13,7 +13,7 @@ module ymaps {
             each(callback:Function, context?:any);
 
             getAll():any[]; // todo determine; Cluster[]?
-            getById(id:string):any; // todo determine; Cluster[]? null?
+            getById(id:string):any; // todo determine; Cluster[]?
             getIterator():interfaces.IIterator;
 
             getLength():number;

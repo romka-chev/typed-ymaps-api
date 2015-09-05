@@ -6,9 +6,9 @@ module ymaps {
 
         constructor(urlTemplate:string, options?:LoadingObjectManagerOptions);
 
-        getBounds():number[][]|undefined; // todo null;
+        getBounds():number[][];
         getObjectState(id:any):LoadingObjectManagerObjectState; // todo check is it really any?
-        getPixelBounds():number[][]|undefined; // todo null;
+        getPixelBounds():number[][];
         getUrlTemplate():string;
         reloadData():any;
         setUrlTemplate(urlTemplate:string):any;
@@ -97,7 +97,7 @@ module ymaps {
         geoObjectIconImageHref:string;
         geoObjectIconImageOffset:number[];
         geoObjectIconImageSize:number[];
-        geoObjectIconShape:interfaces.IShape|any|undefined; // todo null
+        geoObjectIconShape:interfaces.IShape|any; // todo determine
 
         // imported from ymaps.layout.ImageWithContentDataOptions
         geoObjectIconContentLayout:string|Function; // todo ILayout constructor?
@@ -112,7 +112,7 @@ module ymaps {
         geoObjectIconShadowImageHref:string;
         geoObjectIconShadowImageOffset:number[];
         geoObjectIconShadowImageSize:number[];
-        geoObjectIconShadowShape:interfaces.IShape|any|undefined; // todo null
+        geoObjectIconShadowShape:interfaces.IShape|any;  // todo determine
 
         // imported from ymaps.layout.ImageWithContentDataOptions
         geoObjectIconShadowContentLayout:string|Function; // todo ILayout constructor?

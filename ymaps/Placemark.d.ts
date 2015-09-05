@@ -54,7 +54,7 @@ module ymaps {
         iconImageHref:string;
         iconImageOffset:number[];
         iconImageSize:number[];
-        iconShape:interfaces.IShape|any|undefined; // todo null
+        iconShape:interfaces.IShape|any;
 
         // imported from ymaps.layout.ImageWithContentDataOptions
         iconContentLayout:string|Function; // todo ILayout constructor?
@@ -69,7 +69,7 @@ module ymaps {
         iconShadowImageHref:string;
         iconShadowImageOffset:number[];
         iconShadowImageSize:number[];
-        iconShadowShape:interfaces.IShape|any|undefined; // todo null
+        iconShadowShape:interfaces.IShape|any;
 
         // imported from ymaps.layout.ImageWithContentDataOptions
         iconShadowContentLayout:string|Function; // todo ILayout constructor?

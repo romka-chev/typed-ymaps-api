@@ -13,7 +13,7 @@ module ymaps {
             imageHref:string;
             imageOffset:number[];
             imageSize:number[];
-            shape:interfaces.IShape|any|undefined; // todo null
+            shape:interfaces.IShape|Object;
         }
     }
 }

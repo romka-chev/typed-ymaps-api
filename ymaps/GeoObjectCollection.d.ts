@@ -5,10 +5,10 @@ module ymaps {
         add(child:interfaces.IGeoObject):GeoObjectCollection;
 
         each(callback:Function, context?:any):void; // todo duplicate parent? determine (item?:interfaces.IGeoObject) => any ?
-        getBounds():number[][]|undefined; // todo null? duplicate parent?
+        getBounds():number[][]; // todo duplicate parent?
         getIterator():interfaces.IIterator;  // todo duplicate parent?
         getLength():number;  // todo duplicate parent?
-        getPixelBounds():number[][]|undefined; // todo null? duplicate parent?
+        getPixelBounds():number[][]; // todo duplicate parent?
         remove(child:interfaces.IGeoObject):GeoObjectCollection; // todo duplicate parent?
         removeAll():GeoObjectCollection; // todo duplicate parent?
         set(index:number, child:interfaces.IGeoObject):GeoObjectCollection; // todo duplicate parent?

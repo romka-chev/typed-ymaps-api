@@ -4,7 +4,7 @@ module ymaps {
 
         constructor(geometry:interfaces.IPointGeometry|number[]|any, properties:ClusterPlacemarkProperties, options?:ClusterPlacemarkOptions);
 
-        getBounds():number[][]|undefined; // todo null?
+        getBounds():number[][];
         getGeoObjects():interfaces.IGeoObject[];
     }
     export class ClusterPlacemarkProperties extends interfaces.IDataManager {

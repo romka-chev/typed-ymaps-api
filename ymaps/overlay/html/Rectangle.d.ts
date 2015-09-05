@@ -7,7 +7,7 @@ module ymaps {
                 getElement():HTMLElement;
 
                 getLayout():vow.Promise; // todo generics?
-                getLayoutSync():interfaces.ILayout; // todo null?
+                getLayoutSync():interfaces.ILayout;
 
             }
             export class RectangleOptions {

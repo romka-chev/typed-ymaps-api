@@ -7,7 +7,7 @@ module ymaps {
 
                 constructor(options?:ArchiveOptions, state?:ArchiveState);
 
-                getTime():ArchiveTime; // todo null
+                getTime():ArchiveTime;
                 setTime(time:ArchiveTime, callback?:(hash?:ArchiveTime) => any):any;
 
             }

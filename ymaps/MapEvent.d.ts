@@ -9,6 +9,6 @@ module ymaps {
         get(name:"pagePixels"):number[];
         get(name:"position"):number[];
         get(name:"clientPixels"):number[];
-        get(name:"domEvent"):DomEvent|undefined; // todo null
+        get(name:"domEvent"):DomEvent;
     }
 }

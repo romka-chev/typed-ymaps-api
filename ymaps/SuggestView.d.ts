@@ -15,7 +15,7 @@ module ymaps {
     export class SuggestViewStateManager extends data.Manager {
         get<T>(path:"request", defaultValue?:T):T|string;
         get<T>(path:"items", defaultValue?:T):T|SuggestViewStateManagerItems[];
-        get<T>(path:"activeIndex", defaultValue?:T):T|number; // todo null?
+        get<T>(path:"activeIndex", defaultValue?:T):T|number;
         get<T>(path:"panelClosed", defaultValue?:T):T|boolean;
     }
 

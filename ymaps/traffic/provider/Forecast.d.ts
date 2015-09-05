@@ -7,7 +7,7 @@ module ymaps {
 
                 constructor(options?:ForecastOptions, state?:ForecastState);
 
-                getTime():ForecastTime; // todo null
+                getTime():ForecastTime;
 
             }
 

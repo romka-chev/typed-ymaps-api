@@ -10,10 +10,9 @@ module ymaps {
             // todo determine;?
             getAll():any[];
 
-            // todo determine, null. Why number?
+            // todo determine. Why number?
             getById(id:number):any;
 
-            // todo null
             getId(overlay:interfaces.IOverlay):number;
 
             getIterator():interfaces.IIterator;
