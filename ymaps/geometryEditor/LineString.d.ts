@@ -1,38 +1,37 @@
-module ymaps {
-    export module geometryEditor {
-        export class LineString extends interfaces.IGeometryEditor {
-            state:LineStringStateManager;
+namespace ymaps.geometryEditor {
 
-            constructor(geometry:interfaces.ILineStringGeometry, options?:LineStringOptions);
+    interface LineStringStatic {
+        new(geometry:interfaces.ILineStringGeometry, options:LineStringOptions = defaultLineStringOptions):LineString;
+    }
+    interface LineString extends interfaces.IGeometryEditor {
+        state:ymaps.data.Manager;
 
-            getModel():vow.Promise; // todo check error return; generics
-            getModelSync():model.RootLineString;
-            getView():vow.Promise;
-            getViewSync():view.Path;
-            startDrawing():vow.Promise; // todo check error return; generics
-            startEditing():vow.Promise; // todo check error return; generics
-            startFraming():vow.Promise;
+        getModel():vow.Promise; // todo check error return; generics
+        getModelSync():model.RootLineString;
+        getView():vow.Promise;
+        getViewSync():view.Path;
+        startDrawing():vow.Promise; // todo check error return; generics
+        startEditing():vow.Promise; // todo check error return; generics
+        startFraming():vow.Promise;
+        stopDrawing():void;
+        stopEditing():void;
+        stopFraming():void;
+    }
 
-            stopDrawing():void;
-            stopEditing():void;
-            stopFraming():void;
+    interface LineStringOptions {
+        dblClickHandler?:Function;
+        drawingCursor  ?:boolean|string; // todo report about type error? @detemine?
+        drawOver       ?:boolean;
+        edgeLayout     ?:Function;
+        maxPoints      ?:number;
+        menuManager    ?:Function; // todo determine
+        vertexLayout   ?:Function;
+    }
 
-        }
-
-        export class LineStringOptions {
-            dblClickHandler:Function;
-            drawingCursor:boolean|string = "arrow"; // todo report about type error?
-            drawOver:boolean = true;
-            edgeLayout:Function;
-            maxPoints:number = Infinity;
-            menuManager:Function; // todo determine
-            vertexLayout:Function;
-        }
-
-        export class LineStringStateManager extends interfaces.IDataManager{
-            get<T>(path:"editing",     defaultValue:T):T|boolean;
-            get<T>(path:"drawing",     defaultValue:T):T|boolean;
-            get<T>(path:"drawingFrom", defaultValue:T):T|"begin"|"end";
-        }
+    declare var LineString:LineStringStatic;
+    declare var defaultLineStringOptions:LineStringOptions = {
+        drawingCursor: "arrow",
+        drawOver     : true,
+        maxPoints    : Infinity
     }
 }

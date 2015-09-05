@@ -1,24 +1,25 @@
-module ymaps {
-    export module geometryEditor {
-        export class Point extends interfaces.IGeometryEditor {
-            state:PointStateManager;
+namespace ymaps.geometryEditor {
 
-            constructor(geometry:interfaces.IPointGeometry, options?:PointOptions);
-
-            startDrawing():void;
-
-            stopDrawing():void;
-        }
-
-        export class PointOptions {
-            dblClickHandler:Function;
-            drawingCursor:boolean|string = "arrow"; // todo report about type error?
-            drawOver:boolean = true;
-        }
-
-        export class PointStateManager extends interfaces.IDataManager {
-            get<T>(path:"editing", defaultValue:T):T|boolean;
-            get<T>(path:"drawing", defaultValue:T):T|boolean;
-        }
+    interface PointStatic {
+        new(geometry:interfaces.IPointGeometry, options:PointOptions = defaultPointOptions):Point;
     }
+    interface Point extends interfaces.IGeometryEditor {
+        state:ymaps.data.Manager;
+
+        startDrawing():any;
+        stopDrawing():any;
+    }
+
+    interface PointOptions {
+        dblClickHandler?:Function;
+        drawingCursor  ?:boolean|string; // todo report about type error?
+        drawOver       ?:boolean;
+    }
+
+    declare var Point:PointStatic;
+    declare var defaultPointOptions:PointOptions = {
+        drawingCursor: "arrow",
+        drawOver     : true
+    }
+
 }

@@ -1,9 +1,5 @@
-module ymaps {
-    export module geometryEditor {
-        export module model {
-            export class EdgeGeometry extends interfaces.IGeometry {
+namespace ymaps.geometryEditor.model {
+    interface EdgeGeometry extends interfaces.IGeometry {
 
-            }
-        }
     }
 }

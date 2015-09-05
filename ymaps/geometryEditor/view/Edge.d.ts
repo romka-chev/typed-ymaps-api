@@ -1,9 +1,6 @@
-module ymaps {
-    export module geometryEditor {
-        export module view {
-            export class Edge {
-                getPlacemark():GeoObject;
-            }
-        }
+namespace ymaps.geometryEditor.view {
+
+    interface Edge {
+        getPlacemark():GeoObject;
     }
 }

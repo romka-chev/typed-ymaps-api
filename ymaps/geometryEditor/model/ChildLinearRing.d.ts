@@ -1,9 +1,5 @@
-module ymaps {
-    export module geometryEditor {
-        export module model {
-            export class ChildLinearRing extends ChildLineString {
+namespace ymaps.geometryEditor.model {
+    interface ChildLinearRing extends ChildLineString {
 
-            }
-        }
     }
 }

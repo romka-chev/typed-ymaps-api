@@ -1,11 +1,10 @@
-module ymaps {
-    export module interfaces {
-        export class IGeometryEditorModel extends IEventEmitter {
-            // constructor(geometry:IBaseGeometry, editor:IGeometryEditor); // todo check constructor inheritance
+namespace ymaps.interfaces {
 
-            destroy():void;
-
-            getPixels():number[];
-        }
+    interface IGeometryEditorModelStatic{
+        new(geometry:IBaseGeometry, editor:IGeometryEditor):IGeometryEditorModel;
+    }
+    interface IGeometryEditorModel extends IEventEmitter {
+        destroy():void;
+        getPixels():number[];
     }
 }

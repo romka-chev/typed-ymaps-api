@@ -1,9 +1,6 @@
-module ymaps {
-    export module geometryEditor {
-        export module view {
-            export class Vertex {
-                getPlacemark():GeoObject;
-            }
-        }
+namespace ymaps.geometryEditor.view {
+
+    interface Vertex {
+        getPlacemark():GeoObject;
     }
 }
