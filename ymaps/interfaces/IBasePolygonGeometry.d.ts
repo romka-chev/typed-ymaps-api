@@ -1,7 +1,5 @@
-module ymaps {
-    export module interfaces {
-        export class IBasePolygonGeometry extends IBaseGeometry, IPolygonGeometryAccess {
-            getType():"Polygon";
-        }
+namespace ymaps.interfaces {
+    interface IBasePolygonGeometry extends IBaseGeometry, IPolygonGeometryAccess {
+        getType():"Polygon";
     }
 }

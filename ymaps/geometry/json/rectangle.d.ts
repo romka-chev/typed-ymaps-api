@@ -1,10 +1,7 @@
-module ymaps {
-    export module geometry {
-        export module json {
-            export class rectangle extends interfaces.IGeometryJson {
-                coordinates:number[][];
-                type:"Rectangle";
-            }
-        }
+namespace ymaps.geometry.json {
+
+    interface rectangle extends interfaces.IGeometryJson {
+        coordinates:number[][];
+        type:"Rectangle";
     }
 }

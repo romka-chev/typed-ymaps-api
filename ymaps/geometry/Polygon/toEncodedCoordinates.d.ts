@@ -1,7 +1,3 @@
-module ymaps {
-    export module geometry {
-        export module LinearRing {
-            export function toEncodedCoordinates(geometry:Polygon):string;
-        }
-    }
+module ymaps.geometry.Polygon {
+    function toEncodedCoordinates(geometry:ymaps.geometry.Polygon):string;
 }

@@ -1,7 +1,5 @@
-module ymaps {
-    export module interfaces {
-        export class IBaseCircleGeometry extends IBaseGeometry, ICircleGeometryAccess {
-            getType():"Circle";
-        }
+namespace ymaps.interfaces {
+    interface IBaseCircleGeometry extends IBaseGeometry, ICircleGeometryAccess {
+        getType():"Circle";
     }
 }

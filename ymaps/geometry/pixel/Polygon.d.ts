@@ -1,13 +1,17 @@
-module ymaps {
-    export module geometry {
-        export module pixel {
-            export class Polygon extends interfaces.IPixelPolygonGeometry {
-                constructor(coordinates:number[][][], fillRule:"evenOdd"|"nonZero", metaData?:PolygonMetaData);
-            }
+namespace ymaps.geometry.pixel {
 
-            export class PolygonMetaData{
-                convex:boolean = false;
-            }
-        }
+    interface PolygonStatic {
+        new(coordinates:number[][][], fillRule:ymaps.FillRules, metaData:PolygonMetaData = defaultPolygonMetaData):Polygon;
+    }
+    interface Polygon extends interfaces.IPixelPolygonGeometry {
+    }
+
+    interface PolygonMetaData {
+        convex?:boolean;
+    }
+
+    declare var Polygon:PolygonStatic;
+    declare var defaultPolygonMetaData:PolygonMetaData = {
+        convex: false
     }
 }

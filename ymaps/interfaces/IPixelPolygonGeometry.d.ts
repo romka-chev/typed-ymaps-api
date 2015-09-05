@@ -1,23 +1,20 @@
-module ymaps {
-    export module interfaces {
-        export class IPixelPolygonGeometry extends IPixelGeometry {
-            contains(position:number[]):boolean;
+namespace ymaps.interfaces {
 
-            getClosest(anchorPosition:number[]):{
-                position:number[];
-                distance:number;
-                closestPointIndex:number;
-                nextPointIndex?:number;
-                prevPointIndex?:number;
-                pathIndex:number;
-            };//todo export class
-            getCoordinates():number[][][];
+    interface IPixelPolygonGeometry extends IPixelGeometry {
+        contains(position:number[]):boolean;
+        getClosest(anchorPosition:number[]):IPixelPolygonGeometryGetClosestResult;
+        getCoordinates():number[][][];
+        getFillRule():ymaps.FillRules;
+        getLength():number;
+        getType():string; // todo determine? Polygon for sure
+    }
 
-            getFillRule():"evenOdd"|"nonZero";
-
-            getLength():number;
-
-            getType():string; // todo determine?
-        }
+    interface IPixelPolygonGeometryGetClosestResult {
+        position:number[];
+        distance:number;
+        closestPointIndex:number;
+        nextPointIndex?:number;
+        prevPointIndex?:number;
+        pathIndex:number;
     }
 }

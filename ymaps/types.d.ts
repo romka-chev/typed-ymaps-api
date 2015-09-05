@@ -7,6 +7,9 @@ namespace ymaps {
     type TrafficProvider = "traffic#actual"|"traffic#archive";
     type Size = "auto"|"small"|"medium"|"large";
     type MapTypes = "yandex#map"|"yandex#satellite"|"yandex#hybrid"|"yandex#publicMap"|"yandex#publicMapHybrid";
+    type FillRules = "evenOdd"|"nonZero";
+    type PixelRenderings = "jumpy"|"static";
+    type CoordRenderings = "shortestPath"|"straightPath";
     enum Controls{
         FULLSCREEN_CONTROL     = "fullscreenControl",
         GEOLOCATION_CONTROL    = "geolocationControl",

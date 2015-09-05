@@ -1,11 +1,11 @@
-module ymaps {
-    export module geometry {
-        export module base {
-            export class Polygon extends interfaces.IBasePolygonGeometry  {
-                events:event.Manager;
+namespace ymaps.geometry.base {
 
-                constructor(coordinates:number[][][] = [], fillRule:"evenOdd"|"nonZero" = "evenOdd");
-            }
-        }
+    interface PolygonStatic {
+        new(coordinates:number[][][] = [], fillRule:ymaps.FillRules = "evenOdd"):Polygon;
     }
+    interface Polygon extends interfaces.IBasePolygonGeometry {
+        events:event.Manager;
+    }
+
+    declare var Polygon:PolygonStatic;
 }

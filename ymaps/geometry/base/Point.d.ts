@@ -1,11 +1,11 @@
-module ymaps {
-    export module geometry {
-        export module base {
-            export class Point extends interfaces.IBasePointGeometry {
-                events:event.Manager;
+namespace ymaps.geometry.base {
 
-                constructor(coordinates:number[] = null);
-            }
-        }
+    interface PointStatic {
+        new(coordinates?:number[][]):Point;
     }
+    interface Point extends interfaces.IBasePointGeometry {
+        events:event.Manager;
+    }
+
+    declare var Point:PointStatic;
 }

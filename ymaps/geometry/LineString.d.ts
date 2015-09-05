@@ -1,17 +1,24 @@
-module ymaps {
-    export module geometry {
-        export class LineString extends interfaces.ILineStringGeometry {
-            constructor(coordinates:number[][] = [], options?:LineStringOptions);
+namespace ymaps.geometry {
 
-            getDistance(from:number = 0, to?:number):number;
-        }
+    interface LineStringStatic {
+        new(coordinates:number[][] = [], options:LineStringOptions = defaultLineStringOptions):LineString;
+    }
+    interface LineString extends interfaces.ILineStringGeometry {
+        getDistance(from:number = 0, to?:number):number;
+    }
 
-        export class LineStringOptions {
-            coordRendering:"shortestPath"|"straightPath";
-            geodesic:boolean                = false;
-            pixelRendering:"jumpy"|"static" = "jumpy";
-            projection:interfaces.IProjection;
-            simplification:boolean          = true;
-        }
+    interface LineStringOptions {
+        coordRendering?:ymaps.CoordRenderings;
+        geodesic      ?:boolean;
+        pixelRendering?:ymaps.PixelRenderings;
+        projection    ?:interfaces.IProjection;
+        simplification?:boolean;
+    }
+
+    declare var LineString:LineStringStatic;
+    declare var defaultLineStringOptions:LineStringOptions = {
+        geodesic      : false,
+        pixelRendering: "jumpy",
+        simplification: true
     }
 }

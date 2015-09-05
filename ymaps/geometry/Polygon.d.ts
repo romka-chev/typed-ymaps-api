@@ -1,15 +1,25 @@
-module ymaps {
-    export module geometry {
-        export class Polygon extends interfaces.IPolygonGeometry {
-            constructor(coordinates:number[][][] = [], fillRule:"evenOdd"|"nonZero" = "evenOdd",  options?:PolygonOptions);
-        }
+namespace ymaps.geometry {
 
-        export class PolygonOptions {
-            coordRendering:"shortestPath"|"straightPath" = "shortestPath";
-            geodesic:boolean                = false;
-            pixelRendering:"jumpy"|"static" = "jumpy";
-            projection:interfaces.IProjection;
-            simplification:boolean          = true;
-        }
+    interface PolygonStatic {
+        new(coordinates:number[][][] = [], fillRule:ymaps.FillRules = "evenOdd", options:PolygonOptions = defaultPolygonOptions):Polygon;
+    }
+    interface Polygon extends interfaces.IPolygonGeometry {
+        constructor(coordinates:number[][][] = [], fillRule:ymaps.FillRules = "evenOdd", options:PolygonOptions = defaultPolygonOptions);
+    }
+
+    interface PolygonOptions {
+        coordRendering?:ymaps.CoordRenderings;
+        geodesic      ?:boolean;
+        pixelRendering?:ymaps.PixelRenderings;
+        projection    ?:interfaces.IProjection;
+        simplification?:boolean;
+    }
+
+    declare var Polygon:PolygonStatic;
+    declare var defaultPolygonOptions:PolygonOptions = {
+        coordRendering: "shortestPath",
+        geodesic      : false,
+        pixelRendering: "jumpy",
+        simplification: true
     }
 }

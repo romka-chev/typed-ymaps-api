@@ -1,11 +1,11 @@
-module ymaps {
-    export module geometry {
-        export module base {
-            export class LineString extends interfaces.IBaseLineStringGeometry  {
-                events:event.Manager;
+namespace ymaps.geometry.base {
 
-                constructor(coordinates?:number[][]);
-            }
-        }
+    interface LineStringStatic {
+        new(coordinates?:number[][]):LineString;
     }
+    interface LineString extends interfaces.IBaseLineStringGeometry {
+        events:event.Manager;
+    }
+
+    declare var LineString:LineStringStatic;
 }

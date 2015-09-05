@@ -1,9 +1,6 @@
-module ymaps {
-    export module interfaces {
-        export class IPixelPointGeometry extends IPixelGeometry {
-            getCoordinates():number[];
-
-            getType():string; // todo determine?
-        }
+namespace ymaps.interfaces {
+    interface IPixelPointGeometry extends IPixelGeometry {
+        getCoordinates():number[];
+        getType():string; // todo determine? Point for sure
     }
 }

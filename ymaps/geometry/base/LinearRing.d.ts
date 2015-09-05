@@ -1,11 +1,11 @@
-module ymaps {
-    export module geometry {
-        export module base {
-            export class LinearRing extends interfaces.IBaseLinearRingGeometry {
-                events:event.Manager;
+namespace ymaps.geometry.base {
 
-                constructor(coordinates:number[] = null, radius:number = 0);
-            }
-        }
+    interface LinearRingStatic {
+        new(coordinates:number[] = null, radius:number = 0):LinearRing;
     }
+    interface LinearRing extends interfaces.IBaseLinearRingGeometry {
+        events:event.Manager;
+    }
+
+    declare var LinearRing:LinearRingStatic;
 }

@@ -1,13 +1,17 @@
-module ymaps {
-    export module geometry {
-        export module pixel {
-            export class MultiPolygon extends interfaces.IPixelMultiPolygonGeometry {
-                constructor(coordinates:number[][][][], fillRule:"evenOdd"|"nonZero", metaData?:MultiPolygonMetaData);
-            }
+namespace ymaps.geometry.pixel {
 
-            export class MultiPolygonMetaData{
-                convex:boolean = false;
-            }
-        }
+    interface MultiPolygonStatic {
+        new(coordinates:number[][][][], fillRule:ymaps.FillRules, metaData:MultiPolygonMetaData = defaultMultiPolygonMetaData):MultiPolygon;
+    }
+    interface MultiPolygon extends interfaces.IPixelMultiPolygonGeometry {
+    }
+
+    interface MultiPolygonMetaData {
+        convex?:boolean;
+    }
+
+    declare var MultiPolygon:MultiPolygonStatic;
+    declare var defaultMultiPolygonMetaData:MultiPolygonMetaData = {
+        convex: false
     }
 }

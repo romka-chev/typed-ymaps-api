@@ -1,8 +1,6 @@
-module ymaps {
-    export module interfaces {
-        export class IBaseGeometry extends IEventEmitter {
-            getBounds():number[][];
-            getType():string;
-        }
+namespace ymaps.interfaces {
+    interface IBaseGeometry extends IEventEmitter {
+        getBounds():number[][];
+        getType():string;
     }
 }

@@ -1,11 +1,11 @@
-module ymaps {
-    export module geometry {
-        export module base {
-            export class Rectangle extends interfaces.IBaseRectangleGeometry  {
-                events:event.Manager;
+namespace ymaps.geometry.base {
 
-                constructor(coordinates:number[][] = null);
-            }
-        }
+    interface RectangleStatic {
+        new(coordinates:number[][] = null):Rectangle;
     }
+    interface Rectangle extends interfaces.IBaseRectangleGeometry {
+        events:event.Manager;
+    }
+
+    declare var Rectangle:RectangleStatic;
 }

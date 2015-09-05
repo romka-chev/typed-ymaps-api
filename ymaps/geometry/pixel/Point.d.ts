@@ -1,9 +1,10 @@
-module ymaps {
-    export module geometry {
-        export module pixel {
-            export class Point extends interfaces.IPixelPointGeometry {
-                constructor(position:number[], metaData?:any);
-            }
-        }
+namespace ymaps.geometry.pixel {
+
+    interface PointStatic {
+        new(position:number[], metaData?:any):Point;
     }
+    interface Point extends interfaces.IPixelPointGeometry {
+    }
+
+    declare var Point:PointStatic;
 }

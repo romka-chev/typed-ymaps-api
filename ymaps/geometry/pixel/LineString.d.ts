@@ -1,9 +1,10 @@
-module ymaps {
-    export module geometry {
-        export module pixel {
-            export class LineString extends interfaces.IPixelLineStringGeometry {
-                constructor(coordinates:number[][], metaData?:any);
-            }
-        }
+namespace ymaps.geometry.pixel {
+
+    interface LineStringStatic {
+        new(coordinates:number[][], metaData?:any):LineString;
     }
+    interface LineString extends interfaces.IPixelLineStringGeometry {
+    }
+
+    declare var LineString:LineStringStatic;
 }

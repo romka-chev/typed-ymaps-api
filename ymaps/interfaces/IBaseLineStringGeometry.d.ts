@@ -1,7 +1,5 @@
-module ymaps {
-    export module interfaces {
-        export class IBaseLineStringGeometry extends IBaseGeometry, ILineStringGeometryAccess {
-            getType():"LineString";
-        }
+namespace ymaps.interfaces {
+    interface IBaseLineStringGeometry extends IBaseGeometry, ILineStringGeometryAccess {
+        getType():"LineString";
     }
 }

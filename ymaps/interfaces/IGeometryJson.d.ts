@@ -1,7 +1,5 @@
-module ymaps {
-    export module interfaces {
-        export class IGeometryJson {
-            type:string;
-        }
+namespace ymaps.interfaces {
+    interface IGeometryJson {
+        type:string;
     }
 }

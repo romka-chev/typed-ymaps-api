@@ -1,9 +1,10 @@
-module ymaps {
-    export module geometry {
-        export module pixel {
-            export class Rectangle extends interfaces.IPixelRectangleGeometry {
-                constructor(coordinates:number[][] = null, metaData?:any);
-            }
-        }
+namespace ymaps.geometry.pixel {
+
+    interface RectangleStatic {
+        new(coordinates:number[][] = null, metaData?:any):Rectangle;
     }
+    interface Rectangle extends ymaps.interfaces.IPixelRectangleGeometry {
+    }
+
+    declare var Rectangle:RectangleStatic;
 }
