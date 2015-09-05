@@ -5,7 +5,7 @@ namespace ymaps.interfaces {
         solveInverseProblem(startPoint:number[], endPoint:number[], reverseDirection:boolean = false):ICoordSystemSolveProblemResult;
     }
 
-    export interface ICoordSystemSolveProblemResult {
+    interface ICoordSystemSolveProblemResult {
         startPoint    :number[];
         startDirection:number[];
         endPoint      :number[];
@@ -13,7 +13,7 @@ namespace ymaps.interfaces {
         distance      :number;
         pathFunction  :(part:number) => ICoordSystemSolveProblemResultPathFunctionResult;
     }
-    export interface ICoordSystemSolveProblemResultPathFunctionResult {
+    interface ICoordSystemSolveProblemResultPathFunctionResult {
         point    :number[];
         direction:number[];
     }

@@ -3,7 +3,7 @@ namespace ymaps.data {
     interface ManagerStatic{
         new(data:ymaps.Dictionary<any>):Manager;
     }
-    interface Manager extends interfaces.IDataManager, interfaces.IFreezable {
+    interface Manager extends ymaps.interfaces.IDataManager, ymaps.interfaces.IFreezable {
 
         // todo @report about docs about this method is not required
         // todo because its just the same as ymaps.interfaces.IDataManager.get
@@ -17,7 +17,6 @@ namespace ymaps.data {
         unset(path:string|string[]):Manager;
         unsetAll():Manager;
     }
-
 
     declare var Manager:ManagerStatic;
 }

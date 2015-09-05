@@ -1,9 +1,11 @@
-module ymaps {
-    export module domEvent {
-        export class Pointer extends interfaces.IMultiTouchEvent {
-            constructor(originalEvent:any, type?:string);
+namespace ymaps.domEvent {
 
-            get(name:string):any;
-        }
+    interface PointerStatic{
+        new(originalEvent:any, type?:string):Pointer;
     }
+    interface Pointer extends interfaces.IMultiTouchEvent {
+        get(name:string):any;
+    }
+
+    declare var Pointer:PointerStatic;
 }
