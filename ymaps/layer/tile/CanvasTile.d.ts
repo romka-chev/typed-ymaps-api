@@ -1,18 +1,15 @@
-module ymaps {
-    export module layer {
-        export module tile {
-            export class CanvasTile extends interfaces.ICanvasTile {
-                constructor(url:string, options?:CanvasTileOptions) {
-                    super(<any>url);
+namespace ymaps.layer.tile {
 
-                    void options;
-                }
-            }
-        }
-
-        export class CanvasTileOptions {
-            notFoundTile:string = null;
-            tileAnimationDuration:number;
-        }
+    interface CanvasTileStatic extends ymaps.interfaces.ICanvasTileStatic{
+        new(url:string, options?:CanvasTileOptions):CanvasTile;
     }
+    interface CanvasTile extends interfaces.ICanvasTile {
+    }
+
+    interface CanvasTileOptions {
+        notFoundTile?:string;
+        tileAnimationDuration?:number;
+    }
+
+    declare var CanvasTile:CanvasTileStatic;
 }

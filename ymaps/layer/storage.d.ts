@@ -1,5 +1,3 @@
-module ymaps {
-    export module layer {
-        export var storage:util.Storage;
-    }
+namespace ymaps.layer {
+    declare var storage:util.Storage;
 }

@@ -1,18 +1,22 @@
-module ymaps {
-    export module layer {
-        export module tile {
-            export class CanvasContainer extends interfaces.IChildOnMap {
-                constructor(layer:interfaces.ILayer, options?:CanvasContainerOptions);
+namespace ymaps.layer.tileContainer {
 
-                getMap():Map;
-                getTile(tileNumber:number[], tileZoom:number, priority:number):interfaces.ICanvasTile;
-            }
+    interface CanvasContainerStatic {
+        new(layer:interfaces.ILayer, options:CanvasContainerOptions = defaultCanvasContainerOptions):CanvasContainer
+    }
+    interface CanvasContainer extends interfaces.IChildOnMap {
+        getMap():Map;
+        getTile(tileNumber:number[], tileZoom:number, priority:number):interfaces.ICanvasTile;
+    }
 
-            export class CanvasContainerOptions {
-                notFoundTile:string = null;
-                tileClass:string|interfaces.ICanvasTile = "default#canvas"; // todo report about string type missed
-                tileTransparent:boolean = false;
-            }
-        }
+    interface CanvasContainerOptions {
+        notFoundTile   ?:string;
+        tileClass      ?:string|interfaces.ICanvasTile; // todo report about string type missed
+        tileTransparent?:boolean;
+    }
+
+    declare var CanvasContainer:CanvasContainerStatic;
+    declare var defaultCanvasContainerOptions:CanvasContainerOptions = {
+        tileClass      : "default#canvas",
+        tileTransparent: false
     }
 }

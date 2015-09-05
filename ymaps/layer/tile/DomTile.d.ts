@@ -1,18 +1,15 @@
-module ymaps {
-    export module layer {
-        export module tile {
-            export class DomTile extends interfaces.IDomTile {
-                constructor(url:string, options?:DomTileOptions) {
-                    super(<any>url);
+namespace ymaps.layer.tile {
 
-                    void options;
-                }
-            }
-        }
-
-        export class DomTileOptions {
-            notFoundTile:string = null;
-            tileAnimationDuration:number;
-        }
+    interface DomTileStatic extends ymaps.interfaces.IDomTileStatic{
+        new(url:string, options?:DomTileOptions):DomTile
     }
+    interface DomTile extends interfaces.IDomTile {
+    }
+
+    interface DomTileOptions {
+        notFoundTile?:string;
+        tileAnimationDuration?:number;
+    }
+
+    declare var DomTile:DomTileStatic;
 }
