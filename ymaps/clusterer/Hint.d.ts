@@ -1,7 +1,10 @@
-module ymaps {
-    export module clusterer {
-        export class Hint extends interfaces.IHintManager{
-            constructor(clusterer:Clusterer);
-        }
+namespace ymaps.clusterer {
+
+    interface HintStatic{
+        new(clusterer:ymaps.Clusterer):Hint;
     }
+    interface Hint extends ymaps.interfaces.IHintManager{
+    }
+
+    declare var Hint:HintStatic;
 }

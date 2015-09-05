@@ -1,7 +1,10 @@
-module ymaps {
-    export module clusterer {
-        export class Balloon extends interfaces.IBalloonManager{
-            constructor(clusterer:Clusterer);
-        }
+namespace ymaps.clusterer {
+
+    interface BalloonStatic {
+        new(clusterer:ymaps.Clusterer):Balloon;
     }
+    interface Balloon extends ymaps.interfaces.IBalloonManager {
+    }
+
+    declare var Balloon:BalloonStatic;
 }
