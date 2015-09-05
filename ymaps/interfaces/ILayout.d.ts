@@ -1,23 +1,15 @@
-module ymaps {
-    export module interfaces {
-        export class ILayout extends IDomEventEmitter {
+namespace ymaps.interfaces {
 
-            constructor(data:any);
-
-            destroy():void;
-
-            isEmpty():boolean;
-
-            getShape():IShape;
-
-            getData():any;
-
-            setData(data:any):void;
-
-            getParentElement():HTMLElement;
-
-            setParentElement(parent:HTMLElement):void;
-
-        }
+    interface ILayoutStatic{
+        new (data:any):ILayout;
+    }
+    interface ILayout extends IDomEventEmitter {
+        destroy():any;
+        isEmpty():boolean;
+        getShape():IShape;
+        getData():any;
+        setData(data:any):any;
+        getParentElement():HTMLElement;
+        setParentElement(parent:HTMLElement):any;
     }
 }

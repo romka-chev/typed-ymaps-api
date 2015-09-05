@@ -1,9 +1,7 @@
-module ymaps {
-    export module interfaces {
-        export class IEventController {
-            onStartListening(events:IEventManager, type:string):void;
+namespace ymaps.interfaces {
 
-            onStopListening(events:IEventManager, type:string):void;
-        }
+    interface IEventController {
+        onStartListening(events:IEventManager, type:string):any;
+        onStopListening(events:IEventManager, type:string):any;
     }
 }

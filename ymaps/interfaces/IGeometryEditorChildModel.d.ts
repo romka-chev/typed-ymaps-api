@@ -8,6 +8,6 @@ namespace ymaps.interfaces {
         geometry:IBaseGeometry;
 
         getParent():IGeometryEditorModel;
-        setPixels(pixels:number[]):void;
+        setPixels(pixels:number[]):any;
     }
 }

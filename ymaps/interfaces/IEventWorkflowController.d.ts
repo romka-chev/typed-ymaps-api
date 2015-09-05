@@ -1,9 +1,7 @@
-module ymaps {
-    export module interfaces {
-        export class IEventWorkflowController extends IEventController {
-            onAfterEventFiring(events:IEventManager, type:string, event?:IEvent):void;
+namespace ymaps.interfaces {
 
-            onBeforeEventFiring(events:IEventManager, type:string, event?:IEvent):void;
-        }
+    interface IEventWorkflowController extends IEventController {
+        onAfterEventFiring(events:IEventManager, type:string, event?:IEvent):any;
+        onBeforeEventFiring(events:IEventManager, type:string, event?:IEvent):any;
     }
 }

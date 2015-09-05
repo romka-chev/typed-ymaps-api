@@ -1,8 +1,6 @@
-module ymaps {
-    export module interfaces {
-        export class IMultiRouteModelJson {
-            params:IMultiRouteParams;
-            referencePoints:IMultiRouteReferencePoint[];
-        }
+namespace ymaps.interfaces {
+    interface IMultiRouteModelJson {
+        params:IMultiRouteParams;
+        referencePoints:IMultiRouteReferencePoint[];
     }
 }

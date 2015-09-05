@@ -1,7 +1,6 @@
-module ymaps {
-    export module interfaces {
-        export class IMultiRouteReferencePoint {
-            //todo check constructor
-        }
+namespace ymaps.interfaces {
+
+    interface IMultiRouteReferencePoint {
+        //todo check constructor
     }
 }

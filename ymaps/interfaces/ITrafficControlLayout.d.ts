@@ -1,7 +1,6 @@
-module ymaps {
-    export module interfaces {
-        export class ITrafficControlLayout extends IExpandableControlLayout {
+namespace ymaps.interfaces {
 
-        }
+    interface ITrafficControlLayout extends IExpandableControlLayout {
+
     }
 }

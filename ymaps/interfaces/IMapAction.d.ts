@@ -1,9 +1,7 @@
-module ymaps {
-    export module interfaces {
-        export class IMapAction extends IEventEmitter {
-            begin(mapActionManager:map.action.Manager):void;
+namespace ymaps.interfaces {
 
-            end():void;
-        }
+    interface IMapAction extends IEventEmitter {
+        begin(mapActionManager:map.action.Manager):any;
+        end():any;
     }
 }

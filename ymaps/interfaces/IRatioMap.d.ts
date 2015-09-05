@@ -1,7 +1,6 @@
-module ymaps {
-    export module interfaces {
-        export class IRatioMap {
-            // todo dictionary?
-        }
+namespace ymaps.interfaces {
+
+    interface IRatioMap {
+        // todo dictionary?
     }
 }

@@ -6,11 +6,8 @@ namespace ymaps.interfaces {
         getAll():any;
         getNative(key:string):any;
         resolve(key:string, name?:string):any;
-
         getName():string;
         setName(name:string):any;
-
-
         getParent():IOptionManager;
         // todo @report about type in docs?
         // todo maybe it is return ymaps.interfaces.IOptionManager instead of ymaps.interfaces.IChild?

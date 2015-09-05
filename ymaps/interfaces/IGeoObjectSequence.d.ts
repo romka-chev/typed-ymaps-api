@@ -1,6 +1,6 @@
 namespace ymaps.interfaces {
     interface IGeoObjectSequence extends ICustomizable, IEventEmitter, IParentOnMap {
-        each(callback:Function, context?:any):void;
+        each(callback:Function, context?:any):any;
         get(index:number):IGeoObject;
         getBounds():number[][];
         getIterator():IIterator;

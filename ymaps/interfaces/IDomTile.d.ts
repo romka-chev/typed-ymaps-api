@@ -1,15 +1,13 @@
-module ymaps {
-    export module interfaces {
-        export class IDomTile {
-            event:IEventManager;
+namespace ymaps.interfaces {
 
-            constructor(url:string);
+    interface IDomTileStatic{
+        new(url:string):IDomTile;
+    }
+    interface IDomTile {
+        event:IEventManager;
 
-            destroy():void;
-
-            isReady():boolean;
-
-            renderAt(context:HTMLElement, clientBounds:number[][], animate:boolean):void;
-        }
+        destroy():any;
+        isReady():boolean;
+        renderAt(context:HTMLElement, clientBounds:number[][], animate:boolean):any;
     }
 }

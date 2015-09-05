@@ -1,7 +1,6 @@
-module ymaps {
-    export module interfaces {
-        export class ICopyrightsAccessor extends ICopyrightsProvider {
+namespace ymaps.interfaces {
 
-        }
+    interface ICopyrightsAccessor extends ICopyrightsProvider {
+
     }
 }

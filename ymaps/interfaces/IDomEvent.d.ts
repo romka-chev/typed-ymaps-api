@@ -1,17 +1,13 @@
-module ymaps {
-    export module interfaces {
-        export class IDomEvent extends IEvent {
-            constructor(originalEvent:any);
+namespace ymaps.interfaces {
 
-            get(name:string):any;
-
-            getSourceEvent():IDomEvent;
-
-            preventDefault():void;
-
-            stopImmediatePropagation():void;
-
-            stopPropagation():void;
-        }
+    interface IDomEventStatic{
+        new(originalEvent:any):IDomEvent;
+    }
+    interface IDomEvent extends IEvent {
+        get(name:string):any;
+        getSourceEvent():IDomEvent;
+        preventDefault():any;
+        stopImmediatePropagation():any;
+        stopPropagation():any;
     }
 }

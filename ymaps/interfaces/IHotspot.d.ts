@@ -1,13 +1,9 @@
-module ymaps {
-    export module interfaces {
-        export class IHotspot extends IDomEventEmitter {
-            getShape():IShape;
+namespace ymaps.interfaces {
 
-            setShape(shape:IShape):void;
-
-            getZIndex():number;
-
-            setZIndex(zIndex:number):void;
-        }
+    interface IHotspot extends IDomEventEmitter {
+        getShape():IShape;
+        setShape(shape:IShape):any;
+        getZIndex():number;
+        setZIndex(zIndex:number):any;
     }
 }

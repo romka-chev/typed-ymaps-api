@@ -1,7 +1,6 @@
-module ymaps {
-    export module interfaces {
-        export class IZoomControlLayout extends ILayout {
+namespace ymaps.interfaces {
 
-        }
+    interface IZoomControlLayout extends ILayout {
+
     }
 }

@@ -1,15 +1,10 @@
-module ymaps {
-    export module interfaces {
-        export class IPane extends IEventEmitter {
-            destroy():void;
+namespace ymaps.interfaces {
 
-            getElement():HTMLElement;
-
-            getMap():ymaps.Map;
-
-            getOverflow():"visible"|"hidden";
-
-            getZIndex():number;
-        }
+    interface IPane extends IEventEmitter {
+        destroy():any;
+        getElement():HTMLElement;
+        getMap():ymaps.Map;
+        getOverflow():"visible"|"hidden";
+        getZIndex():number;
     }
 }

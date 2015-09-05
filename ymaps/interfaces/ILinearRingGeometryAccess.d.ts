@@ -15,7 +15,7 @@ namespace ymaps.interfaces {
         getLength():number;
     }
 
-    export interface ILinearRingGeometryAccessGetClosestResult {
+    interface ILinearRingGeometryAccessGetClosestResult {
         position:number[];
         distance:number;
         closestPointIndex:number;

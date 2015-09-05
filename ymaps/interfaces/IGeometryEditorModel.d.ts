@@ -4,7 +4,7 @@ namespace ymaps.interfaces {
         new(geometry:IBaseGeometry, editor:IGeometryEditor):IGeometryEditorModel;
     }
     interface IGeometryEditorModel extends IEventEmitter {
-        destroy():void;
+        destroy():any;
         getPixels():number[];
     }
 }

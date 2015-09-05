@@ -1,4 +1,5 @@
 namespace ymaps.interfaces {
+
     interface IPixelRectangleGeometry extends IPixelGeometry {
         getClosest(anchorPosition:number[]):IPixelRectangleGeometryGetClosestResult;
         getCoordinates():number[][];

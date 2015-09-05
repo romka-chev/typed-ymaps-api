@@ -1,7 +1,6 @@
-module ymaps {
-    export module interfaces {
-        export class ISearchControlLayout extends IExpandableControlLayout {
+namespace ymaps.interfaces {
 
-        }
+    interface ISearchControlLayout extends IExpandableControlLayout {
+
     }
 }

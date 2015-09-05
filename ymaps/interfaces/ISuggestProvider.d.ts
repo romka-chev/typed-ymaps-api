@@ -1,12 +1,11 @@
-module ymaps {
-    export module interfaces {
-        export class ISuggestProvider {
-            suggest(request:string, options:ISuggestProviderSuggestOptions):vow.Promise;
-        }
+namespace ymaps.interfaces {
 
-        export interface ISuggestProviderSuggestOptions{
-            boundedBy?:number[][];
-            results?:number;
-        }
+    interface ISuggestProvider {
+        suggest(request:string, options:ISuggestProviderSuggestOptions):vow.Promise;
+    }
+
+    interface ISuggestProviderSuggestOptions {
+        boundedBy?:number[][];
+        results?:number;
     }
 }

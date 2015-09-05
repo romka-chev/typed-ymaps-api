@@ -3,7 +3,6 @@ namespace ymaps.interfaces {
         select():any;
         deselect():any;
         isSelected():boolean;
-
         enable():any;
         disable():any;
         isEnabled():boolean;

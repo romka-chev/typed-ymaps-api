@@ -1,5 +1,6 @@
 namespace ymaps.interfaces {
-    export class IMultiTouchEvent {
+
+    interface IMultiTouchEvent {
         //todo report about missing docs
     }
 }

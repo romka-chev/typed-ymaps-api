@@ -4,7 +4,7 @@ module ymaps {
 
             properties:data.Manager; // todo determine
 
-            constructor(referencePoints:interfaces.IMultiRouteReferencePoint[], params?:interfaces.IMultiRouteParams);
+            constructor(referencePoints:interfaces.IMultiRouteReferencePoint[], params:interfaces.IMultiRouteParams = ymaps.interfaces.defaultIMultiRouteParams);
 
             destroy():any;
             getAllPoints():multiRouter.WayPointModel[]|multiRouter.ViaPointModel[];

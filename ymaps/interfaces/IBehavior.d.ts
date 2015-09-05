@@ -1,11 +1,11 @@
 namespace ymaps.interfaces {
-    export interface IBehavior extends IChildOnMap, ICustomizable {
-        new(options?:any);
 
-        disable():void;
-
-        enable():void;
-
+    interface IBehaviorStatic{
+        new(options?:any):IBehavior;
+    }
+    interface IBehavior extends IChildOnMap, ICustomizable {
+        disable():any;
+        enable():any;
         isEnabled():boolean;
     }
 }

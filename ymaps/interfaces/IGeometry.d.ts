@@ -3,6 +3,6 @@ namespace ymaps.interfaces {
         getBounds():number[][];
         getPixelGeometry(options?:any):IPixelGeometry;
         getMap():ymaps.Map;
-        setMap(map:ymaps.Map):void;
+        setMap(map:ymaps.Map):any;
     }
 }

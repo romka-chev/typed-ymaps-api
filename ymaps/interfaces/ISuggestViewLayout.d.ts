@@ -1,7 +1,6 @@
-module ymaps {
-    export module interfaces {
-        export class ISuggestViewLayout { // todo check extended
+namespace ymaps.interfaces {
 
-        }
+    interface ISuggestViewLayout { // todo check extended
+
     }
 }

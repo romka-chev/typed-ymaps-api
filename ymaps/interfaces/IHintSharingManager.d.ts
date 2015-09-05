@@ -1,7 +1,6 @@
-module ymaps {
-    export module interfaces {
-        export class IHintSharingManager {
-            // todo report about missed interface
-        }
+namespace ymaps.interfaces {
+
+    interface IHintSharingManager {
+        // todo report about missed interface
     }
 }

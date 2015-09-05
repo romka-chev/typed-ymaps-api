@@ -1,6 +1,6 @@
 namespace ymaps.interfaces {
     interface IHotspotObjectSource extends ICustomizable {
-        cancelLastRequest():void;
-        requestObjects(layer:hotspot.Layer, tileNumber:number[], zoom:number, callback:Function):void;
+        cancelLastRequest():any;
+        requestObjects(layer:hotspot.Layer, tileNumber:number[], zoom:number, callback:Function):any;
     }
 }

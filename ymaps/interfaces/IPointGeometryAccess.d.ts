@@ -1,5 +1,6 @@
 namespace ymaps.interfaces {
-    export class IPointGeometryAccess {
+
+    interface IPointGeometryAccess {
         getCoordinates():number[];
         setCoordinates(coordinates:number[]):IPointGeometryAccess;
     }

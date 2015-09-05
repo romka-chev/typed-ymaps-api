@@ -1,15 +1,13 @@
-module ymaps {
-    export module interfaces {
-        export class ICanvasTile {
-            events:IEventManager;
+namespace ymaps.interfaces {
 
-            constructor(url:string);
+    interface ICanvasTileStatic{
+        new(url:string):ICanvasTile;
+    }
+    interface ICanvasTile {
+        events:IEventManager;
 
-            destroy():void;
-
-            isReady():boolean;
-
-            renderAt(context:any, canvasSize:number[], bounds:number[][], animate?:boolean):void;
-        }
+        destroy():any;
+        isReady():boolean;
+        renderAt(context:any, canvasSize:number[], bounds:number[][], animate?:boolean):any;
     }
 }
