@@ -1,7 +1,3 @@
-module ymaps {
-    module graphics {
-        module style {
-            // todo how to use it?
-        }
-    }
+module ymaps.graphics.style {
+    // todo how to use it?
 }

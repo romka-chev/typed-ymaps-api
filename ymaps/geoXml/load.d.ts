@@ -1,5 +1,3 @@
-module ymaps {
-    export module geoXml {
-        export function load(url:string):vow.Promise; // todo generics?
-    }
+namespace ymaps.geoXml {
+    function load(url:string):vow.Promise; // todo generics?
 }
