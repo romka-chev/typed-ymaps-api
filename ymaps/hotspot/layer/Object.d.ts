@@ -1,13 +1,13 @@
-module ymaps {
-    export module hotspot {
-        export module layer {
-            export class Object extends interfaces.IHotspotLayerObject {
+namespace ymaps.hotspot.layer {
 
-                // todo determine options?
-                // todo check feature carefully
-                constructor(shape:interfaces.IShape, feature:GeoObjectFeature, options?:any);
-
-            }
-        }
+    interface ObjectStatic {
+        // todo determine options?
+        // todo check feature carefully
+        new(shape:interfaces.IShape, feature:GeoObjectFeature, options?:any):Object;
     }
+    interface Object extends interfaces.IHotspotLayerObject {
+
+    }
+
+    declare var Object:ObjectStatic;
 }
