@@ -5,6 +5,6 @@ namespace ymaps.interfaces {
         fire(type:string, event?:ymaps.Event|any):IEventManager;
         group():IEventGroup;
         getParent():IEventManager;
-        setParent(parent:IEventManager):void;
+        setParent(parent:IEventManager):IEventManager;
     }
 }

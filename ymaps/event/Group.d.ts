@@ -1,9 +1,11 @@
-module ymaps {
-    export module event {
-        export class Group extends interfaces.IEventGroup {
-            constructor(events:interfaces.IEventManager);
+namespace ymaps.event {
 
-            events:interfaces.IEventManager;
-        }
+    interface GroupStatic {
+        new(events:interfaces.IEventManager):Group;
     }
+    interface Group extends interfaces.IEventGroup {
+        events:interfaces.IEventManager;
+    }
+
+    declare var Group:GroupStatic;
 }
