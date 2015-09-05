@@ -8,20 +8,7 @@ module ymaps {
 
             constructor(map:Map, controls?:string[]|interfaces.IControl[], options?:ManagerOptions);
 
-            add(control:"fullscreenControl"
-                |"geolocationControl"
-                |"routeEditor"
-                |"rulerControl"
-                |"searchControl"
-                |"trafficControl"
-                |"typeSelector"
-                |"zoomControl"
-                |"smallMapDefaultSet"
-                |"mediumMapDefaultSet"
-                |"largeMapDefaultSet"
-                |"default"
-                |interfaces.IControl,
-                options?:MangerAddOptions):control.Manager;
+            add(control:ymaps.Controls|interfaces.IControl, options?:MangerAddOptions):control.Manager;
 
             each(callback:Function, context:any):Manager;
             get(index:number|string):interfaces.IControl;

@@ -1,8 +1,7 @@
 namespace ymaps.collection {
 
     interface ItemStatic {
-        // todo @dictionary
-        new(options?:Object):Item;
+        new(options?:ymaps.Dictionary<any>):Item;
     }
     interface Item extends ymaps.interfaces.IChildOnMap, ymaps.interfaces.ICustomizable, ymaps.interfaces.IEventEmitter, ymaps.interfaces.IParentOnMap {
         getMap():ymaps.Map;

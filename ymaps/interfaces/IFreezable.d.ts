@@ -1,13 +1,10 @@
-module ymaps {
-    export module interfaces {
-        export class IFreezable {
-            events:IEventManager;
+namespace ymaps.interfaces {
+    interface IFreezable {
+        events:ymaps.interfaces.IEventManager;
 
-            freeze():IFreezable;
+        freeze():IFreezable;
+        unfreeze():IFreezable;
+        isFrozen():boolean;
 
-            isFrozen():boolean;
-
-            unfreeze():IFreezable;
-        }
     }
 }

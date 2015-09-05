@@ -1,4 +1,4 @@
-namespace ymaps.behaviour {
+namespace ymaps.behavior {
 
     interface RulerStatic{
         new():Ruler;
@@ -9,7 +9,6 @@ namespace ymaps.behaviour {
         close():boolean;
 
         getState():string;
-
         setState(state:string):any;
     }
 

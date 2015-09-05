@@ -1,42 +1,55 @@
-module ymaps {
-    export module control {
-        export class FullscreenControl extends Button {
+namespace ymaps.control {
 
-            state:FullscreenControlStateManager;
-
-            constructor(parameters?:FullscreenControlParameters){
-                super(<any>parameters);
-            }
-        }
-        export class FullscreenControlParameters{
-            data    :FullscreenControlParametersData;
-            options :FullscreenControlParametersOptions;
-            state   :FullscreenControlParametersState;
-        }
-        export class FullscreenControlParametersData{
-            title:string;
-        }
-        export class FullscreenControlParametersOptions{
-            float       :"left"|"right"|"none"  = "right";
-            floatIndex  :number                 = 300;
-            maxWidth    :number|number[]        = 28;
-            visible     :boolean                = true;
-            layout      :string|interfaces.ISelectableControlLayout;
-            position    :FullscreenControlParametersOptionsPosition;
-        }
-        export class FullscreenControlParametersOptionsPosition{
-            bottom  :number|string = "auto";
-            left    :number|string = "auto";
-            top     :number|string = "auto";
-            right   :number|string = "auto";
-        }
-        export class FullscreenControlParametersState{
-            enabled :boolean = true;
-            selected:boolean = false;
-        }
-
-        class FullscreenControlStateManager extends data.Manager{
-            get<T>(path:"fullscreen", defaultValue?:T):T|boolean;
-        }
+    interface FullscreenControlStatic {
+        new(parameters:FullscreenControlParameters = defaultFullscreenControlParameters):FullscreenControlStatic;
     }
+    interface FullscreenControl extends Button {
+    }
+
+    interface FullscreenControlParameters {
+        data?:FullscreenControlParametersData;
+        options?:FullscreenControlParametersOptions;
+        state?:FullscreenControlParametersState;
+    }
+    interface FullscreenControlParametersData {
+        title?:string;
+    }
+    interface FullscreenControlParametersOptions {
+        float?:ymaps.Float;
+        floatIndex?:number;
+        maxWidth?:number|number[];
+        visible?:boolean;
+        layout?:string|interfaces.ISelectableControlLayout; // todo layout constructor
+        position?:FullscreenControlParametersOptionsPosition;
+    }
+    interface FullscreenControlParametersOptionsPosition {
+        bottom?:number|string;
+        left?:number|string;
+        top?:number|string;
+        right?:number|string;
+    }
+    interface FullscreenControlParametersState {
+        enabled?:boolean;
+        selected?:boolean;
+    }
+
+    declare var FullscreenControl:FullscreenControlStatic;
+    declare var defaultFullscreenControlParameters:FullscreenControlParameters = {
+        options: {
+            float     : "right",
+            floatIndex: 300,
+            maxWidth  : 28,
+            visible   : true,
+            position  : {
+                bottom: "auto",
+                left  : "auto",
+                top   : "auto",
+                right : "auto"
+            }
+        },
+        state  : {
+            enabled : true,
+            selected: false
+        }
+    };
 }

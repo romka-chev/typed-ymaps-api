@@ -1,61 +1,66 @@
-module ymaps {
-    export module control {
-        export class ListBox extends interfaces.ICollection, interfaces.IControl, interfaces.ICustomizable {
+namespace ymaps.control {
 
-            data:ListBoxDataManager;
-            state:ListBoxStateManager;
+    interface ListBoxStatic {
+        new(parameters:ListBoxParameters = defaultListBoxParameters):ListBox;
+    }
+    interface ListBox extends ymaps.interfaces.ICollection, ymaps.interfaces.IControl, ymaps.interfaces.ICustomizable {
 
-            constructor(parameters?:ListBoxParameters);
+        data:ymaps.data.Manager;
+        state:ymaps.data.Manager;
 
-            collapse():ListBox;
-            expand():ListBox;
-            getMap():Map;
-            isExpanded():boolean;
-        }
-        export class ListBoxParameters{
-            data    :ListBoxParametersData;
-            items   :interfaces.IControl[];
-            options :ListBoxParametersOptions;
-            state   :ListBoxParametersState;
-        }
-        export class ListBoxParametersData{
-            content:string;
-            image:string;
-            title:string;
-        }
-        export class ListBoxParametersOptions{
-            collapseOnBlur  :boolean  = true;
-            expandOnClick   :boolean  = true;
-            float           :"left"|"right"|"none"  = "right";
-            floatIndex      :number                 = 0;
-            layout          :string|Function;
-            maxWidth        :number|number[]        = 90;
-            popupFloat      :"left"|"right";
-            position        :ListBoxParametersOptionsPosition;
-            visible         :boolean                = true;
-        }
-        export class ListBoxParametersOptionsPosition{
-            bottom  :number|string = "auto";
-            left    :number|string = "auto";
-            top     :number|string = "auto";
-            right   :number|string = "auto";
-        }
-        export class ListBoxParametersState{
-            expanded:boolean = false;
-        }
+        collapse():ListBox;
+        expand():ListBox;
+        getMap():Map;
+        isExpanded():boolean;
+    }
+    interface ListBoxParameters {
+        data    ?:ListBoxParametersData;
+        items   ?:interfaces.IControl[];
+        options ?:ListBoxParametersOptions;
+        state   ?:ListBoxParametersState;
+    }
+    interface ListBoxParametersData {
+        content ?:string;
+        image   ?:string;
+        title   ?:string;
+    }
+    interface ListBoxParametersOptions {
+        collapseOnBlur  ?:boolean;
+        expandOnClick   ?:boolean;
+        float           ?:ymaps.Float;
+        floatIndex      ?:number;
+        layout          ?:string|Function;
+        maxWidth        ?:number|number[];
+        popupFloat      ?:ymaps.PopupFloat;
+        position        ?:ListBoxParametersOptionsPosition;
+        visible         ?:boolean;
+    }
+    interface ListBoxParametersOptionsPosition {
+        bottom  ?:number|string;
+        left    ?:number|string;
+        top     ?:number|string;
+        right   ?:number|string;
+    }
+    export class ListBoxParametersState {
+        expanded:boolean = false;
+    }
 
-        class ListBoxDataManager extends data.Manager{
-            get<T>(path:"content", defaultValue?:T):T|string;
-            get<T>(path:"title",   defaultValue?:T):T|string;
-        }
-        class ListBoxStateManager extends data.Manager{
-            get<T>(path:"expanded", defaultValue?:T):T|boolean;
-            /**
-             *  todo @report about size description docs missed
-             * @param path
-             * @param defaultValue
-             */
-            get<T>(path:"size",     defaultValue?:T):T|string;
+    declare var ListBox:ListBoxStatic;
+    declare var defaultListBoxParameters:ListBoxParameters = {
+        options: {
+            collapseOnBlur: true,
+            expandOnClick : true,
+            float         : "right",
+            floatIndex    : 0,
+            maxWidth      : 90,
+            position      : {
+                bottom: "auto",
+                left  : "auto",
+                top   : "auto",
+                right : "auto"
+            },
+            visible       : true
         }
     }
+
 }

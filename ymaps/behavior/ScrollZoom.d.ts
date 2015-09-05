@@ -1,4 +1,4 @@
-namespace ymaps.behaviour {
+namespace ymaps.behavior {
 
     interface ScrollZoomStatic {
         new(options:ScrollZoomOptions = defaultScrollZoomOptions):ScrollZoom;
@@ -8,7 +8,7 @@ namespace ymaps.behaviour {
     }
     interface ScrollZoomOptions {
         maximumDelta?:number;
-        speed?:number;
+        speed       ?:number;
     }
 
 

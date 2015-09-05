@@ -1,4 +1,4 @@
-namespace ymaps.behaviour {
+namespace ymaps.behavior {
 
     interface DragStatic {
         new(options:DragOptions = defaultDragOptionsOptions):Drag;
@@ -6,11 +6,11 @@ namespace ymaps.behaviour {
     interface Drag extends ymaps.interfaces.IBehavior {
     }
     interface DragOptions {
-        actionCursor?:string;
-        cursor?:string;
-        inertia?:boolean;
+        actionCursor   ?:string;
+        cursor         ?:string;
+        inertia        ?:boolean;
         inertiaDuration?:number;
-        tremor?:number;
+        tremor         ?:number;
     }
 
 

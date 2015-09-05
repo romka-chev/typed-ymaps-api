@@ -1,4 +1,4 @@
-namespace ymaps.behaviour {
+namespace ymaps.behavior {
 
     interface LeftMouseButtonMagnifierStatic {
         new(options:LeftMouseButtonMagnifierOptions = defaultLeftMouseButtonMagnifierOptions):LeftMouseButtonMagnifier;
@@ -7,8 +7,8 @@ namespace ymaps.behaviour {
     }
     interface LeftMouseButtonMagnifierOptions {
         actionCursor?:string;
-        cursor?:string;
-        duration?:number;
+        cursor      ?:string;
+        duration    ?:number;
     }
 
 

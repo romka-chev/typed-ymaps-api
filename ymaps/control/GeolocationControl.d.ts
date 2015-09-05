@@ -1,43 +1,53 @@
-module ymaps {
-    export module control {
-        export class GeolocationControl extends Button {
+namespace ymaps.control {
 
-            state:GeolocationControlStateManager;
+    interface GeolocationControlStatic {
+        new(parameters:GeolocationParameters = defaultGeolocationParameters):GeolocationControl;
+    }
+    interface GeolocationControl extends Button {
+    }
+    interface GeolocationParameters {
+        data   ?:GeolocationParametersData;
+        options?:GeolocationParametersOptions;
+        state  ?:GeolocationParametersState;
+    }
+    interface GeolocationParametersData {
+        image?:string;
+        title?:string;
+    }
+    interface GeolocationParametersOptions {
+        float      ?:ymaps.Float;
+        floatIndex ?:number;
+        maxWidth   ?:number|number[];
+        visible    ?:boolean;
+        noPlacemark?:boolean;
+        position   ?:GeolocationParametersOptionsPosition;
+    }
+    interface GeolocationParametersOptionsPosition {
+        bottom?:number|string;
+        left  ?:number|string;
+        top   ?:number|string;
+        right ?:number|string;
+    }
+    interface GeolocationParametersState {
+    }
 
-            constructor(parameters?:GeolocationParameters){
-                super(<any>parameters);
+    declare var GeolocationControl:GeolocationControlStatic;
+    declare var defaultGeolocationParameters:GeolocationParameters = {
+        data   : {
+            image: 'geolocation'
+        },
+        options: {
+            float      : "right",
+            floatIndex : 300,
+            maxWidth   : 28,
+            visible    : true,
+            noPlacemark: false,
+            position   : {
+                bottom: "auto",
+                left  : "auto",
+                top   : "auto",
+                right : "auto"
             }
-        }
-        export class GeolocationParameters{
-            data    :GeolocationParametersData;
-            options :GeolocationParametersOptions;
-            /**
-             * todo @report about mistake in official docs ?
-             * There is no default states described in the docs
-             */
-            state   :GeolocationParametersState;
-        }
-        export class GeolocationParametersData{
-            image:string = 'geolocation';
-            title:string;
-        }
-        export class GeolocationParametersOptions{
-            float       :"left"|"right"|"none"  = "right";
-            floatIndex  :number                 = 300;
-            maxWidth    :number|number[]        = 28;
-            visible     :boolean                = true;
-            noPlacemark :boolean                = false;
-            position    :GeolocationParametersOptionsPosition;
-        }
-        export class GeolocationParametersOptionsPosition{
-            bottom  :number|string = "auto";
-            left    :number|string = "auto";
-            top     :number|string = "auto";
-            right   :number|string = "auto";
-        }
-        export class GeolocationParametersState{}
-
-        class GeolocationControlStateManager extends data.Manager{
         }
     }
 }

@@ -1,4 +1,4 @@
-namespace ymaps.behaviour {
+namespace ymaps.behavior {
 
     interface RouteEditorStatic {
         new():RouteEditor;

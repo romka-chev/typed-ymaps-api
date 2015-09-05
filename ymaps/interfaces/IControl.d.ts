@@ -1,13 +1,12 @@
-module ymaps {
-    export module interfaces {
-        export class IControl extends IChildOnMap {
-            options:IOptionManager;
+namespace ymaps.interfaces {
 
-            constructor(options?:any);
+    interface IControlStatic{
+        new(options?:any):IControl;
+    }
+    interface IControl extends IChildOnMap {
+        options:IOptionManager;
 
-            getParent():IControlParent;
-            setParent(parent:IControlParent):IControl; // todo report about typo in official docs
-
-        }
+        getParent():IControlParent;
+        setParent(parent:IControlParent):IControl; // todo report about typo in official docs
     }
 }

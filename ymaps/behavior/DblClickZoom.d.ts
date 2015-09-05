@@ -1,4 +1,4 @@
-namespace ymaps.behaviour {
+namespace ymaps.behavior {
 
     interface DblClickZoomStatic {
         new(options:DblClickZoomOptions = defaultDblClickZoomOptions):DblClickZoom;
@@ -8,7 +8,7 @@ namespace ymaps.behaviour {
 
     interface DblClickZoomOptions {
         centering?:boolean;
-        duration?:number;
+        duration ?:number;
     }
 
 

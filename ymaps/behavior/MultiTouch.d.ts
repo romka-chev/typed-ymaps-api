@@ -1,4 +1,4 @@
-namespace ymaps.behaviour {
+namespace ymaps.behavior {
 
     interface MultiTouchStatic {
         new(options:MultiTouchOptions = defaultMultiTouchOptions):MultiTouch;

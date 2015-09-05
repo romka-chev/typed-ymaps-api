@@ -1,17 +1,11 @@
-module ymaps {
-    export module interfaces {
-        export class ISelectableControl extends IControl {
-            deselect():void;
+namespace ymaps.interfaces {
+    interface ISelectableControl extends IControl {
+        select():any;
+        deselect():any;
+        isSelected():boolean;
 
-            disable():void;
-
-            enable():void;
-
-            isEnabled():boolean;
-
-            isSelected():boolean;
-
-            select():void;
-        }
+        enable():any;
+        disable():any;
+        isEnabled():boolean;
     }
 }
