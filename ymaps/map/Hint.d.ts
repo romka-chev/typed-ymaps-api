@@ -1,8 +1,10 @@
-module ymaps {
-    export module map {
-        export class Hint extends interfaces.IHintManager, interfaces.IHintSharingManager {
-            constructor(map:Map);
+namespace ymaps.map {
 
-        }
+    interface HintStatic {
+        new(map:Map):Hint;
     }
+    interface Hint extends interfaces.IHintManager, interfaces.IHintSharingManager {
+    }
+
+    declare var Hint:HintStatic;
 }

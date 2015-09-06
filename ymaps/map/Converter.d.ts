@@ -1,10 +1,12 @@
-module ymaps {
-    export module map {
-        export class Converter {
-            constructor(map:Map);
+namespace ymaps.map {
 
-            globalToPage(globalPixelPoint:number[]):number[];
-            pageToGlobal(globalPixelPoint:number[]):number[];
-        }
+    interface ConverterStatic {
+        new(map:Map):Converter;
     }
+    interface Converter {
+        globalToPage(globalPixelPoint:number[]):number[];
+        pageToGlobal(globalPixelPoint:number[]):number[];
+    }
+
+    declare var Converter:ConverterStatic;
 }

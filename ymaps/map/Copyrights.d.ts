@@ -1,15 +1,16 @@
-module ymaps {
-    export module map {
-        export class Copyrights {
+namespace ymaps.map {
 
-            events:event.Manager;
-
-            constructor(map:Map);
-
-            add(customCopyrights:string|string[]|HTMLElement|HTMLElement[]):interfaces.ICopyrightsAccessor;
-            addProvider(provider:interfaces.ICopyrightsProvider):Copyrights;
-            get(point:number[], zoom:number):vow.Promise; // todo generics
-            removeProvider(provider:interfaces.ICopyrightsProvider):Copyrights;
-        }
+    interface CopyrightsStatic {
+        new(map:Map):Copyrights;
     }
+    interface Copyrights {
+        events:event.Manager;
+
+        add(customCopyrights:string|string[]|HTMLElement|HTMLElement[]):interfaces.ICopyrightsAccessor;
+        addProvider(provider:interfaces.ICopyrightsProvider):Copyrights;
+        get(point:number[], zoom:number):vow.Promise;
+        removeProvider(provider:interfaces.ICopyrightsProvider):Copyrights;
+    }
+
+    declare var Copyrights:CopyrightsStatic;
 }

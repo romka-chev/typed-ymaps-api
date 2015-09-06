@@ -1,17 +1,17 @@
-module ymaps {
-    export module map {
-        export module pane {
-            export class Manager { // todo check is methods are really voids
-                constructor(map:Map);
+namespace ymaps.map.pane {
 
-                append(key:string, pane:interfaces.IPane):void;
-                destroy():void;
-                get(key:string):interfaces.IPane;
-                getLower():string;
-                getUpper():string;
-                insertBefore(key:string, pane:interfaces.IPane, referenceKey:string):void;
-                remove(pane:interfaces.IPane):void;
-            }
-        }
+    interface ManagerStatic {
+        new(map:Map):Manager;
     }
+    interface Manager {
+        append(key:string, pane:interfaces.IPane):any;
+        destroy():any;
+        get(key:string):interfaces.IPane;
+        getLower():string;
+        getUpper():string;
+        insertBefore(key:string, pane:interfaces.IPane, referenceKey:string):any;
+        remove(pane:interfaces.IPane):any;
+    }
+
+    declare var Manager:ManagerStatic;
 }

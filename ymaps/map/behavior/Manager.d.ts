@@ -1,14 +1,20 @@
-module ymaps {
-    export module map {
-        export module behavior {
-            export class Manager extends interfaces.ICustomizable, interfaces.IEventEmitter, interfaces.IParentOnMap {
-                constructor(map:Map, behaviors:string|string[], options?:any); // todo determine parameters
+namespace ymaps.map.behavior {
 
-                disable(behaviors:string|string[]):Manager;
-                enable(behaviors:string|string[]):Manager;
-                get(behaviorName:string):interfaces.IBehavior;
-                isEnabled(behaviorName:string):boolean;
-            }
-        }
+    interface ManagerStatic {
+        // todo determine parameters?
+        new(map:Map, behaviors:string|string[], options:ManagerOptions = defaultManagerOptions):Manager;
     }
+    interface Manager extends interfaces.ICustomizable, interfaces.IEventEmitter, interfaces.IParentOnMap {
+        disable(behaviors:string|string[]):Manager;
+        enable(behaviors:string|string[]):Manager;
+        get(behaviorName:string):interfaces.IBehavior;
+        isEnabled(behaviorName:string):boolean;
+    }
+
+    interface ManagerOptions {
+
+    }
+
+    declare var Manager:ManagerStatic;
+    declare var defaultManagerOptions:ManagerOptions = {}
 }

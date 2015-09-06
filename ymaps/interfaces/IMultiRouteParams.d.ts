@@ -1,7 +1,7 @@
 namespace ymaps.interfaces {
 
     interface IMultiRouteParams {
-        aanyTrafficJams?:boolean;
+        avoidTrafficJams?:boolean;
         boundedBy       ?:number[][];
         results         ?:number;
         routingMode     ?:"auto"|"masstransit";
@@ -12,7 +12,7 @@ namespace ymaps.interfaces {
 
     // todo bad logic
     declare var defaultIMultiRouteParams:IMultiRouteParams = {
-        aanyTrafficJams: false,
+        avoidTrafficJams: false,
         boundedBy       : null,
         results         : 3,
         routingMode     : "auto",

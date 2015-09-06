@@ -1,7 +1,10 @@
-module ymaps {
-    export module map {
-        export class Balloon {
-            constructor(map:Map);
-        }
+namespace ymaps.map {
+
+    interface BalloonStatic {
+        new(map:Map):Balloon
     }
+    interface Balloon extends ymaps.interfaces.IBalloonManager, ymaps.interfaces.IBalloonSharingManager {
+    }
+
+    declare var Balloon:BalloonStatic;
 }

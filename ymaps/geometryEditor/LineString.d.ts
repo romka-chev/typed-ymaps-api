@@ -20,7 +20,7 @@ namespace ymaps.geometryEditor {
 
     interface LineStringOptions {
         dblClickHandler?:Function;
-        drawingCursor  ?:boolean|string; // todo report about type error? @detemine?
+        drawingCursor  ?:boolean|string; // todo report about type error? @determine?
         drawOver       ?:boolean;
         edgeLayout     ?:Function;
         maxPoints      ?:number;

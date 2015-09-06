@@ -1,10 +1,12 @@
-module ymaps {
-    export module map {
-        export class ZoomRange extends interfaces.IEventEmitter {
-            constructor(map:Map, constraints:number[]);
+namespace ymaps.map {
 
-            get():vow.Promise; // todo generics? number[]
-            getCurrent():number[];
-        }
+    interface ZoomRangeStatic {
+        new(map:Map, constraints:number[]):ZoomRange;
     }
+    interface ZoomRange extends interfaces.IEventEmitter {
+        get():vow.Promise; // todo generics? number[]
+        getCurrent():number[];
+    }
+
+    declare var ZoomRange:ZoomRangeStatic;
 }

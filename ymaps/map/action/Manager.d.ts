@@ -1,23 +1,23 @@
-module ymaps {
-    export module map {
-        export module action {
-            export class Manager extends interfaces.IEventEmitter {
-                constructor(map:Map);
+namespace ymaps.map.action {
 
-                breakTick():void;
-                execute(action:interfaces.IMapAction):void;
-                getCurrentState():ManagerCurrentState;
-                getMap():Map;
-                setCorrection(userFunction:Function):void; // todo (tick) => tick ?
-                stop():void;
-            }
-
-            export class ManagerCurrentState{
-                isTicking:boolean;
-                tickProgress:number; // todo check
-                zoom:number;
-                globalPixelCenter:number[];
-            }
-        }
+    interface ManagerStatic {
+        new(map:Map):Manager;
     }
+    interface Manager extends interfaces.IEventEmitter {
+        breakTick():any;
+        execute(action:interfaces.IMapAction):any;
+        getCurrentState():ManagerCurrentState;
+        getMap():Map;
+        setCorrection(userFunction:Function):any; // todo (tick) => tick ?
+        stop():any;
+    }
+
+    interface ManagerCurrentState {
+        isTicking        ?:boolean;
+        tickProgress     ?:number; // todo check
+        zoom             ?:number;
+        globalPixelCenter?:number[];
+    }
+
+    declare var Manager:ManagerStatic;
 }

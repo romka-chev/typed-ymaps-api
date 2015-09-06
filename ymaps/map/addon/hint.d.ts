@@ -1,11 +1,9 @@
-module ymaps {
-    export module map {
-        export module action {
-            export class hint{
+namespace ymaps.map.addon {
 
-                // todo check map parameter?
-                get():interfaces.IPopupManager;
-            }
-        }
+    interface Hint {
+        // todo check map parameter?
+        get():interfaces.IPopupManager;
     }
+
+    declare var hint:Hint;
 }

@@ -1,18 +1,20 @@
-module ymaps {
-    export module map {
-        export module action {
-            export class Continuous extends interfaces.IMapAction {
-                isActive():boolean;
-                tick(tick:ContinuousTick):Continuous;
-            }
+namespace ymaps.map.action {
 
-            export class ContinuousTick{
-                duration:number = 0;
-                globalPixelCenter:number[];
-                pixelOffset:number[];
-                timingFunction:string = "linear";
-                zoom:number;
-            }
-        }
+    interface Continuous extends interfaces.IMapAction {
+        isActive():boolean;
+        tick(tick:ContinuousTickOptions /* = defaultContinuousTickOptions */):Continuous;
+    }
+
+    interface ContinuousTickOptions {
+        duration?:number;
+        globalPixelCenter?:number[];
+        pixelOffset?:number[];
+        timingFunction?:string;
+        zoom?:number;
+    }
+
+    declare var defaultContinuousTickOptions:ContinuousTickOptions = {
+        duration      : 0,
+        timingFunction: "linear"
     }
 }

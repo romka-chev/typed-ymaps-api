@@ -1,21 +1,26 @@
-module ymaps {
-    export module map {
-        export module action {
-            export class Single extends interfaces.IMapAction {
-                constructor(tick:SingleTick);
+namespace ymaps.map.action {
 
-                isActive():boolean;
-            }
+    interface SingleStatic {
+        new(tick:SingleTickOptions):Single;
+    }
+    interface Single extends interfaces.IMapAction {
+        isActive():boolean;
+    }
 
-            export class SingleTick {
-                callback:Function;
-                center:number;
-                checkZoomRange:boolean = false;
-                duration:number        = 0;
-                globalPixelCenter:number[];
-                timingFunction:string  = "linear";
-                zoom:number;
-            }
-        }
+    interface SingleTickOptions {
+        callback         ?:Function;
+        center           ?:number;
+        checkZoomRange   ?:boolean;
+        duration         ?:number;
+        globalPixelCenter?:number[];
+        timingFunction   ?:string;
+        zoom             ?:number;
+    }
+
+    declare var Single:SingleStatic;
+    declare var defaultSingleTickOptions:SingleTickOptions = {
+        checkZoomRange: false,
+        duration      : 0,
+        timingFunction: "linear",
     }
 }

@@ -1,20 +1,23 @@
-module ymaps {
-    export module map {
-        export module layer {
-            export class Manager extends interfaces.ILayer, interfaces.IMapObjectCollection {
-                constructor(map:Map, options?:ManagerOptions);
+namespace ymaps.map.layer {
 
-                // todo check is really void
-                // todo determine callback?
-                each(callback:Function, context?:any):void;
-            }
+    interface ManagerStatic {
+        new(map:Map, options:ManagerOptions = defaultManagerOptions):Manager;
+    }
+    interface Manager extends interfaces.ILayer, interfaces.IMapObjectCollection {
+        // todo determine callback?
+        each(callback:Function, context?:any):any;
+    }
 
-            export class ManagerOptions{
-                trafficImageZIndex:number = 201;
-                trafficInfoZIndex:number = 1;
-                trafficJamZIndex:number = 0;
-            }
+    interface ManagerOptions {
+        trafficImageZIndex?:number;
+        trafficInfoZIndex ?:number;
+        trafficJamZIndex  ?:number;
+    }
 
-        }
+    declare var Manager:ManagerStatic;
+    declare var defaultManagerOptions:ManagerOptions = {
+        trafficImageZIndex: 201,
+        trafficInfoZIndex : 1,
+        trafficJamZIndex  : 0,
     }
 }

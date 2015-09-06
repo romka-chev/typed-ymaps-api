@@ -1,11 +1,9 @@
-module ymaps {
-    export module map {
-        export module action {
-            export class balloon{
+namespace ymaps.map.addon {
 
-                // todo check map parameter?
-                get():interfaces.IPopupManager;
-            }
-        }
+    interface Balloon {
+        // todo check map parameter?
+        get():interfaces.IPopupManager;
     }
+
+    declare var balloon:Balloon;
 }

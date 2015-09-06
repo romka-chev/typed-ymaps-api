@@ -1,15 +1,17 @@
-module ymaps {
-    export module map {
-        export class Container extends interfaces.IDomEventEmitter {
-            constructor(parentElement:string|HTMLElement);
+namespace ymaps.map {
 
-            enterFullscreen():void;
-            exitFullscreen():void;
-            fitToViewport(preservePixelPosition?:boolean):void;
-            getElement():HTMLElement;
-            getOffset():number[];
-            getSize():number[];
-            isFullscreen():boolean;
-        }
+    interface ContainerStatic {
+        new(parentElement:string|HTMLElement):Container;
     }
+    interface Container extends interfaces.IDomEventEmitter {
+        enterFullscreen():any;
+        exitFullscreen():any;
+        fitToViewport(preservePixelPosition?:boolean):any;
+        getElement():HTMLElement;
+        getOffset():number[];
+        getSize():number[];
+        isFullscreen():boolean;
+    }
+
+    declare var Container:ContainerStatic;
 }
