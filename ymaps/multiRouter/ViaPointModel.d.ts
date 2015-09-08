@@ -1,28 +1,19 @@
-module ymaps {
-    export module multiRouter {
-        class ViaPointModel extends interfaces.IEventEmitter {
+namespace ymaps.multiRouter {
 
-            geometry:geometry.base.Point;
-            multiRoute:multiRouter.MultiRouteModel;
-            properties:ViaPointModelPropertiesManager;
+    interface ViaPointModel extends interfaces.IEventEmitter {
+        geometry:geometry.base.Point;
+        multiRoute:multiRouter.MultiRouteModel;
+        properties:ViaPointModelPropertiesManager;
 
-            destroy():any;
-            getReferencePoint():any; // todo determine?
-            getReferencePointIndex():number;
+        destroy():any;
+        getReferencePoint():any; // todo determine?
+        getReferencePointIndex():number;
+        setReferencePoint(referencePoint:string|number[]|geometry.Point):any;
+        update(viaPointJson:any):any;
+    }
 
-            setReferencePoint(referencePoint:string):any;
-            setReferencePoint(referencePoint:number[]):any;
-            setReferencePoint(referencePoint:geometry.Point):any;
-
-            update(viaPointJson:any):any;
-
-        }
-
-        export class ViaPointModelPropertiesManager extends data.Manager {
-            get<T>(path:"index", defaultValue:T):T|number;
-            get<T>(path:"lodIndex", defaultValue:T):T|number;
-
-            // todo setters ?
-        }
+    interface ViaPointModelPropertiesManager extends data.Manager {
+        get(path:"index",    defaultValue?:number):number;
+        get(path:"lodIndex", defaultValue?:number):number;
     }
 }

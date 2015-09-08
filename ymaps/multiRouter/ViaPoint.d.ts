@@ -1,17 +1,12 @@
-module ymaps {
-    export module multiRouter {
-        class ViaPoint extends interfaces.IGeoObject {
+namespace ymaps.multiRouter {
 
-            model:multiRouter.ViaPointModel;
-            properties:ViaPointPropertiesManager;
+    interface ViaPoint extends interfaces.IGeoObject {
+        model:multiRouter.ViaPointModel;
+        properties:ViaPointPropertiesManager;
+    }
 
-        }
-
-        export class ViaPointPropertiesManager extends data.Manager {
-            get<T>(path:"index", defaultValue:T):T|number;
-            get<T>(path:"lodIndex", defaultValue:T):T|number;
-
-            // todo setters ?
-        }
+    interface ViaPointPropertiesManager extends data.Manager {
+        get(path:"index",    defaultValue?:number):number;
+        get(path:"lodIndex", defaultValue?:number):number;
     }
 }

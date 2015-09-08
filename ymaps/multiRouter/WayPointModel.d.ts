@@ -1,32 +1,23 @@
-module ymaps {
-    export module multiRouter {
-        class WayPointModel extends interfaces.IEventEmitter {
+namespace ymaps.multiRouter {
 
-            geometry:geometry.base.Point;
-            multiRoute:multiRouter.MultiRouteModel;
-            properties:WayPointModelPropertiesManager;
+    interface WayPointModel extends interfaces.IEventEmitter {
+        geometry:geometry.base.Point;
+        multiRoute:multiRouter.MultiRouteModel;
+        properties:WayPointModelPropertiesManager;
 
-            destroy():any;
-            getReferencePoint():any; // todo determine?
-            getReferencePointIndex():number;
+        destroy():any;
+        getReferencePoint():any; // todo determine?
+        getReferencePointIndex():number;
+        setReferencePoint(referencePoint:string|number[]|geometry.Point):any;
+        update(wayPointJson:any):any;
+    }
 
-            setReferencePoint(referencePoint:string):any;
-            setReferencePoint(referencePoint:number[]):any;
-            setReferencePoint(referencePoint:geometry.Point):any;
-
-            update(wayPointJson:any):any;
-
-        }
-
-        export class WayPointModelPropertiesManager extends data.Manager {
-            get<T>(path:"index", defaultValue:T):T|number;
-            get<T>(path:"request", defaultValue:T):T|string;
-            get<T>(path:"address", defaultValue:T):T|string;
-            get<T>(path:"description", defaultValue:T):T|string;
-            get<T>(path:"name", defaultValue:T):T|string;
-            get<T>(path:"searchMetaData", defaultValue:T):T|any; // todo determine?
-
-            // todo setters ?
-        }
+    interface WayPointModelPropertiesManager extends data.Manager {
+        get(path:"index",          defaultValue?:number ):number;
+        get(path:"request",        defaultValue?:string ):string;
+        get(path:"address",        defaultValue?:string ):string;
+        get(path:"description",    defaultValue?:string ):string;
+        get(path:"name",           defaultValue?:string ):string;
+        get(path:"searchMetaData", defaultValue?:any    ):any; // todo determine?
     }
 }

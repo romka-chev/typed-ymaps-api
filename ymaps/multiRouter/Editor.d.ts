@@ -1,39 +1,41 @@
-module ymaps {
-    export module multiRouter {
-        class Editor extends interfaces.ICustomizable, interfaces.IEventEmitter {
+namespace ymaps.multiRouter {
 
-            state:EditorStateManager;
-
-            constructor(multiRoute:multiRouter.MultiRoute, state?:EditorState, options?:EditorOptions);
-
-            destroy():any;
-
-            getMultiRoute():multiRouter.MultiRoute;
-        }
-
-
-        export class EditorOptions {
-            drawOver:boolean          = true;
-            midPointsType:"way"|"via" = "way";
-        }
-
-        export class EditorState {
-            addWayPoints:boolean    = false;
-            dragWayPoints:boolean   = true;
-            removeWayPoints:boolean = false;
-            dragViaPoints:boolean   = true;
-            removeViaPoints:boolean = true;
-            addMidPoints:boolean    = true;
-        }
-        export class EditorStateManager extends data.Manager {
-            get<T>(path:"addWayPoints", defaultValue:T):T|boolean;
-            get<T>(path:"dragWayPoints", defaultValue:T):T|boolean;
-            get<T>(path:"removeWayPoints", defaultValue:T):T|boolean;
-            get<T>(path:"dragViaPoints", defaultValue:T):T|boolean;
-            get<T>(path:"removeViaPoints", defaultValue:T):T|boolean;
-            get<T>(path:"addMidPoints", defaultValue:T):T|boolean;
-
-            // todo setters ?
-        }
+    interface EditorStatic {
+        new(multiRoute:multiRouter.MultiRoute, state:EditorState = defaultEditorState, options:EditorOptions = defaultEditorOptions):Editor;
     }
+    interface Editor extends interfaces.ICustomizable, interfaces.IEventEmitter {
+
+        state:ymaps.data.Manager;
+
+        destroy():any;
+        getMultiRoute():multiRouter.MultiRoute;
+    }
+
+    interface EditorOptions {
+        drawOver     ?:boolean;
+        midPointsType?:"way"|"via";
+    }
+    interface EditorState {
+        addWayPoints   ?:boolean;
+        dragWayPoints  ?:boolean;
+        removeWayPoints?:boolean;
+        dragViaPoints  ?:boolean;
+        removeViaPoints?:boolean;
+        addMidPoints   ?:boolean;
+    }
+
+    declare var Editor:EditorStatic;
+    declare var defaultEditorOptions:EditorOptions = {
+        drawOver     : true,
+        midPointsType: "way"
+    };
+    declare var defaultEditorState:EditorState     = {
+        addWayPoints   : false,
+        dragWayPoints  : true,
+        removeWayPoints: false,
+        dragViaPoints  : true,
+        removeViaPoints: true,
+        addMidPoints   : true
+    }
+
 }

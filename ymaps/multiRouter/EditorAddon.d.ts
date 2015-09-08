@@ -1,11 +1,10 @@
-module ymaps {
-    export module multiRouter {
-        class EditorAddon extends interfaces.ICustomizable, interfaces.IEventEmitter {
-            state:data.Manager; // todo determine?
+namespace ymaps.multiRouter {
 
-            isActive():boolean;
-            start(state:any):any;
-            stop():any;
-        }
+    interface EditorAddon extends interfaces.ICustomizable, interfaces.IEventEmitter {
+        state:data.Manager;
+
+        isActive():boolean;
+        start(state:any):any;
+        stop():any;
     }
 }
