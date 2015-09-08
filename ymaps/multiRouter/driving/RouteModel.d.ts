@@ -1,40 +1,35 @@
-module ymaps {
-    export module multiRouter {
-        export module driving {
-            export class RouteModel extends interfaces.IEventEmitter {
-                multiRoute:multiRouter.MultiRouteModel;
-                properties:RouteModelPropertiesManager;
+namespace ymaps.multiRouter.driving {
 
-                destroy():any;
-                getPaths():multiRouter.driving.PathModel[];
-                getType():string; // todo determine?
-                update(routeJson:any):any;
-            }
+    interface RouteModel extends interfaces.IEventEmitter {
+        multiRoute:multiRouter.MultiRouteModel;
+        properties:RouteModelPropertiesManager;
 
-            export class RouteModelPropertiesManager extends data.Manager {
-                get<T>(path:"index",              defaultValue:T):T|number;
-                get<T>(path:"type",               defaultValue:T):T|string; // todo determine?
-                get<T>(path:"blocked",            defaultValue:T):T|boolean;
-                get<T>(path:"distance",           defaultValue:T):T|RouteModelPropertiesDistance;
-                get<T>(path:"duration",           defaultValue:T):T|RouteModelPropertiesDuration;
-                get<T>(path:"durationInTraffic",  defaultValue:T):T|RouteModelPropertiesDurationInTraffic;
-                get<T>(path:"boundedBy",          defaultValue:T):T|number[][];
+        destroy():any;
+        getPaths():multiRouter.driving.PathModel[];
+        getType():string; // todo determine?
+        update(routeJson:any):any;
+    }
 
-                // todo setters ?
-            }
+    interface RouteModelPropertiesManager extends data.Manager {
+        get(path:"index",             defaultValue?:number                               ):number;
+        get(path:"type",              defaultValue?:string                               ):string; // todo determine?
+        get(path:"blocked",           defaultValue?:boolean                              ):boolean;
+        get(path:"distance",          defaultValue?:RouteModelPropertiesDistance         ):RouteModelPropertiesDistance;
+        get(path:"duration",          defaultValue?:RouteModelPropertiesDuration         ):RouteModelPropertiesDuration;
+        get(path:"durationInTraffic", defaultValue?:RouteModelPropertiesDurationInTraffic):RouteModelPropertiesDurationInTraffic;
+        get(path:"boundedBy",         defaultValue?:number[][]                           ):number[][];
+    }
 
-            export interface RouteModelPropertiesDistance{
-                text :string;
-                value:any; // todo determine?
-            }
-            export interface RouteModelPropertiesDuration{
-                text :string;
-                value:any; // todo determine?
-            }
-            export interface RouteModelPropertiesDurationInTraffic{
-                text :string;
-                value:any; // todo determine?
-            }
-        }
+    interface RouteModelPropertiesDistance {
+        text :string;
+        value:any; // todo determine?
+    }
+    interface RouteModelPropertiesDuration {
+        text :string;
+        value:any; // todo determine?
+    }
+    interface RouteModelPropertiesDurationInTraffic {
+        text :string;
+        value:any; // todo determine?
     }
 }

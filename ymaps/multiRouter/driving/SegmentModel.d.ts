@@ -1,48 +1,43 @@
-module ymaps {
-    export module multiRouter {
-        export module driving {
-            export class SegmentModel extends interfaces.IGeoObject {
-                geometry:geometry.base.LineString;
-                path:multiRouter.driving.PathModel;
-                properties:SegmentModelPropertiesManager;
+namespace ymaps.multiRouter.driving {
 
-                destroy():any;
-                getType():string; // todo determine?
-                getViaPoints():multiRouter.ViaPointModel[];
-                update(segmentJson:any):any;
-            }
+    interface SegmentModel extends interfaces.IGeoObject {
+        geometry:geometry.base.LineString; // todo report about incompatible override
+        path:multiRouter.driving.PathModel;
+        properties:SegmentModelPropertiesManager;
 
-            export class SegmentModelPropertiesManager extends data.Manager {
-                get<T>(path:"index",              defaultValue:T):T|number;
-                get<T>(path:"type",               defaultValue:T):T|string; // todo determine?
-                get<T>(path:"street",             defaultValue:T):T|string;
-                get<T>(path:"action",             defaultValue:T):T|SegmentModelPropertiesAction;
-                get<T>(path:"distance",           defaultValue:T):T|SegmentModelPropertiesDistance;
-                get<T>(path:"duration",           defaultValue:T):T|SegmentModelPropertiesDuration;
-                get<T>(path:"durationInTraffic",  defaultValue:T):T|SegmentModelPropertiesDurationInTraffic;
-                get<T>(path:"text",               defaultValue:T):T|string;
-                get<T>(path:"viaPoints",          defaultValue:T):T|number[];
-                get<T>(path:"lodIndex",           defaultValue:T):T|number;
+        destroy():any;
+        getType():string; // todo determine?
+        getViaPoints():multiRouter.ViaPointModel[];
+        update(segmentJson:any):any;
+    }
 
-                // todo setters ?
-            }
+    interface SegmentModelPropertiesManager extends data.Manager {
+        get(path:"index",             defaultValue?:number                                  ):number;
+        get(path:"type",              defaultValue?:string                                  ):string; // todo determine?
+        get(path:"street",            defaultValue?:string                                  ):string;
+        get(path:"action",            defaultValue?:SegmentModelPropertiesAction            ):SegmentModelPropertiesAction;
+        get(path:"distance",          defaultValue?:SegmentModelPropertiesDistance          ):SegmentModelPropertiesDistance;
+        get(path:"duration",          defaultValue?:SegmentModelPropertiesDuration          ):SegmentModelPropertiesDuration;
+        get(path:"durationInTraffic", defaultValue?:SegmentModelPropertiesDurationInTraffic ):SegmentModelPropertiesDurationInTraffic;
+        get(path:"text",              defaultValue?:string                                  ):string;
+        get(path:"viaPoints",         defaultValue?:number[]                                ):number[];
+        get(path:"lodIndex",          defaultValue?:number                                  ):number;
+    }
 
-            export interface SegmentModelPropertiesAction{
-                text :string;
-                value:any; // todo determine?
-            }
-            export interface SegmentModelPropertiesDistance{
-                text :string;
-                value:any; // todo determine?
-            }
-            export interface SegmentModelPropertiesDuration{
-                text :string;
-                value:any; // todo determine?
-            }
-            export interface SegmentModelPropertiesDurationInTraffic{
-                text :string;
-                value:any; // todo determine?
-            }
-        }
+    interface SegmentModelPropertiesAction {
+        text :string;
+        value:any; // todo determine?
+    }
+    interface SegmentModelPropertiesDistance {
+        text :string;
+        value:any; // todo determine?
+    }
+    interface SegmentModelPropertiesDuration {
+        text :string;
+        value:any; // todo determine?
+    }
+    interface SegmentModelPropertiesDurationInTraffic {
+        text :string;
+        value:any; // todo determine?
     }
 }

@@ -1,41 +1,36 @@
-module ymaps {
-    export module multiRouter {
-        export module driving {
-            export class PathModel extends interfaces.IEventEmitter {
+namespace ymaps.multiRouter.driving {
 
-                properties:PathModelPropertiesManager;
-                route:multiRouter.driving.RouteModel;
+    interface PathModel extends interfaces.IEventEmitter {
 
-                destroy():any;
-                getSegments():multiRouter.driving.SegmentModel[];
-                getType():string; // todo determine?
-                update(pathJson:any):any;
-            }
+        properties:PathModelPropertiesManager;
+        route:multiRouter.driving.RouteModel;
 
-            export class PathModelPropertiesManager extends data.Manager {
-                get<T>(path:"index",              defaultValue:T):T|number;
-                get<T>(path:"type",               defaultValue:T):T|string; // todo determine?
-                get<T>(path:"distance",           defaultValue:T):T|PathModelPropertiesDistance;
-                get<T>(path:"duration",           defaultValue:T):T|PathModelPropertiesDuration;
-                get<T>(path:"durationInTraffic",  defaultValue:T):T|PathModelPropertiesDurationInTraffic;
-                get<T>(path:"coordinates",        defaultValue:T):T|number[][];
-                get<T>(path:"encodedCoordinates", defaultValue:T):T|string;
+        destroy():any;
+        getSegments():multiRouter.driving.SegmentModel[];
+        getType():string; // todo determine?
+        update(pathJson:any):any;
+    }
 
-                // todo setters ?
-            }
+    interface PathModelPropertiesManager extends data.Manager {
+        get(path:"index",                defaultValue?:number                                ):number;
+        get(path:"type",                 defaultValue?:string                                ):string; // todo determine?
+        get(path:"distance",             defaultValue?:PathModelPropertiesDistance           ):PathModelPropertiesDistance;
+        get(path:"duration",             defaultValue?:PathModelPropertiesDuration           ):PathModelPropertiesDuration;
+        get(path:"durationInTraffic",    defaultValue?:PathModelPropertiesDurationInTraffic  ):PathModelPropertiesDurationInTraffic;
+        get(path:"coordinates",          defaultValue?:number[][]                            ):number[][];
+        get(path:"encodedCoordinates",   defaultValue?:string                                ):string;
+    }
 
-            export interface PathModelPropertiesDistance{
-                text :string;
-                value:any; // todo determine?
-            }
-            export interface PathModelPropertiesDuration{
-                text :string;
-                value:any; // todo determine?
-            }
-            export interface PathModelPropertiesDurationInTraffic{
-                text :string;
-                value:any; // todo determine?
-            }
-        }
+    interface PathModelPropertiesDistance {
+        text :string;
+        value:any; // todo determine?
+    }
+    interface PathModelPropertiesDuration {
+        text :string;
+        value:any; // todo determine?
+    }
+    interface PathModelPropertiesDurationInTraffic {
+        text :string;
+        value:any; // todo determine?
     }
 }

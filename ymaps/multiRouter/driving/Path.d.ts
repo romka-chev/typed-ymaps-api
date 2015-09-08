@@ -1,38 +1,34 @@
-module ymaps {
-    export module multiRouter {
-        export module driving {
-            export class Path extends interfaces.IGeoObject {
-                model:multiRouter.driving.PathModel;
+namespace ymaps.multiRouter.driving {
 
-                properties:PathPropertiesManager;
+    interface Path extends interfaces.IGeoObject {
+        model:multiRouter.driving.PathModel;
+        properties:ymaps.data.Manager;
 
-                getSegments():GeoObjectCollection;
-            }
+        getSegments():GeoObjectCollection;
+    }
 
-            export class PathPropertiesManager extends data.Manager {
-                get<T>(path:"index",              defaultValue:T):T|number;
-                get<T>(path:"type",               defaultValue:T):T|string; // todo determine?
-                get<T>(path:"distance",           defaultValue:T):T|PathPropertiesDistance;
-                get<T>(path:"duration",           defaultValue:T):T|PathPropertiesDuration;
-                get<T>(path:"durationInTraffic",  defaultValue:T):T|PathPropertiesDurationInTraffic;
-                get<T>(path:"coordinates",        defaultValue:T):T|number[][];
-                get<T>(path:"encodedCoordinates", defaultValue:T):T|string;
+    // todo maybe this is redundant?
+    interface PathPropertiesManager extends data.Manager {
+        get(path:"index",              defaultValue?:number                         ):number;
+        get(path:"type",               defaultValue?:string                         ):string; // todo determine?
+        get(path:"distance",           defaultValue?:PathPropertiesDistance         ):PathPropertiesDistance;
+        get(path:"duration",           defaultValue?:PathPropertiesDuration         ):PathPropertiesDuration;
+        get(path:"durationInTraffic",  defaultValue?:PathPropertiesDurationInTraffic):PathPropertiesDurationInTraffic;
+        get(path:"coordinates",        defaultValue?:number[][]                     ):number[][];
+        get(path:"encodedCoordinates", defaultValue?:string                         ):string;
+    }
 
-                // todo setters ?
-            }
-
-            export interface PathPropertiesDistance{
-                text :string;
-                value:any; // todo determine?
-            }
-            export interface PathPropertiesDuration{
-                text :string;
-                value:any; // todo determine?
-            }
-            export interface PathPropertiesDurationInTraffic{
-                text :string;
-                value:any; // todo determine?
-            }
-        }
+    // todo optional values?
+    interface PathPropertiesDistance {
+        text :string;
+        value:any; // todo determine?
+    }
+    interface PathPropertiesDuration {
+        text :string;
+        value:any; // todo determine?
+    }
+    interface PathPropertiesDurationInTraffic {
+        text :string;
+        value:any; // todo determine?
     }
 }

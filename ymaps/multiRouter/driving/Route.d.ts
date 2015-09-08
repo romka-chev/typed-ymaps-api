@@ -1,37 +1,32 @@
-module ymaps {
-    export module multiRouter {
-        export module driving {
-            export class Route extends interfaces.IGeoObject {
-                model:multiRouter.driving.RouteModel;
-                properties:RoutePropertiesManager;
+namespace ymaps.multiRouter.driving {
 
-                getPaths():GeoObjectCollection;
-            }
+    interface Route extends interfaces.IGeoObject {
+        model:multiRouter.driving.RouteModel;
+        properties:RoutePropertiesManager;
 
-            export class RoutePropertiesManager extends data.Manager {
-                get<T>(path:"index",              defaultValue:T):T|number;
-                get<T>(path:"type",               defaultValue:T):T|string; // todo determine?
-                get<T>(path:"blocked",            defaultValue:T):T|boolean;
-                get<T>(path:"distance",           defaultValue:T):T|RoutePropertiesDistance;
-                get<T>(path:"duration",           defaultValue:T):T|RoutePropertiesDuration;
-                get<T>(path:"durationInTraffic",  defaultValue:T):T|RoutePropertiesDurationInTraffic;
-                get<T>(path:"boundedBy",          defaultValue:T):T|number[][];
+        getPaths():GeoObjectCollection;
+    }
 
-                // todo setters ?
-            }
+    interface RoutePropertiesManager extends data.Manager {
+        get(path:"index",                defaultValue?:number                          ):number;
+        get(path:"type",                 defaultValue?:string                          ):string; // todo determine?
+        get(path:"blocked",              defaultValue?:boolean                         ):boolean;
+        get(path:"distance",             defaultValue?:RoutePropertiesDistance         ):RoutePropertiesDistance;
+        get(path:"duration",             defaultValue?:RoutePropertiesDuration         ):RoutePropertiesDuration;
+        get(path:"durationInTraffic",    defaultValue?:RoutePropertiesDurationInTraffic):RoutePropertiesDurationInTraffic;
+        get(path:"boundedBy",            defaultValue?:number[][]                      ):number[][];
+    }
 
-            export interface RoutePropertiesDistance{
-                text :string;
-                value:any; // todo determine?
-            }
-            export interface RoutePropertiesDuration{
-                text :string;
-                value:any; // todo determine?
-            }
-            export interface RoutePropertiesDurationInTraffic{
-                text :string;
-                value:any; // todo determine?
-            }
-        }
+    interface RoutePropertiesDistance {
+        text :string;
+        value:any; // todo determine?
+    }
+    interface RoutePropertiesDuration {
+        text :string;
+        value:any; // todo determine?
+    }
+    interface RoutePropertiesDurationInTraffic {
+        text :string;
+        value:any; // todo determine?
     }
 }
