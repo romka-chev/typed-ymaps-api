@@ -1,13 +1,8 @@
-module ymaps {
-    export module multiRouter {
-        export module masstransit {
+namespace ymaps.multiRouter.masstransit {
 
-            // todo maybe interface?
-            export class TransportProperties {
-                id:string;
-                name:string;
-                type:"bus"|"trolleybus"|"tramway"|"minibus"|"underground"|"suburban";
-            }
-        }
+    interface TransportProperties {
+        id  :string;
+        name:string;
+        type:ymaps.Transports;
     }
 }

@@ -1,38 +1,33 @@
-module ymaps {
-    export module multiRouter {
-        export module masstransit {
-            export class TransportSegmentModel extends interfaces.IEventEmitter {
-                geometry:geometry.base.LineString;
-                path:multiRouter.masstransit.PathModel;
-                properties:TransportSegmentModelPropertiesManager;
+namespace ymaps.multiRouter.masstransit {
 
-                destroy():any;
-                getStops():multiRouter.masstransit.StopModel[];
-                getType():string; // todo determine?
-                update(segmentJson:any):any;
-            }
+    interface TransportSegmentModel extends interfaces.IEventEmitter {
+        geometry:geometry.base.LineString;
+        path:multiRouter.masstransit.PathModel;
+        properties:TransportSegmentModelPropertiesManager;
 
-            export class TransportSegmentModelPropertiesManager extends data.Manager {
-                get<T>(path:"index",        defaultValue:T):T|number;
-                get<T>(path:"type",         defaultValue:T):T|string; // todo determine?
-                get<T>(path:"text",         defaultValue:T):T|string; // todo determine?
-                get<T>(path:"transports",   defaultValue:T):T|multiRouter.masstransit.TransportProperties[];
-                get<T>(path:"stops",        defaultValue:T):T|any; // todo determine GeoJson:FeatureCollection?
-                get<T>(path:"distance",     defaultValue:T):T|TransportSegmentModelPropertiesDistance;
-                get<T>(path:"duration",     defaultValue:T):T|TransportSegmentModelPropertiesDuration;
-                get<T>(path:"lodIndex",     defaultValue:T):T|number;
+        destroy():any;
+        getStops():multiRouter.masstransit.StopModel[];
+        getType():string; // todo determine?
+        update(segmentJson:any):any;
+    }
 
-                // todo setters ?
-            }
+    interface TransportSegmentModelPropertiesManager extends data.Manager {
+        get(path:"index",      defaultValue?:number                                  ):number;
+        get(path:"type",       defaultValue?:string                                  ):string; // todo determine?
+        get(path:"text",       defaultValue?:string                                  ):string; // todo determine?
+        get(path:"transports", defaultValue?:TransportProperties[]                   ):TransportProperties[];
+        get(path:"stops",      defaultValue?:any                                     ):any; // todo determine GeoJson:FeatureCollection?
+        get(path:"distance",   defaultValue?:TransportSegmentModelPropertiesDistance ):TransportSegmentModelPropertiesDistance;
+        get(path:"duration",   defaultValue?:TransportSegmentModelPropertiesDuration ):TransportSegmentModelPropertiesDuration;
+        get(path:"lodIndex",   defaultValue?:number                                  ):number;
+    }
 
-            export interface TransportSegmentModelPropertiesDistance {
-                text :string;
-                value:any; // todo determine?
-            }
-            export interface TransportSegmentModelPropertiesDuration {
-                text :string;
-                value:any; // todo determine?
-            }
-        }
+    interface TransportSegmentModelPropertiesDistance {
+        text :string;
+        value:any; // todo determine?
+    }
+    interface TransportSegmentModelPropertiesDuration {
+        text :string;
+        value:any; // todo determine?
     }
 }

@@ -1,35 +1,28 @@
-module ymaps {
-    export module multiRouter {
-        export module masstransit {
-            export class Path extends interfaces.IGeoObject {
-                model:multiRouter.masstransit.PathModel;
+namespace ymaps.multiRouter.masstransit {
 
-                properties:PathPropertiesManager;
+    interface Path extends interfaces.IGeoObject {
+        model:multiRouter.masstransit.PathModel;
+        properties:PathPropertiesManager;
 
-                getSegmentMarkers():GeoObjectCollection;
+        getSegmentMarkers():GeoObjectCollection;
+        getSegments():GeoObjectCollection;
+    }
 
-                getSegments():GeoObjectCollection;
-            }
+    interface PathPropertiesManager extends data.Manager {
+        get(path:"index",              defaultValue?:number                 ):number;
+        get(path:"type",               defaultValue?:string                 ):string; // todo determine?
+        get(path:"distance",           defaultValue?:PathPropertiesDistance ):PathPropertiesDistance;
+        get(path:"duration",           defaultValue?:PathPropertiesDuration ):PathPropertiesDuration;
+        get(path:"coordinates",        defaultValue?:number[][]             ):number[][];
+        get(path:"encodedCoordinates", defaultValue?:string                 ):string;
+    }
 
-            export class PathPropertiesManager extends data.Manager {
-                get<T>(path:"index", defaultValue:T):T|number;
-                get<T>(path:"type", defaultValue:T):T|string; // todo determine?
-                get<T>(path:"distance", defaultValue:T):T|PathPropertiesDistance;
-                get<T>(path:"duration", defaultValue:T):T|PathPropertiesDuration;
-                get<T>(path:"coordinates", defaultValue:T):T|number[][];
-                get<T>(path:"encodedCoordinates", defaultValue:T):T|string;
-
-                // todo setters ?
-            }
-
-            export interface PathPropertiesDistance {
-                text :string;
-                value:any; // todo determine?
-            }
-            export interface PathPropertiesDuration {
-                text :string;
-                value:any; // todo determine?
-            }
-        }
+    interface PathPropertiesDistance {
+        text :string;
+        value:any; // todo determine?
+    }
+    interface PathPropertiesDuration {
+        text :string;
+        value:any; // todo determine?
     }
 }

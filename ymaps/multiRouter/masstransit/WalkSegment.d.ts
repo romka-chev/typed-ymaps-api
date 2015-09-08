@@ -1,30 +1,25 @@
-module ymaps {
-    export module multiRouter {
-        export module masstransit {
-            export class WalkSegment extends interfaces.IGeoObject {
-                model:multiRouter.masstransit.WalkSegmentModel;
-                properties:WalkSegmentPropertiesManager;
-            }
+namespace ymaps.multiRouter.masstransit {
 
-            export class WalkSegmentPropertiesManager extends data.Manager {
-                get<T>(path:"index",        defaultValue:T):T|number;
-                get<T>(path:"type",         defaultValue:T):T|string; // todo determine?
-                get<T>(path:"text",         defaultValue:T):T|string; // todo determine?
-                get<T>(path:"distance",     defaultValue:T):T|WalkSegmentPropertiesDistance;
-                get<T>(path:"duration",     defaultValue:T):T|WalkSegmentPropertiesDuration;
-                get<T>(path:"lodIndex",     defaultValue:T):T|number;
+    interface WalkSegment extends interfaces.IGeoObject {
+        model:multiRouter.masstransit.WalkSegmentModel;
+        properties:WalkSegmentPropertiesManager;
+    }
 
-                // todo setters ?
-            }
+    interface WalkSegmentPropertiesManager extends data.Manager {
+        get(path:"index",    defaultValue?:number                        ):number;
+        get(path:"type",     defaultValue?:string                        ):string; // todo determine?
+        get(path:"text",     defaultValue?:string                        ):string;
+        get(path:"distance", defaultValue?:WalkSegmentPropertiesDistance ):WalkSegmentPropertiesDistance;
+        get(path:"duration", defaultValue?:WalkSegmentPropertiesDuration ):WalkSegmentPropertiesDuration;
+        get(path:"lodIndex", defaultValue?:number                        ):number;
+    }
 
-            export interface WalkSegmentPropertiesDistance {
-                text :string;
-                value:any; // todo determine?
-            }
-            export interface WalkSegmentPropertiesDuration {
-                text :string;
-                value:any; // todo determine?
-            }
-        }
+    interface WalkSegmentPropertiesDistance {
+        text :string;
+        value:any; // todo determine?
+    }
+    interface WalkSegmentPropertiesDuration {
+        text :string;
+        value:any; // todo determine?
     }
 }

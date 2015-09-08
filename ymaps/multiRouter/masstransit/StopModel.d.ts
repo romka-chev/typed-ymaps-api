@@ -1,20 +1,15 @@
-module ymaps {
-    export module multiRouter {
-        export module masstransit {
-            export class StopModel extends interfaces.IEventEmitter {
-                geometry:geometry.base.Point;
-                properties:StopModelPropertiesManager;
-                segment:multiRouter.masstransit.TransportSegmentModel;
-            }
+namespace ymaps.multiRouter.masstransit {
 
-            export class StopModelPropertiesManager extends data.Manager {
-                get<T>(path:"index", defaultValue:T):T|number;
-                get<T>(path:"id", defaultValue:T):T|string;
-                get<T>(path:"name", defaultValue:T):T|string;
-                get<T>(path:"lodIndex", defaultValue:T):T|number;
+    interface StopModel extends interfaces.IEventEmitter {
+        geometry:geometry.base.Point;
+        properties:StopModelPropertiesManager;
+        segment:multiRouter.masstransit.TransportSegmentModel;
+    }
 
-                // todo setters ?
-            }
-        }
+    interface StopModelPropertiesManager extends data.Manager {
+        get(path:"index",    defaultValue?:number):number;
+        get(path:"id",       defaultValue?:string):string;
+        get(path:"name",     defaultValue?:string):string;
+        get(path:"lodIndex", defaultValue?:number):number;
     }
 }

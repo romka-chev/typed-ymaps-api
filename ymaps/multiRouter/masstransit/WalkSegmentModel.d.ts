@@ -1,34 +1,29 @@
-module ymaps {
-    export module multiRouter {
-        export module masstransit {
-            export class WalkSegmentModel extends interfaces.IEventEmitter {
-                geometry:geometry.base.LineString;
-                path:multiRouter.masstransit.PathModel;
-                properties:WalkSegmentModelPropertiesManager;
+namespace ymaps.multiRouter.masstransit {
 
-                destroy():any;
-                getType():string; // todo determine?
-            }
+    interface WalkSegmentModel extends interfaces.IEventEmitter {
+        geometry:geometry.base.LineString;
+        path:multiRouter.masstransit.PathModel;
+        properties:WalkSegmentModelPropertiesManager;
 
-            export class WalkSegmentModelPropertiesManager extends data.Manager {
-                get<T>(path:"index",        defaultValue:T):T|number;
-                get<T>(path:"type",         defaultValue:T):T|string; // todo determine?
-                get<T>(path:"text",         defaultValue:T):T|string; // todo determine?
-                get<T>(path:"distance",     defaultValue:T):T|WalkSegmentModelPropertiesDistance;
-                get<T>(path:"duration",     defaultValue:T):T|WalkSegmentModelPropertiesDuration;
-                get<T>(path:"lodIndex",     defaultValue:T):T|number;
+        destroy():any;
+        getType():string; // todo determine?
+    }
 
-                // todo setters ?
-            }
+    interface WalkSegmentModelPropertiesManager extends data.Manager {
+        get(path:"index",    defaultValue?:number                             ):number;
+        get(path:"type",     defaultValue?:string                             ):string; // todo determine?
+        get(path:"text",     defaultValue?:string                             ):string;
+        get(path:"distance", defaultValue?:WalkSegmentModelPropertiesDistance ):WalkSegmentModelPropertiesDistance;
+        get(path:"duration", defaultValue?:WalkSegmentModelPropertiesDuration ):WalkSegmentModelPropertiesDuration;
+        get(path:"lodIndex", defaultValue?:number                             ):number;
+    }
 
-            export interface WalkSegmentModelPropertiesDistance {
-                text :string;
-                value:any; // todo determine?
-            }
-            export interface WalkSegmentModelPropertiesDuration {
-                text :string;
-                value:any; // todo determine?
-            }
-        }
+    interface WalkSegmentModelPropertiesDistance {
+        text :string;
+        value:any; // todo determine?
+    }
+    interface WalkSegmentModelPropertiesDuration {
+        text :string;
+        value:any; // todo determine?
     }
 }

@@ -10,6 +10,7 @@ namespace ymaps {
     type FillRules = "evenOdd"|"nonZero";
     type PixelRenderings = "jumpy"|"static";
     type CoordRenderings = "shortestPath"|"straightPath";
+    type Transports = "bus"|"trolleybus"|"tramway"|"minibus"|"underground"|"suburban";
     enum Controls{
         FULLSCREEN_CONTROL     = "fullscreenControl",
         GEOLOCATION_CONTROL    = "geolocationControl",

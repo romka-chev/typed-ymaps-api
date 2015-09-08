@@ -1,32 +1,27 @@
-module ymaps {
-    export module multiRouter {
-        export module masstransit {
-            export class TransportSegment extends interfaces.IGeoObject {
-                model:multiRouter.masstransit.TransportSegmentModel;
-                properties:TransportSegmentPropertiesManager;
-            }
+namespace ymaps.multiRouter.masstransit {
 
-            export class TransportSegmentPropertiesManager extends data.Manager {
-                get<T>(path:"index",        defaultValue:T):T|number;
-                get<T>(path:"type",         defaultValue:T):T|string; // todo determine?
-                get<T>(path:"text",         defaultValue:T):T|string; // todo determine?
-                get<T>(path:"transports",   defaultValue:T):T|multiRouter.masstransit.TransportProperties[];
-                get<T>(path:"stops",        defaultValue:T):T|any; // todo determine GeoJson:FeatureCollection?
-                get<T>(path:"distance",     defaultValue:T):T|TransportSegmentPropertiesDistance;
-                get<T>(path:"duration",     defaultValue:T):T|TransportSegmentPropertiesDuration;
-                get<T>(path:"lodIndex",     defaultValue:T):T|number;
+    interface TransportSegment extends interfaces.IGeoObject {
+        model:multiRouter.masstransit.TransportSegmentModel;
+        properties:TransportSegmentPropertiesManager;
+    }
 
-                // todo setters ?
-            }
+    interface TransportSegmentPropertiesManager extends data.Manager {
+        get(path:"index",      defaultValue?:number                             ):number;
+        get(path:"type",       defaultValue?:string                             ):string; // todo determine?
+        get(path:"text",       defaultValue?:string                             ):string; // todo determine?
+        get(path:"transports", defaultValue?:TransportProperties[]              ):TransportProperties[];
+        get(path:"stops",      defaultValue?:any                                ):any; // todo determine GeoJson:FeatureCollection?
+        get(path:"distance",   defaultValue?:TransportSegmentPropertiesDistance ):TransportSegmentPropertiesDistance;
+        get(path:"duration",   defaultValue?:TransportSegmentPropertiesDuration ):TransportSegmentPropertiesDuration;
+        get(path:"lodIndex",   defaultValue?:number                             ):number;
+    }
 
-            export interface TransportSegmentPropertiesDistance {
-                text :string;
-                value:any; // todo determine?
-            }
-            export interface TransportSegmentPropertiesDuration {
-                text :string;
-                value:any; // todo determine?
-            }
-        }
+    interface TransportSegmentPropertiesDistance {
+        text :string;
+        value:any; // todo determine?
+    }
+    interface TransportSegmentPropertiesDuration {
+        text :string;
+        value:any; // todo determine?
     }
 }

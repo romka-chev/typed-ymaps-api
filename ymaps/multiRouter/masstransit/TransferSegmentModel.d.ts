@@ -1,34 +1,29 @@
-module ymaps {
-    export module multiRouter {
-        export module masstransit {
-            export class TransferSegmentModel extends interfaces.IGeoObject {
-                geometry:geometry.base.LineString;
-                path:multiRouter.masstransit.PathModel;
-                properties:TransferSegmentModelPropertiesManager;
+namespace ymaps.multiRouter.masstransit {
 
-                destroy(segmentJson:any):any;
-                getType():string;
-            }
+    interface TransferSegmentModel extends interfaces.IGeoObject {
+        geometry:geometry.base.LineString; // todo report about incompatible override
+        path:multiRouter.masstransit.PathModel;
+        properties:TransferSegmentModelPropertiesManager;
 
-            export class TransferSegmentModelPropertiesManager extends data.Manager {
-                get<T>(path:"index", defaultValue:T):T|number;
-                get<T>(path:"type", defaultValue:T):T|string; // todo determine?
-                get<T>(path:"text", defaultValue:T):T|string; // todo determine?
-                get<T>(path:"distance", defaultValue:T):T|TransferSegmentModelPropertiesDistance;
-                get<T>(path:"duration", defaultValue:T):T|TransferSegmentModelPropertiesDuration;
-                get<T>(path:"lodIndex", defaultValue:T):T|number;
+        destroy(segmentJson:any):any;
+        getType():string;
+    }
 
-                // todo setters ?
-            }
+    interface TransferSegmentModelPropertiesManager extends data.Manager {
+        get(path:"index",    defaultValue?:number                                 ):number;
+        get(path:"type",     defaultValue?:string                                 ):string; // todo determine?
+        get(path:"text",     defaultValue?:string                                 ):string;
+        get(path:"distance", defaultValue?:TransferSegmentModelPropertiesDistance ):TransferSegmentModelPropertiesDistance;
+        get(path:"duration", defaultValue?:TransferSegmentModelPropertiesDuration ):TransferSegmentModelPropertiesDuration;
+        get(path:"lodIndex", defaultValue?:number                                 ):number;
+    }
 
-            export interface TransferSegmentModelPropertiesDistance {
-                text :string;
-                value:any; // todo determine?
-            }
-            export interface TransferSegmentModelPropertiesDuration {
-                text :string;
-                value:any; // todo determine?
-            }
-        }
+    interface TransferSegmentModelPropertiesDistance {
+        text :string;
+        value:any; // todo determine?
+    }
+    interface TransferSegmentModelPropertiesDuration {
+        text :string;
+        value:any; // todo determine?
     }
 }

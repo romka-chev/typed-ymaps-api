@@ -1,34 +1,28 @@
-module ymaps {
-    export module multiRouter {
-        export module masstransit {
-            export class RouteModel extends interfaces.IEventEmitter {
-                multiRoute:multiRouter.MultiRouteModel;
+namespace ymaps.multiRouter.masstransit {
 
-                properties:RouteModelPropertiesManager;
+    interface RouteModel extends interfaces.IEventEmitter {
+        multiRoute:multiRouter.MultiRouteModel;
+        properties:RouteModelPropertiesManager;
 
-                getPaths():multiRouter.masstransit.PathModel[];
-                getType():string; // todo determine?
-                update(routeJson:any):any;
-            }
+        getPaths():multiRouter.masstransit.PathModel[];
+        getType():string; // todo determine?
+        update(routeJson:any):any;
+    }
 
-            export class RouteModelPropertiesManager extends data.Manager {
-                get<T>(path:"index", defaultValue:T):T|number;
-                get<T>(path:"type", defaultValue:T):T|string; // todo determine?
-                get<T>(path:"distance", defaultValue:T):T|RouteModelPropertiesDistance;
-                get<T>(path:"duration", defaultValue:T):T|RouteModelPropertiesDuration;
-                get<T>(path:"boundedBy", defaultValue:T):T|number[][];
+    interface RouteModelPropertiesManager extends data.Manager {
+        get(path:"index",     defaultValue?:number                       ):number;
+        get(path:"type",      defaultValue?:string                       ):string; // todo determine?
+        get(path:"distance",  defaultValue?:RouteModelPropertiesDistance ):RouteModelPropertiesDistance;
+        get(path:"duration",  defaultValue?:RouteModelPropertiesDuration ):RouteModelPropertiesDuration;
+        get(path:"boundedBy", defaultValue?:number[][]                   ):number[][];
+    }
 
-                // todo setters ?
-            }
-
-            export interface RouteModelPropertiesDistance {
-                text :string;
-                value:any; // todo determine?
-            }
-            export interface RouteModelPropertiesDuration {
-                text :string;
-                value:any; // todo determine?
-            }
-        }
+    interface RouteModelPropertiesDistance {
+        text :string;
+        value:any; // todo determine?
+    }
+    interface RouteModelPropertiesDuration {
+        text :string;
+        value:any; // todo determine?
     }
 }

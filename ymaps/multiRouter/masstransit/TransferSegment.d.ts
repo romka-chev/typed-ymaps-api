@@ -1,30 +1,25 @@
-module ymaps {
-    export module multiRouter {
-        export module masstransit {
-            export class TransferSegment extends interfaces.IGeoObject {
-                model:multiRouter.masstransit.TransferSegmentModel;
-                properties:TransferSegmentPropertiesManager;
-            }
+namespace ymaps.multiRouter.masstransit {
 
-            export class TransferSegmentPropertiesManager extends data.Manager {
-                get<T>(path:"index", defaultValue:T):T|number;
-                get<T>(path:"type", defaultValue:T):T|string; // todo determine?
-                get<T>(path:"text", defaultValue:T):T|string; // todo determine?
-                get<T>(path:"distance", defaultValue:T):T|TransferSegmentPropertiesDistance;
-                get<T>(path:"duration", defaultValue:T):T|TransferSegmentPropertiesDuration;
-                get<T>(path:"lodIndex", defaultValue:T):T|number;
+    interface TransferSegment extends interfaces.IGeoObject {
+        model:multiRouter.masstransit.TransferSegmentModel;
+        properties:TransferSegmentPropertiesManager;
+    }
 
-                // todo setters ?
-            }
+    interface TransferSegmentPropertiesManager extends data.Manager {
+        get(path:"index",    defaultValue?:number                            ):number;
+        get(path:"type",     defaultValue?:string                            ):string; // todo determine?
+        get(path:"text",     defaultValue?:string                            ):string;
+        get(path:"distance", defaultValue?:TransferSegmentPropertiesDistance ):TransferSegmentPropertiesDistance;
+        get(path:"duration", defaultValue?:TransferSegmentPropertiesDuration ):TransferSegmentPropertiesDuration;
+        get(path:"lodIndex", defaultValue?:number                            ):number;
+    }
 
-            export interface TransferSegmentPropertiesDistance {
-                text :string;
-                value:any; // todo determine?
-            }
-            export interface TransferSegmentPropertiesDuration {
-                text :string;
-                value:any; // todo determine?
-            }
-        }
+    interface TransferSegmentPropertiesDistance {
+        text :string;
+        value:any; // todo determine?
+    }
+    interface TransferSegmentPropertiesDuration {
+        text :string;
+        value:any; // todo determine?
     }
 }
