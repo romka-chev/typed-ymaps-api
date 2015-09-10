@@ -1,16 +1,14 @@
-module ymaps {
-    export module option {
-        class Manager extends interfaces.IOptionManager {
+namespace ymaps.option {
 
-            constructor(options?:any, parent?:interfaces.IOptionManager, name?:string);
-
-            set(hash:Object):Manager;
-            set(key:string, value:any):Manager;
-
-            unset(keys:string|string[]):Manager;
-
-            unsetAll():Manager;
-
-        }
+    interface ManagerStatic {
+        new (options?:any, parent?:interfaces.IOptionManager, name?:string):Manager;
     }
+    interface Manager extends interfaces.IOptionManager {
+        set(hash:Object):Manager;
+        set(key:string, value:any):Manager;
+        unset(keys:string|string[]):Manager;
+        unsetAll():Manager;
+    }
+
+    declare var Manager:ManagerStatic;
 }

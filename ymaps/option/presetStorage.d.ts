@@ -1,6 +1,3 @@
-module ymaps {
-    export module option {
-        export var presetStorage:util.Storage;
-        // todo determine all keys?
-    }
+namespace ymaps.option {
+    declare var presetStorage:util.Storage;
 }
