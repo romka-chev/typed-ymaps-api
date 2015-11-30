@@ -1,6 +1,8 @@
 # typed-ymaps-api
 TypeScript definition files for Yandex Maps API
 
+### This project is under development. Please do not use it.
+
 todo replace all `void` with `any` or just remove `void`
 todo check all classes for correct interfaces/classes inheritance
 
